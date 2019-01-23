@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     // IEnumerator allows pausing of the subroutine "SpawnWave()"
     IEnumerator SpawnWave() {
         waveIndex++;
-        //Debug.Log("Wave Incoming!")
+        //Debug.Log("Wave Incoming!");
         for (int i = 0; i < waveIndex; i++) {
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);

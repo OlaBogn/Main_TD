@@ -3,13 +3,24 @@
 public class Turret : MonoBehaviour
 {
     private Transform target;
+
+    [Header("Attributes")]
+
     public float range = 15f;
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+
+    [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
     private GameObject nearestEnemy;
 
     public Transform PartToRotate;
     public float turnSpeed = 10f;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +30,7 @@ public class Turret : MonoBehaviour
 
     void UpdateTarget() 
     {
+        
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         nearestEnemy = null;
@@ -43,12 +55,27 @@ public class Turret : MonoBehaviour
     void Update()
     {
         if (target == null) 
-            return; //if turret doesnt have a target cancel update
+            return; //if turret doesnt have a target cancel update of rotation
 
         Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * turnSpeed);
+
+        if (fireCountdown <= 0f) {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+    }
+
+    void Shoot() {
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+        if (bullet != null) {
+            bullet.Seek(target);
+        }
     }
 
     void OnDrawGizmosSelected() {
