@@ -21,17 +21,16 @@ public class Turret : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating("UpdateTarget", 0f, 0.1f); //Checks target at start and every 0.5s
+    void Start() {
+        InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     void UpdateTarget() 
     {
-        
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+
         float shortestDistance = Mathf.Infinity;
         nearestEnemy = null;
         
@@ -43,6 +42,7 @@ public class Turret : MonoBehaviour
             }
         }
 
+
         if(nearestEnemy != null && shortestDistance <= range)  {
             target = nearestEnemy.transform;
         } else {
@@ -52,21 +52,24 @@ public class Turret : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        fireCountdown -= Time.deltaTime;
-        if (target == null) 
-            return; //if turret doesnt have a target cancel update of rotation
+    void Update() {
+        if (target == null) { 
+            fireCountdown -= Time.deltaTime;
+            return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)
+        }
 
+        // Rotates turret towards current target
         Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * turnSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed); //(Lerp is used to smooth this transition)
 
+        // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f) {
             Shoot();
             fireCountdown = 1f / fireRate;
         }
+        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot() {
