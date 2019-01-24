@@ -54,6 +54,7 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fireCountdown -= Time.deltaTime;
         if (target == null) 
             return; //if turret doesnt have a target cancel update of rotation
 
@@ -66,7 +67,6 @@ public class Turret : MonoBehaviour
             Shoot();
             fireCountdown = 1f / fireRate;
         }
-        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot() {
