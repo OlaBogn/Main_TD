@@ -52,11 +52,18 @@ public class Turret : MonoBehaviour
     }
 
     // Update is called once per frame
+<<<<<<< HEAD
     void Update() {
         if (target == null) { 
             fireCountdown -= Time.deltaTime;
             return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)
         }
+=======
+    void Update()
+    {
+        if (target == null) 
+            return; //if turret doesnt have a target cancel update of rotation
+>>>>>>> parent of ef1b36d... Fixed local repo-error
 
         // Rotates turret towards current target
         Vector3 dir = target.position - transform.position;
