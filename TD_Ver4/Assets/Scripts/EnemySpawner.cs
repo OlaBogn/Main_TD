@@ -52,7 +52,6 @@ IEnumerator SpawnWave() {
             {
                 SpawnBeefy();
             }
-//>>>>>>> master
             yield return new WaitForSeconds(0.5f);
         }
 

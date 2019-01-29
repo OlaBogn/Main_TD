@@ -21,7 +21,6 @@ public class EnemyMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // dir = direction
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
 
@@ -35,7 +34,6 @@ public class EnemyMovement : MonoBehaviour {
     void GetNextWaypoint() {
         if (wayPointIndex >= Waypoints.points.Length - 1) {
             Destroy(gameObject); // TODO: Currently destroyes tiles and enemies.... FIX!!!
-            DamagePlayer();
             return;
         }
 
@@ -43,8 +41,5 @@ public class EnemyMovement : MonoBehaviour {
         target = Waypoints.points[wayPointIndex];
     }
     
-    void DamagePlayer() {
-        playerHealth--;
-        textObject.text = "Health: " + (playerHealth);
-    }
+    
 }
