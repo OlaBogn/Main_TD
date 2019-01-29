@@ -1116,6 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446807053}
   - component: {fileID: 446807052}
+  - component: {fileID: 446807054}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1155,6 +1156,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446807054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446807051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae9f30ad5303d542b3c0a4d419c2473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 10
+  healthCounter: {fileID: 1689912195}
+  enemyTag: Enemy
 --- !u!4 &524527787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
@@ -2531,7 +2547,12 @@ PrefabInstance:
     - target: {fileID: 8140342301357738468, guid: b4977179f6f829841b333a8b847409d3,
         type: 3}
       propertyPath: range
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140342301357738468, guid: b4977179f6f829841b333a8b847409d3,
+        type: 3}
+      propertyPath: fireRate
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4977179f6f829841b333a8b847409d3, type: 3}
@@ -3392,6 +3413,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1689912195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8209070347352392070, guid: 953684acc3a93e74cacf08db758e69ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 142535528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717478622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,7 +4196,7 @@ GameObject:
   - component: {fileID: 1955465367}
   - component: {fileID: 1955465366}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

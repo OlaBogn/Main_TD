@@ -30,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
         waveCountDownText.text = "WaveCountdown: " + Mathf.Round(countdown + 1).ToString();
     }
 
-// IEnumerator allows pausing of the subroutine "SpawnWave()"
-IEnumerator SpawnWave() {
+    // IEnumerator allows pausing of the subroutine "SpawnWave()"
+    IEnumerator SpawnWave() {
         waveIndex++;
         //Debug.Log("Wave Incoming!");
         for (int i = 0; i < waveIndex; i++) {
@@ -52,7 +52,6 @@ IEnumerator SpawnWave() {
             {
                 SpawnBeefy();
             }
-//>>>>>>> master
             yield return new WaitForSeconds(0.5f);
         }
 

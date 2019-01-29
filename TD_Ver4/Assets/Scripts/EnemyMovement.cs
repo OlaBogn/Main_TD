@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 public class EnemyMovement : MonoBehaviour {
 
@@ -10,9 +8,6 @@ public class EnemyMovement : MonoBehaviour {
     private Transform target;
     private int wayPointIndex = 0;
     private GameObject go;
-
-    public Text textObject;
-    private int playerHealth = 10;
     
     // Start is called before the first frame update
     void Start() {
@@ -34,8 +29,8 @@ public class EnemyMovement : MonoBehaviour {
 
     void GetNextWaypoint() {
         if (wayPointIndex >= Waypoints.points.Length - 1) {
+            //DamagePlayer();
             Destroy(gameObject); // TODO: Currently destroyes tiles and enemies.... FIX!!!
-            DamagePlayer();
             return;
         }
 
@@ -43,8 +38,5 @@ public class EnemyMovement : MonoBehaviour {
         target = Waypoints.points[wayPointIndex];
     }
     
-    void DamagePlayer() {
-        playerHealth--;
-        textObject.text = "Health: " + (playerHealth);
-    }
+    
 }

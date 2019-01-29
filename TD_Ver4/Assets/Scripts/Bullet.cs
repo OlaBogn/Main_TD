@@ -32,11 +32,8 @@ public class Bullet : MonoBehaviour
     }
 
     void HitTarget() {
-
-        Destroy(gameObject);
-
-        // TODO: temporarily destroys target.gameObject TODO!
         Destroy(target.gameObject);
+        Destroy(gameObject);
         return;
     }
 }
