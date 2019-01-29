@@ -92,6 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0387c319318cc4a84d43c2aee24408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+//<<<<<<< TurretFix
+  speed: 3
+//=======
+//  speed: 2
+//>>>>>>> master
   textObject: {fileID: 8209070347352392070, guid: 953684acc3a93e74cacf08db758e69ec,
     type: 3}
