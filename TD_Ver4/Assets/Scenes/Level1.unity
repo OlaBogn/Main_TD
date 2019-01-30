@@ -1141,6 +1141,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 524527787}
   enemyPrefab2: {fileID: 4435513794635368610, guid: eab543d8e201ce74990678102c8a8c40,
     type: 3}
+  enemyPrefab3: {fileID: 3596011639458213058, guid: de8cb9b35d8b650459ad3d9847037ae4,
+    type: 3}
   waveCountDownText: {fileID: 357547443}
 --- !u!4 &446807053
 Transform:
