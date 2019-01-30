@@ -1169,8 +1169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 10
-  healthCounter: {fileID: 1689912195}
   enemyTag: Enemy
+  healthCounter: {fileID: 1689912195}
+  endPosition: {fileID: 1708591031}
 --- !u!4 &524527787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
@@ -2554,6 +2555,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8140342301357738468, guid: b4977179f6f829841b333a8b847409d3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4977179f6f829841b333a8b847409d3, type: 3}
 --- !u!1001 &1327588723
@@ -3425,6 +3431,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1708591031 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144915070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1717478622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,7 +4347,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4359,7 +4371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981976490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -7, z: -10}
+  m_LocalPosition: {x: 7, y: -7, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

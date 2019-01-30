@@ -4,32 +4,43 @@ using System.Collections;
 
 public class PlayerHealthTracker : MonoBehaviour
 {
+    [Header ("Unity Setup")]
+
     public int playerHealth = 10;
-
-    public Text healthCounter;
-    private float textUpdateFrequency = 0.2f;
-
-    private float distanceToTarget;
-
     public string enemyTag = "Enemy";
+    public Text healthCounter;
+    public Transform endPosition;
+
+    private float textUpdateFrequency = 0.2f;
+    private float damageDistanceThreshold = 0.2f;
+
     GameObject[] enemies;
     private GameObject nearestEnemy;
-
-
-
+    private GameObject previousEnemyCounted;
+    
     void Start() {
         InvokeRepeating("UpdateHealth", 0f, textUpdateFrequency);
     }
     
     void Update()
     {
-        if (nearestEnemy == null)
-            return;
+        enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         
-        distanceToTarget = Vector3.Distance(transform.position, nearestEnemy.transform.position);
-        if (distanceToTarget <= 1f) {
-            DamagePlayer();
+        float shortestDistance = Mathf.Infinity;
+        nearestEnemy = null;
+        foreach (GameObject enemy in enemies) {
+            float distanceToEnemy = Vector3.Distance(endPosition.transform.position, enemy.transform.position);
+            if (distanceToEnemy <= shortestDistance) {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
         }
+        if (shortestDistance <= damageDistanceThreshold && nearestEnemy != previousEnemyCounted) {
+            DamagePlayer();
+            previousEnemyCounted = nearestEnemy;
+            Debug.Log(shortestDistance);
+        }
+        
     }
 
     void DamagePlayer() {
@@ -38,20 +49,7 @@ public class PlayerHealthTracker : MonoBehaviour
 
     // Updates the playerhealth as often as textUpdateFrequency ticks down
     void UpdateHealth() {
-        float shortestDistance = Mathf.Infinity;
-        nearestEnemy = null;
-
-        foreach (GameObject enemy in enemies) {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy <= shortestDistance) {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-                distanceToTarget = shortestDistance;
-            }
-        }
-
-        healthCounter.text = "Health: " + playerHealth.ToString();
-        enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        healthCounter.text = "Healthyboi: " + playerHealth.ToString();
     }
     
 }
