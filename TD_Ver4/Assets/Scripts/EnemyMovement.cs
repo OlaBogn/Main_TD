@@ -9,14 +9,11 @@ public class EnemyMovement : MonoBehaviour {
     private int wayPointIndex = 0;
     private GameObject go;
     
-    // Start is called before the first frame update
     void Start() {
         target = Waypoints.points[0];
     }
-
-    // Update is called once per frame
+    
     void Update() {
-        // dir = direction
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
 
@@ -29,12 +26,11 @@ public class EnemyMovement : MonoBehaviour {
 
     void GetNextWaypoint() {
         if (wayPointIndex >= Waypoints.points.Length - 1) {
-            //DamagePlayer();
-            Destroy(gameObject); // TODO: Currently destroyes tiles and enemies.... FIX!!!
+            Destroy(gameObject); 
             return;
         }
 
-        wayPointIndex++;
+        wayPointIndex++;    
         target = Waypoints.points[wayPointIndex];
     }
     

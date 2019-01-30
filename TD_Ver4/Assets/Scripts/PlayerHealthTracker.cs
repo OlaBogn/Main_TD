@@ -37,8 +37,7 @@ public class PlayerHealthTracker : MonoBehaviour
         }
         if (shortestDistance <= damageDistanceThreshold && nearestEnemy != previousEnemyCounted) {
             DamagePlayer();
-            previousEnemyCounted = nearestEnemy;
-            Debug.Log(shortestDistance);
+            previousEnemyCounted = nearestEnemy; // checks previous enemy to avoid taking double damage
         }
         
     }

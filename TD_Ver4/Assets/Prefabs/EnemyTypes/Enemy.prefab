@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8503759337824955594}
   - component: {fileID: 8242197375809237777}
   - component: {fileID: 1479897343714015335}
+  - component: {fileID: 8732273245274254956}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -92,10 +93,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0387c319318cc4a84d43c2aee24408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-//<<<<<<< TurretFix
-  speed: 3
-//=======
-//  speed: 2
-//>>>>>>> master
-  textObject: {fileID: 8209070347352392070, guid: 953684acc3a93e74cacf08db758e69ec,
-    type: 3}
+  speed: 5
+--- !u!114 &8732273245274254956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737561353931377399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bb49cabecadb4587eaa49dafe51be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
