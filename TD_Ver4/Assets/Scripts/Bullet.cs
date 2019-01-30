@@ -4,8 +4,10 @@ public class Bullet : MonoBehaviour
 {
 
     private Transform target;
+    public string enemyTag = "Enemy";
 
     public float speed = 25f;
+    public float bulletDamage = 5f;
 
     public void Seek(Transform _target) {
         target = _target;
@@ -26,14 +28,14 @@ public class Bullet : MonoBehaviour
             HitTarget();
             return;
         }
-
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        
     }
 
     void HitTarget() {
-        Destroy(target.gameObject);
-        Destroy(gameObject);
+        if (target.gameObject.CompareTag(enemyTag)) {
+            target.gameObject.GetComponent<EnemyHealthTracker>().takeDamage(bulletDamage);
+        }
+        target = null;
         return;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4435513794635368610}
   - component: {fileID: 4435513794635368611}
   - component: {fileID: 4435513794635368612}
+  - component: {fileID: 2476681354451357587}
   m_Layer: 0
   m_Name: Beefy
   m_TagString: Enemy
@@ -93,3 +94,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &2476681354451357587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435513794635368613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bb49cabecadb4587eaa49dafe51be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
