@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget() {
         if (target.gameObject.CompareTag(enemyTag)) {
-            target.gameObject.GetComponent<EnemyHealthTracker>().takeDamage(bulletDamage);
+            target.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
         }
         target = null;
         return;
