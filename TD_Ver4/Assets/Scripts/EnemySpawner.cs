@@ -6,7 +6,7 @@ using System.Linq;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    [Header("Unity Setup")]
     public Transform enemyPrefab;
     public Transform spawnPoint;
     public Transform enemyPrefab2;
