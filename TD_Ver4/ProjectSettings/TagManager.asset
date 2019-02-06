@@ -8,7 +8,6 @@ TagManager:
   - enemyPrefab
   - HealthCounter
   - Enemy
-  - Tile
   layers:
   - Default
   - TransparentFX

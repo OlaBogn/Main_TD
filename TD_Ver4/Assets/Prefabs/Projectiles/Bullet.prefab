@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
-  speed: 12
+  speed: 10
   bulletDamage: 5
 --- !u!96 &4217387829323562907
 TrailRenderer:

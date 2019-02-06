@@ -48,7 +48,7 @@ public class PlayerHealthTracker : MonoBehaviour
 
     // Updates the playerhealth as often as textUpdateFrequency ticks down
     void UpdateHealth() {
-        healthCounter.text = "Healthy: " + playerHealth.ToString();
+        healthCounter.text = "Healthyboi: " + playerHealth.ToString();
     }
     
 }
