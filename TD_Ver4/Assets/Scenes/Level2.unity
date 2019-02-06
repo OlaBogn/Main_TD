@@ -655,6 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed07086a0432713468ffa7158ac74f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret: {fileID: 8140342301357738459, guid: b4977179f6f829841b333a8b847409d3, type: 3}
+  spawnPoint: {fileID: 0}
 --- !u!4 &905769997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
