@@ -1050,6 +1050,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 791616079}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!4 &905769997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
@@ -1160,7 +1161,7 @@ Camera:
   m_GameObject: {fileID: 918194914}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -1177,7 +1178,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 19
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
