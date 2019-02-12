@@ -7,20 +7,13 @@ public class TileClick : MonoBehaviour
     public GameObject turret;
     public Transform spawnPoint;
 
-    private bool hasTurret = false;
-
     void Start() {
         spawnPoint = transform;
     }
 
     void OnMouseDown() {
         if (this.gameObject.CompareTag(tileTag)) {
-            if (hasTurret == false) {
-                Instantiate(turret, spawnPoint.position, spawnPoint.rotation);
-                hasTurret = true;
-            }
-            
+            Instantiate(turret, spawnPoint.position, spawnPoint.rotation);
         }
     }
-
 }
