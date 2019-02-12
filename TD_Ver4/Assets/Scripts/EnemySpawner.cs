@@ -30,7 +30,6 @@ public class EnemySpawner : MonoBehaviour
         if (countdown <= 0f) {
             // Går ut av løkken hvis wavelist.txt ikke har flere linjer
             if (waveIndex >= allLines.Length) {
-                Debug.Log("Finito");
                 return;
             }
 
@@ -41,13 +40,12 @@ public class EnemySpawner : MonoBehaviour
 
         
         countdown -= Time.deltaTime;
-        waveCountDownText.text = "WaveCountdown: " + Mathf.Round(countdown + 1).ToString();
+        waveCountDownText.text = "Wave: " + waveIndex.ToString() + "/" + allLines.Length.ToString();
     }
 
     // IEnumerator allows pausing of the subroutine "SpawnWave()"
     IEnumerator SpawnWave() {
         waveIndex++;
-        //Debug.Log("Wave Incoming!");
             
             
         line = allLines[waveIndex-1];
