@@ -7,28 +7,21 @@ public class EnemyMovement : MonoBehaviour {
 
     private Transform target;
     private int wayPointIndex = 0;
-    public GameObject pivot;
-    public GameObject sprite;
-
-    
+    private GameObject go;
     
     void Start() {
         target = Waypoints.points[0];
     }
-    private void Awake() {
-        sprite.transform.rotation = Quaternion.Euler(0, 90, 90);
-    }
-
+    
     void Update() {
-        // moves enemy
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.1f) {
             GetNextWaypoint();
         }
-        
-        pivot.transform.rotation = Quaternion.LookRotation(dir);
+
+
     }
 
     void GetNextWaypoint() {
@@ -41,5 +34,6 @@ public class EnemyMovement : MonoBehaviour {
         wayPointIndex++;    
         target = Waypoints.points[wayPointIndex];
     }
+    
     
 }
