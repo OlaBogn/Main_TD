@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   pivot: {fileID: 3198919167667884205}
+  sprite: {fileID: 1490956129071508270}
 --- !u!114 &8732273245274254956
 MonoBehaviour:
   m_ObjectHideFlags: 0
