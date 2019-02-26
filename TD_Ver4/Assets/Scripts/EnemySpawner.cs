@@ -75,15 +75,15 @@ public class EnemySpawner : MonoBehaviour
 }
 
 
-    void SpawnBeefy() {
+    public void SpawnBeefy() {
         Instantiate(enemyPrefab2, spawnPoint.position, spawnPoint.rotation);
     }
 
-    void SpawnEnemy() {
+    public void SpawnEnemy() {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 
-    void SpawnSpeedster() {
+    public void SpawnSpeedster() {
         Instantiate(enemyPrefab3, spawnPoint.position, spawnPoint.rotation);
     }
 }
