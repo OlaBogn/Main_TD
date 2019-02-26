@@ -469,7 +469,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthCounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 451812592}
     - target: {fileID: 6859160579165251410, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: endPosition
@@ -488,6 +488,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 255193458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &451812592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7092309848807860713, guid: d0620ad024c7a94448d5e48fb855dcff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1714107857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &486810046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,

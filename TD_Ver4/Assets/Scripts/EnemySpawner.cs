@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     private string line = string.Empty;
 
 
-    public Text waveCountDownText;
+    //public Text waveCountDownText;
 
     private int waveIndex = 0;
     
@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
         
         countdown -= Time.deltaTime;
-        waveCountDownText.text = "Wave: " + waveIndex.ToString() + "/" + allLines.Length.ToString();
+        //waveCountDownText.text = "Wave: " + waveIndex.ToString() + "/" + allLines.Length.ToString();
     }
 
     // IEnumerator allows pausing of the subroutine "SpawnWave()"
