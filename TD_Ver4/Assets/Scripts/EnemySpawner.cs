@@ -7,47 +7,38 @@ using System.Linq;
 public class EnemySpawner : MonoBehaviour
 {
 
-    public Transform enemyPrefab;
+    [Header("Unity SetUp")]
     public Transform spawnPoint;
+    public Transform enemyPrefab;
     public Transform enemyPrefab2;
     public Transform enemyPrefab3;
-
-    private float timeBetweenWaves = 5f;
-    private float countdown = 1f;
+    public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
     private string[] allLines = File.ReadAllLines("Assets\\Scripts\\Resources\\wavelist.txt");
     private string line = string.Empty;
-
-
-    //public Text waveCountDownText;
-
     private int waveIndex = 0;
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (countdown <= 0f) {
-            // Går ut av løkken hvis wavelist.txt ikke har flere linjer
-            if (waveIndex >= allLines.Length) {
-                return;
-            }
 
-            StartCoroutine(SpawnWave()); // Uses StartCoroutine because of the IEnumerator method
-            countdown = timeBetweenWaves;
-            timeBetweenWaves++;
+    private void Awake() {
+        UpdateWaveText();
+    }
+
+    public void SpawnNextWave() {
+        if (waveIndex >= allLines.Length) {
+            return;
         }
+        StartCoroutine(SpawnWave());
+        UpdateWaveText();
+    }
 
-        
-        countdown -= Time.deltaTime;
-        //waveCountDownText.text = "Wave: " + waveIndex.ToString() + "/" + allLines.Length.ToString();
+    void UpdateWaveText() {
+        string waveText = "Wave: " + waveIndex + "/" + allLines.Length;
+        waveCounter.text = waveText;
     }
 
     // IEnumerator allows pausing of the subroutine "SpawnWave()"
     IEnumerator SpawnWave() {
         waveIndex++;
-            
-            
         line = allLines[waveIndex-1];
 
         // Splitter line opp i flere int
@@ -72,9 +63,8 @@ public class EnemySpawner : MonoBehaviour
             }
 
         }
-}
-
-
+    }
+    
     public void SpawnBeefy() {
         Instantiate(enemyPrefab2, spawnPoint.position, spawnPoint.rotation);
     }
