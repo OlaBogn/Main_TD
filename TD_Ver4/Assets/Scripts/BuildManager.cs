@@ -7,8 +7,13 @@ public class BuildManager : MonoBehaviour
 
     public static BuildManager instance;
 
-    private void Awake()
+    private void Start()
     {
+        
+    }
+   
+    private void Awake()
+    { 
         // Sørger for at det bare er en instanse (Google Singleton instance)
         if (instance != null)
         {
@@ -18,19 +23,29 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    // Her må det skrives inn turret typer
+    // Her må det skrives inn nye turret typer
     public GameObject standardTurretPrefab;
+    public GameObject anotherTurretPrefab;
 
+    // Logikk
     public GameObject turretToBuild;
+
+
 
     public GameObject GetTurretToBuild()
     {
         return turretToBuild;
     }
-   
-    public void SetTurretToBuild (GameObject turret)
+
+
+
+    public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
+    }
+
+    public void BuildTurretOn (TileClick node) {
+       // Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset);
     }
 
 }
