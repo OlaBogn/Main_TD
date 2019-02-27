@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelWaveList : MonoBehaviour
 {
-    
+    private string[] wavesList = null;
+
     public static string[] GetWaveList() {
-        string[] x = {
+        string[] wavesList = {
             "3,3,3,3,3,3",
             "0,0,0,0",
             "0,0,0,1",
@@ -16,8 +17,6 @@ public class LevelWaveList : MonoBehaviour
             "1,1,1,1",
             "3,3,3,3,3,3"
         };
-        return x;
-
-
+        return wavesList;
     }
 }
