@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
-    private string[] allLines = File.ReadAllLines("Assets\\Scripts\\Resources\\wavelist.txt");
+    private string[] allLines = LevelWaveList.GetWaveList();
     private string line = string.Empty;
     private int waveIndex = 0;
 
