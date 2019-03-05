@@ -122,12 +122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8140342301357738459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e7de848dc3ebb4bb04749f0d76cb64, type: 3}
+  m_Script: {fileID: 11500000, guid: baba09c22cd136040942dcbabc3a0fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  fireRate: 5
-  animator: {fileID: 580440201668535468}
+  range: 15
+  fireRate: 1
+  animator: {fileID: 0}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
   turnSpeed: 10

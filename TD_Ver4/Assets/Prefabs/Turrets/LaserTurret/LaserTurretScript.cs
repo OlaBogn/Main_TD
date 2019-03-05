@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretWithAniDelayed : MonoBehaviour
+public class LaserTurretScript : MonoBehaviour
 {
     private Transform target;
 
@@ -84,15 +84,15 @@ public class TurretWithAniDelayed : MonoBehaviour
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
         {
-            Shoot();
+            StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-
+        yield return new WaitForSeconds(0.6f);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
@@ -100,6 +100,7 @@ public class TurretWithAniDelayed : MonoBehaviour
         {
             bullet.Seek(target);
         }
+        
     }
 
     void OnDrawGizmosSelected()
