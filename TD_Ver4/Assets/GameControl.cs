@@ -23,13 +23,9 @@ public class GameControl : MonoBehaviour {
 
         Load();
     }
-
-    private void OnGUI() {
-        GUI.Label(new Rect(350, 50, 150, 30), "Experience: " + experience);
-    }
-
+    
     public void GainExperience() {
-        experience += 10;
+        experience += 5f;
     }
 
     public void Save() {
