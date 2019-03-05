@@ -9,8 +9,7 @@ using System.IO;
 public class GameControl : MonoBehaviour {
 
     public static GameControl control;
-
-    public float health;
+    
     public float experience;
     public GameObject[] prefabs;
 
@@ -21,11 +20,16 @@ public class GameControl : MonoBehaviour {
         } else if (control != this) {
             Destroy(gameObject);
         }
+
+        Load();
     }
 
-    void OnGUI() {
-        GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health);
-        GUI.Label(new Rect(10, 40, 150, 30), "Experience: " + experience);
+    private void OnGUI() {
+        GUI.Label(new Rect(350, 50, 150, 30), "Experience: " + experience);
+    }
+
+    public void GainExperience() {
+        experience += 10;
     }
 
     public void Save() {
@@ -33,7 +37,7 @@ public class GameControl : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
         PlayerData data = new PlayerData();
-        data.health = health;
+        
         data.experience = experience;
 
         bf.Serialize(file, data); // takes serializable "data" object and stores it in "file" location
@@ -49,8 +53,7 @@ public class GameControl : MonoBehaviour {
             PlayerData data = (PlayerData)bf.Deserialize(file);
 
             file.Close();
-
-            health = data.health;
+            
             experience = data.experience;
 
             Debug.Log("Loaded data from: " + Application.persistentDataPath.ToString() + "/playerInfo.dat");
@@ -61,6 +64,5 @@ public class GameControl : MonoBehaviour {
 // Object being saved by GameControl
 [Serializable]
 class PlayerData {
-    public float health;
     public float experience;
 }

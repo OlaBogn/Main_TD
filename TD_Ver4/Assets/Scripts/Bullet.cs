@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame) { // if this is true the bullet "should" have hit
             HitTarget();
+            GameControl.GainExperience();
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
