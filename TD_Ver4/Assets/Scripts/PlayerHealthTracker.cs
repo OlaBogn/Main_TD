@@ -45,12 +45,8 @@ public class PlayerHealthTracker : MonoBehaviour
     void DamagePlayer() {
         playerHealth--;
         if (playerHealth <= 0) {
-            EndGame();
+            GameControl.control.setGameOver();
         }
-    }
-
-    void EndGame() {
-        Debug.Log("End game!");
     }
 
     // Updates the playerhealth as often as textUpdateFrequency ticks down

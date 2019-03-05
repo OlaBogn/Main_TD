@@ -9,8 +9,6 @@ public class EnemyMovement : MonoBehaviour {
     private int wayPointIndex = 0;
     public GameObject pivot;
     public GameObject sprite;
-
-    
     
     void Start() {
         target = Waypoints.points[0];
@@ -20,6 +18,10 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void Update() {
+        if (GameControl.control.gameOver == true) {
+            return;
+        }
+
         // moves enemy
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);

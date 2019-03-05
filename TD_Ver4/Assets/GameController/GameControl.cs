@@ -11,7 +11,12 @@ public class GameControl : MonoBehaviour {
     public static GameControl control;
     
     public float experience;
+
+    [Header("Unity setup")]
     public GameObject[] prefabs;
+    public GameObject gameOverUI;
+
+    public bool gameOver = false;
 
     void Awake() {
         if (control == null) {
@@ -22,6 +27,13 @@ public class GameControl : MonoBehaviour {
         }
 
         Load();
+
+        
+    }
+
+    public void setGameOver() {
+        gameOver = !gameOver;
+        gameOverUI.SetActive(true);
     }
     
     public void GainExperience() {
