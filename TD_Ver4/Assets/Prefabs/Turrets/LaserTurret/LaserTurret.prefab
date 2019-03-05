@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140342301357738469}
   - component: {fileID: 8140342301357738458}
-  - component: {fileID: 2051725093253231978}
+  - component: {fileID: 5282709806460701501}
   m_Layer: 0
   m_Name: LaserTurret
   m_TagString: Untagged
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2051725093253231978
+--- !u!114 &5282709806460701501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,11 +122,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8140342301357738459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e7de848dc3ebb4bb04749f0d76cb64, type: 3}
+  m_Script: {fileID: 11500000, guid: c43d287c32f85824f884884f4df45cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 7
-  fireRate: 1.2
+  range: 5
+  fireRate: 1
   animator: {fileID: 6153785072535210613}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}

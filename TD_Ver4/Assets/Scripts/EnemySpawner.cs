@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
-    private string[] allLines = LevelWaveList.GetWaveList();
+    private string[] allLines = GetWaveList(0);
     private string line = string.Empty;
     private int waveIndex = 0;
 
@@ -75,5 +75,20 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnSpeedster() {
         Instantiate(enemyPrefab3, spawnPoint.position, spawnPoint.rotation);
+    }
+    public static string[] GetWaveList(int n) {
+        if (n == 0) {
+            string[] wavesList = {
+                "3,3,3,3,3,3",
+                "0,0,0,0",
+                "0,0,0,1",
+                "0,0,1,1",
+                "0,1,1,1",
+                "1,1,1,1",
+                "3,3,3,3,3,3"
+            };
+            return wavesList;
+        }
+        return null;
     }
 }
