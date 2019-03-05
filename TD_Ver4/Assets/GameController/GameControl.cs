@@ -38,8 +38,6 @@ public class GameControl : MonoBehaviour {
 
         bf.Serialize(file, data); // takes serializable "data" object and stores it in "file" location
         file.Close();
-
-        Debug.Log("Saved data to: " + Application.persistentDataPath.ToString() + "/playerInfo.dat");
     }
 
     public void Load() {
@@ -51,8 +49,6 @@ public class GameControl : MonoBehaviour {
             file.Close();
             
             experience = data.experience;
-
-            Debug.Log("Loaded data from: " + Application.persistentDataPath.ToString() + "/playerInfo.dat");
         }
     }
 }
