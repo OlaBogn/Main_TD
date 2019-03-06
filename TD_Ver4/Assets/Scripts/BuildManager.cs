@@ -15,6 +15,7 @@ public class BuildManager : MonoBehaviour
 
     public void SetCurrent(GameObject go)
     {
+
         if (current == null) {
             current = go;
             current.GetComponent<SpriteRenderer>().sprite = active;
