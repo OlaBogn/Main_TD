@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserTurretScript : MonoBehaviour
+public class MissileTurret : MonoBehaviour
 {
     private Transform target;
 
@@ -66,13 +66,13 @@ public class LaserTurretScript : MonoBehaviour
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;
-            //animator.SetBool("inRange", false);
+            animator.SetBool("inRange", false);
             return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)
         }
         else
         {
 
-            //animator.SetBool("inRange", true);
+            animator.SetBool("inRange", true);
         }
 
         // Rotates turret towards current target
@@ -84,7 +84,7 @@ public class LaserTurretScript : MonoBehaviour
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
         {
-            animator.SetBool("inRange", true);
+            //animator.SetBool("inRange", true);
             StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
@@ -93,8 +93,8 @@ public class LaserTurretScript : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(0.8f);
-        animator.SetBool("inRange", false);
+        yield return new WaitForSeconds(0f);
+        //animator.SetBool("inRange", false);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         

@@ -42,7 +42,7 @@ public class TileClick : MonoBehaviour
     }
 
     void OnMouseDown() {
-        
+
         gm = GameObject.FindGameObjectWithTag("GameMaster");
         if (gm == null) {
             return;

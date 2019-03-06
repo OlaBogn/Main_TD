@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserTurretScript : MonoBehaviour
+public class SlimeTurretScript : MonoBehaviour
 {
     private Transform target;
 
@@ -93,7 +93,7 @@ public class LaserTurretScript : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.3f);
         animator.SetBool("inRange", false);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
