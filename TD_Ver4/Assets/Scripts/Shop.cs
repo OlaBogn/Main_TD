@@ -9,15 +9,18 @@ public class Shop : MonoBehaviour {
     BuildManager buildManager;
     TileClick tileClick;
 
-    private void Start()
-    {
-        //buildManager = BuildManager.instance;
+    private GameObject gm;
+
+    private void Start() {
+        gm = GameObject.FindGameObjectWithTag("GameMaster");
     }
     // GameController.control.prefabs[];
 
     // Må bli renamet for hver turret
     public void PurchaseTurret0()
     {
+        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[0]);
+
         //Debug.Log("Turret 0 Purchased");
        // buildManager.SetTurretToBuild(buildManager.turret0);
        // tileClick.BuildTurret(buildManager.turret0);
@@ -25,12 +28,14 @@ public class Shop : MonoBehaviour {
 
     public void PurchaseTurret1()
     {
+        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[0]);
         Debug.Log("Turret 1 Purchased");
        // buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
     }
 
     public void PurchaseTurret2()
     {
+        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[1]);
         Debug.Log("Turret 2 Purchased");
         // buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
     }
