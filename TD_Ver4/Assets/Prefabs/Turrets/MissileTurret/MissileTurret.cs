@@ -76,10 +76,10 @@ public class MissileTurret : MonoBehaviour
         }
 
         // Rotates turret towards current target
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = target.position - PartToRotate.transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed); //(Lerp is used to smooth this transition)
+        PartToRotate.transform.rotation = Quaternion.Lerp(PartToRotate.transform.rotation, q, Time.deltaTime * turnSpeed); //(Lerp is used to smooth this transition)
 
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
