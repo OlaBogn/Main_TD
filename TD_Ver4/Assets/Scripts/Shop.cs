@@ -6,7 +6,6 @@ public class Shop : MonoBehaviour {
 
 
 
-    BuildManager buildManager;
     TileClick tileClick;
 
     private GameObject gm;
@@ -28,14 +27,14 @@ public class Shop : MonoBehaviour {
 
     public void PurchaseTurret1()
     {
-        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[0]);
+        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[1]);
         Debug.Log("Turret 1 Purchased");
        // buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
     }
 
     public void PurchaseTurret2()
     {
-        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[1]);
+        gm.GetComponent<BuildManager>().SetTurretToBuild(GameControl.control.prefabs[2]);
         Debug.Log("Turret 2 Purchased");
         // buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
     }

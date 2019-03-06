@@ -25,14 +25,15 @@ public class TileClick : MonoBehaviour
         return true;    
     }
 
-
+    public Transform GetTransform()
+    {
+        return spawnPoint;
+    }
 
     public void BuildTurret(GameObject turret)
     {
         if (HasTurret())
         {
-            //GameObject turretToBuild = buildManager.GetTurretToBuild();
-           // turret = (GameObject)Instantiate(turretToBuild, spawnPoint.position, spawnPoint.rotation);
             hasTurret = true;
             Debug.Log("Kommer inn i BuildTurret");
         }

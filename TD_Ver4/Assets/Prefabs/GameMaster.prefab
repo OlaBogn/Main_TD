@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5905278806163926534}
   - component: {fileID: 5905278805838856701}
   - component: {fileID: 5905278806163926553}
+
   - component: {fileID: 3338636775671817231}
   m_Layer: 0
   m_Name: GameMaster
@@ -69,6 +70,7 @@ MonoBehaviour:
   enemyTag: Enemy
   healthCounter: {fileID: 0}
   endPosition: {fileID: 0}
+
 --- !u!114 &3338636775671817231
 MonoBehaviour:
   m_ObjectHideFlags: 0

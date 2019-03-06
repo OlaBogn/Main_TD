@@ -11,8 +11,7 @@ public class BuildManager : MonoBehaviour
     public Sprite active;
     public Sprite standard;
 
-    //public static BuildManager instance;
-
+    // Endrer turretTile sprites på klikk og håndterer nåværende/forrige tileclick
     public void SetCurrent(GameObject go)
     {
 
@@ -21,13 +20,17 @@ public class BuildManager : MonoBehaviour
             current.GetComponent<SpriteRenderer>().sprite = active;
             return;
         }
+        
         previous = current;
         current = go;
         
+
         current.GetComponent<SpriteRenderer>().sprite = active;
         previous.GetComponent<SpriteRenderer>().sprite = standard;
     }
     
+   
+
     public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
@@ -35,7 +38,7 @@ public class BuildManager : MonoBehaviour
     }
     
     public void BuildTurret() {
-        
+        Instantiate(turretToBuild,current.transform.position, Quaternion.identity);
     }
 
 }
