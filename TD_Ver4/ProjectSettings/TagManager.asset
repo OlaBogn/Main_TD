@@ -9,6 +9,7 @@ TagManager:
   - HealthCounter
   - Enemy
   - Tile
+  - GameMaster
   layers:
   - Default
   - TransparentFX

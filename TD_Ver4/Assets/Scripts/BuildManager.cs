@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-
-    public static BuildManager instance;
-
-    private void Awake()
-    {
-        // Sørger for at det bare er en instanse (Google Singleton instance)
-        if (instance != null)
-        {
-            Debug.LogError("More than one BuildManager in scene!");
-            return;
-        }
-        instance = this;
-    }
-
-    // Her må det skrives inn turret typer
-    public GameObject standardTurretPrefab;
-
     public GameObject turretToBuild;
 
-    public GameObject GetTurretToBuild()
+    private GameObject current;
+    private GameObject previous;
+    public Sprite active;
+    public Sprite standard;
+
+    //public static BuildManager instance;
+
+    public void SetCurrent(GameObject go)
     {
-        return turretToBuild;
+
+        if (current == null) {
+            current = go;
+            current.GetComponent<SpriteRenderer>().sprite = active;
+            return;
+        }
+        previous = current;
+        current = go;
+        
+        current.GetComponent<SpriteRenderer>().sprite = active;
+        previous.GetComponent<SpriteRenderer>().sprite = standard;
     }
-   
-    public void SetTurretToBuild (GameObject turret)
+    
+    public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
+        BuildTurret();
+    }
+    
+    public void BuildTurret() {
+        
     }
 
 }
