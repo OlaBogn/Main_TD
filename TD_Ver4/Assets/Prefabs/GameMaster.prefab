@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5905278806163926534}
   - component: {fileID: 5905278805838856701}
   - component: {fileID: 5905278806163926553}
-  - component: {fileID: 5905278806163926535}
+  - component: {fileID: 748806322821388045}
   m_Layer: 0
   m_Name: GameMaster
-  m_TagString: Untagged
+  m_TagString: GameMaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   enemyTag: Enemy
   healthCounter: {fileID: 0}
   endPosition: {fileID: 0}
---- !u!114 &5905278806163926535
+--- !u!114 &748806322821388045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,6 +78,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5905278806163926552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c07d5c684421a4a9b91b628ee3217b, type: 3}
+  m_Script: {fileID: 11500000, guid: 121c6c8d6262ba74b8b4024be760bab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretToBuild: {fileID: 0}
+  active: {fileID: 21300000, guid: 3beba38c4a7f8e24389e508630c7a4ce, type: 3}
+  standard: {fileID: 21300000, guid: e694da32f6c11e543ba68f4e843e5349, type: 3}
