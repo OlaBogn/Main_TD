@@ -4,13 +4,14 @@ public class TileClick : MonoBehaviour
 {
     private string tileTag = "Tile";
 
-    public GameObject gm;
+    private GameObject gm;
 
     public GameObject turret;
     public Transform spawnPoint;
 
 
     private bool hasTurret = false;
+    
 
     void Start() {
         spawnPoint = transform;
@@ -42,15 +43,14 @@ public class TileClick : MonoBehaviour
     void OnMouseDown() {
 
         //gm.BuildManager.SetCurrent(gameObject);
-        
-            
-        /* if (this.gameObject.CompareTag(tileTag) && hasTurret == false)
-         {
-             Instantiate(turret, spawnPoint.position, spawnPoint.rotation);
-             hasTurret = true;
 
-             // Debug.Log("IsPressed"); */
-        Debug.Log(spawnPoint.position);
-        
+        gm = GameObject.FindGameObjectWithTag("GameMaster");
+        if (gm == null) {
+            return;
+        }
+        gm.GetComponent<BuildManager>().SendMessage("SetCurrent", gameObject);
+
+
+
     }
 }

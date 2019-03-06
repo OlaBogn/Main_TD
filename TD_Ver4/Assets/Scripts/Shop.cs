@@ -11,7 +11,7 @@ public class Shop : MonoBehaviour {
 
     private void Start()
     {
-        buildManager = BuildManager.instance;
+        //buildManager = BuildManager.instance;
     }
     // GameController.control.prefabs[];
 
