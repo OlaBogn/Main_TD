@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6859160579165251415
+--- !u!1 &5905278806163926552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6859160579165251409}
-  - component: {fileID: 6859160579165251408}
-  - component: {fileID: 6859160579165251410}
+  - component: {fileID: 5905278806163926534}
+  - component: {fileID: 5905278805838856701}
+  - component: {fileID: 5905278806163926553}
+  - component: {fileID: 5905278806163926535}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -18,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6859160579165251409
+--- !u!4 &5905278806163926534
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6859160579165251415}
+  m_GameObject: {fileID: 5905278806163926552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,39 +33,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6859160579165251408
+--- !u!114 &5905278805838856701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6859160579165251415}
+  m_GameObject: {fileID: 5905278806163926552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab188fde32a65df4d9dfbfeec57d7e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   enemyPrefab: {fileID: 8503759337824955594, guid: ea46455720b644c469568c5afd3bc3cf,
     type: 3}
-  spawnPoint: {fileID: 0}
   enemyPrefab2: {fileID: 4435513794635368610, guid: eab543d8e201ce74990678102c8a8c40,
     type: 3}
   enemyPrefab3: {fileID: 3596011639458213058, guid: de8cb9b35d8b650459ad3d9847037ae4,
     type: 3}
-  waveCountDownText: {fileID: 0}
---- !u!114 &6859160579165251410
+  waveCounter: {fileID: 0}
+--- !u!114 &5905278806163926553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6859160579165251415}
+  m_GameObject: {fileID: 5905278806163926552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae9f30ad5303d542b3c0a4d419c2473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 100
+  playerHealth: 10
   enemyTag: Enemy
   healthCounter: {fileID: 0}
   endPosition: {fileID: 0}
+--- !u!114 &5905278806163926535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905278806163926552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c07d5c684421a4a9b91b628ee3217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
