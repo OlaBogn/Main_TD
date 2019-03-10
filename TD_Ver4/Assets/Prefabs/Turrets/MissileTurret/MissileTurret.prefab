@@ -42,9 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8140342301357738469}
   - component: {fileID: 8140342301357738458}
-  - component: {fileID: 6998741222278501273}
+  - component: {fileID: 7470961194410834679}
   m_Layer: 0
-  m_Name: GattlingGun
+  m_Name: MissileTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,8 +58,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8140342301357738459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.901, y: -5, z: -0.01}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 5, y: -5, z: -0.01}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 8140342301187300262}
   m_Father: {fileID: 0}
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3bc3e48e80d24d7409067a77a43399e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45cf9d832baabd54fa23c06455e75d16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6998741222278501273
+--- !u!114 &7470961194410834679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,16 +122,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8140342301357738459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baba09c22cd136040942dcbabc3a0fbe, type: 3}
+  m_Script: {fileID: 11500000, guid: bcfeb5efc61ec174e87d126bc998c642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
-  fireRate: 1
-  animator: {fileID: 0}
+  range: 13
+  fireRate: 0.4
+  animator: {fileID: 8562143403284495936}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
   turnSpeed: 10
-  bulletPrefab: {fileID: 4588562835530020193, guid: 62e91cd515298d74bb6459ce1edb3e52,
+  bulletPrefab: {fileID: 4588562835530020193, guid: fd64bdeab018f69478a3e108c9544955,
     type: 3}
   firePoint: {fileID: 8140342301875277885}
 --- !u!1 &8140342301593919667
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140342301593919666}
   - component: {fileID: 8140342301593919677}
-  - component: {fileID: 580440201668535468}
+  - component: {fileID: 8562143403284495936}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -159,13 +159,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8140342301593919667}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.032, y: 0, z: -0.10000009}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.10000009}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8140342301187300262}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &8140342301593919677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13eb56ceed18df943b78142929f8dbf4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 806dba47049e1ac439ab0fea85b800d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &580440201668535468
+--- !u!95 &8562143403284495936
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ Animator:
   m_GameObject: {fileID: 8140342301593919667}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a577671777fd6f044b8934a3c74e91b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: d0e0ec041d341c54382bd3f08a0db1de, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8140342301875277874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1259, y: 0.0057, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8140342301187300262}

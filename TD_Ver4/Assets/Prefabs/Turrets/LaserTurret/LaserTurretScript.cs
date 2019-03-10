@@ -69,24 +69,25 @@ public class LaserTurretScript : MonoBehaviour
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;
-            animator.SetBool("inRange", false);
+            //animator.SetBool("inRange", false);
             return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)
         }
         else
         {
 
-            animator.SetBool("inRange", true);
+            //animator.SetBool("inRange", true);
         }
 
         // Rotates turret towards current target
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = target.position - PartToRotate.transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed); //(Lerp is used to smooth this transition)
+        PartToRotate.transform.rotation = Quaternion.Lerp(PartToRotate.transform.rotation, q, Time.deltaTime * turnSpeed); //(Lerp is used to smooth this transition)
 
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
         {
+            animator.SetBool("inRange", true);
             StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
@@ -95,9 +96,11 @@ public class LaserTurretScript : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.8f);
+        animator.SetBool("inRange", false);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        
 
         if (bullet != null)
         {
