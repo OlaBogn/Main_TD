@@ -54,6 +54,9 @@ public class Turret : MonoBehaviour
 
     void Update()
     {
+        if (GameControl.control.gameOver == true) {
+            return;
+        }
         if (target == null) { 
             fireCountdown -= Time.deltaTime;
             return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)

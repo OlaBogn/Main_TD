@@ -44,6 +44,9 @@ public class PlayerHealthTracker : MonoBehaviour
 
     void DamagePlayer() {
         playerHealth--;
+        if (playerHealth <= 0) {
+            GameControl.control.setGameOver();
+        }
     }
 
     // Updates the playerhealth as often as textUpdateFrequency ticks down

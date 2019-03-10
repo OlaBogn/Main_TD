@@ -11,7 +11,13 @@ public class GameControl : MonoBehaviour {
     public static GameControl control;
     
     public float experience;
+
+    [Header("Unity setup")]
     public GameObject[] prefabs;
+    public GameObject gameOverUI;
+    private string gameOverUITag = "GameOverUI";
+
+    public bool gameOver = false;
 
     void Awake() {
         if (control == null) {
@@ -22,14 +28,25 @@ public class GameControl : MonoBehaviour {
         }
 
         Load();
+        
     }
 
-    private void OnGUI() {
-        GUI.Label(new Rect(350, 50, 150, 30), "Experience: " + experience);
+    void Start() {
+        GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject go in gos) {
+            if (go.CompareTag(gameOverUITag)) {
+                gameOverUI = go;
+            }
+        }
     }
 
+    public void setGameOver() {
+        gameOver = !gameOver;
+        gameOverUI.SetActive(true);
+    }
+    
     public void GainExperience() {
-        experience += 10;
+        experience += 5f;
     }
 
     public void Save() {
@@ -42,8 +59,6 @@ public class GameControl : MonoBehaviour {
 
         bf.Serialize(file, data); // takes serializable "data" object and stores it in "file" location
         file.Close();
-
-        Debug.Log("Saved data to: " + Application.persistentDataPath.ToString() + "/playerInfo.dat");
     }
 
     public void Load() {
@@ -55,8 +70,6 @@ public class GameControl : MonoBehaviour {
             file.Close();
             
             experience = data.experience;
-
-            Debug.Log("Loaded data from: " + Application.persistentDataPath.ToString() + "/playerInfo.dat");
         }
     }
 }

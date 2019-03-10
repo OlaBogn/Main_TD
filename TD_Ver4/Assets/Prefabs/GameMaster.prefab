@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5905278805838856701}
   - component: {fileID: 5905278806163926553}
 
+
   - component: {fileID: 3338636775671817231}
+
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -71,7 +73,6 @@ MonoBehaviour:
   healthCounter: {fileID: 0}
   endPosition: {fileID: 0}
 
---- !u!114 &3338636775671817231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,3 +87,4 @@ MonoBehaviour:
   turretToBuild: {fileID: 0}
   active: {fileID: 21300000, guid: 3beba38c4a7f8e24389e508630c7a4ce, type: 3}
   standard: {fileID: 21300000, guid: e694da32f6c11e543ba68f4e843e5349, type: 3}
+
