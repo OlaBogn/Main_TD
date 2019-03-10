@@ -403,6 +403,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1270594433}
+    - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: waveCounter
+      value: 
+      objectReference: {fileID: 491902459}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: endPosition
+      value: 
+      objectReference: {fileID: 1541328752}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: healthCounter
+      value: 
+      objectReference: {fileID: 451812592}
+    - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6859160579165251415, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_Name
@@ -492,31 +517,6 @@ PrefabInstance:
         type: 3}
       propertyPath: playerHealth
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1270594433}
-    - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: waveCounter
-      value: 
-      objectReference: {fileID: 491902459}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: endPosition
-      value: 
-      objectReference: {fileID: 1541328752}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: healthCounter
-      value: 
-      objectReference: {fileID: 451812592}
-    - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5905278806163926535, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 1897688165}
   m_Layer: 5
   m_Name: GameOverUI
-  m_TagString: Untagged
+  m_TagString: GameOverUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2442,6 +2442,6 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverUI
       value: 
-      objectReference: {fileID: 1897688163}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7f0f376c5721349a53be26f517a4df, type: 3}

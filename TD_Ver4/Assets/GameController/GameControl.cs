@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour {
     [Header("Unity setup")]
     public GameObject[] prefabs;
     public GameObject gameOverUI;
+    private string gameOverUITag = "GameOverUI";
 
     public bool gameOver = false;
 
@@ -27,8 +28,16 @@ public class GameControl : MonoBehaviour {
         }
 
         Load();
-
         
+    }
+
+    void Start() {
+        GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject go in gos) {
+            if (go.CompareTag(gameOverUITag)) {
+                gameOverUI = go;
+            }
+        }
     }
 
     public void setGameOver() {
