@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.Runtime.Serialization.Formatters.Binary; // writes unreadable files for datastorage
 using System.IO;
@@ -31,13 +32,8 @@ public class GameControl : MonoBehaviour {
         
     }
 
-    void Start() {
-        GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
-        foreach (GameObject go in gos) {
-            if (go.CompareTag(gameOverUITag)) {
-                gameOverUI = go;
-            }
-        }
+    public void Start() {
+        // TODO: make control responsible for finding the gameOverUI GameObject
     }
 
     public void setGameOver() {
