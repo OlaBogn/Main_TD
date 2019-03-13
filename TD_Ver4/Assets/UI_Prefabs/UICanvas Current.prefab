@@ -642,7 +642,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897688165}
-        m_MethodName: moveToMainMenu
+        m_MethodName: retryLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -733,7 +733,7 @@ PrefabInstance:
     - target: {fileID: 1405276773471701906, guid: d0620ad024c7a94448d5e48fb855dcff,
         type: 3}
       propertyPath: m_Name
-      value: UICanvas Variant
+      value: UICanvas Current
       objectReference: {fileID: 0}
     - target: {fileID: 2600361298805409159, guid: d0620ad024c7a94448d5e48fb855dcff,
         type: 3}

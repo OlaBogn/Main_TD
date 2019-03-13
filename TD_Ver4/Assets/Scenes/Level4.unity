@@ -604,6 +604,11 @@ PrefabInstance:
       propertyPath: endPosition
       value: 
       objectReference: {fileID: 1600122577}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1329419522}
     - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4030,6 +4035,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
     type: 3}
   m_PrefabInstance: {fileID: 1312718320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1329419522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1897688163, guid: 524aae7ae52e34a459bc037148af44df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831817154}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1431941182
 PrefabInstance:
