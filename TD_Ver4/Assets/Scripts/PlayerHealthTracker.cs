@@ -46,6 +46,7 @@ public class PlayerHealthTracker : MonoBehaviour
     void DamagePlayer() {
         playerHealth--;
         if (playerHealth <= 0) {
+            UpdateHealth();
             gameOverUI.SetActive(true);
             Time.timeScale = 0f; // freezes time
         }
