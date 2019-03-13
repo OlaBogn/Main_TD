@@ -18,9 +18,6 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void Update() {
-        if (GameControl.control.gameOver == true) {
-            return;
-        }
 
         // moves enemy
         Vector3 dir = target.position - transform.position;

@@ -10,6 +10,7 @@ public class PlayerHealthTracker : MonoBehaviour
     public string enemyTag = "Enemy";
     public Text healthCounter;
     public Transform endPosition;
+    public GameObject gameOverUI;
 
     private float textUpdateFrequency = 0.2f;
     private float damageDistanceThreshold = 0.2f;
@@ -45,8 +46,14 @@ public class PlayerHealthTracker : MonoBehaviour
     void DamagePlayer() {
         playerHealth--;
         if (playerHealth <= 0) {
-            GameControl.control.setGameOver();
+            UpdateHealth();
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0f; // freezes time
         }
+    }
+    // Resets timescale on awake to make the retry functionality work
+    void Awake() {
+        Time.timeScale = 1f;
     }
 
     // Updates the playerhealth as often as textUpdateFrequency ticks down

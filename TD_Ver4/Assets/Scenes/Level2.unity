@@ -1149,6 +1149,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8588046825346765807, guid: 524aae7ae52e34a459bc037148af44df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1307739492}
+    - target: {fileID: 8588046825346765807, guid: 524aae7ae52e34a459bc037148af44df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnNextWave
+      objectReference: {fileID: 0}
     - target: {fileID: 6042069019890035597, guid: 524aae7ae52e34a459bc037148af44df,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1283,6 +1293,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1307739492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 495175803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab188fde32a65df4d9dfbfeec57d7e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1339434353

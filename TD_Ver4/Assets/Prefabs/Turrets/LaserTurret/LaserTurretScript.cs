@@ -63,9 +63,9 @@ public class LaserTurretScript : MonoBehaviour
 
     void Update()
     {
-        if (GameControl.control.gameOver == true) {
+        /*if (GameControl.control.gameOver == true) {
             return;
-        }
+        }*/
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;
