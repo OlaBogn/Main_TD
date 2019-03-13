@@ -46,7 +46,8 @@ public class BuildManager : MonoBehaviour
     // Endrer turretTile sprites på klikk og håndterer nåværende/forrige tileclick
     public void SetCurrent(GameObject go)
     {
-
+        if (current == go)
+            return;
         if (current == null) {
             current = go;
             current.GetComponent<SpriteRenderer>().sprite = active;
