@@ -11,6 +11,7 @@ public class BuildManager : MonoBehaviour
     public Sprite active;
     public Sprite standard;
 
+
     // Endrer turretTile sprites på klikk og håndterer nåværende/forrige tileclick
     public void SetCurrent(GameObject go)
     {

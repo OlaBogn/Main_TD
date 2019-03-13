@@ -14,10 +14,6 @@ public class GameControl : MonoBehaviour {
 
     [Header("Unity setup")]
     public GameObject[] prefabs;
-    public GameObject gameOverUI;
-    private string gameOverUITag = "GameOverUI";
-
-    public bool gameOver = false;
 
     void Awake() {
         if (control == null) {
@@ -33,17 +29,9 @@ public class GameControl : MonoBehaviour {
 
     void Start() {
         GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
-        foreach (GameObject go in gos) {
-            if (go.CompareTag(gameOverUITag)) {
-                gameOverUI = go;
-            }
-        }
     }
 
-    public void setGameOver() {
-        gameOver = !gameOver;
-        gameOverUI.SetActive(true);
-    }
+    
     
     public void GainExperience() {
         experience += 5f;
