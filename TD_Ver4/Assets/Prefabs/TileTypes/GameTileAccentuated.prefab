@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 923419495567964281}
   - component: {fileID: 923419495567964287}
   - component: {fileID: 923419495567964280}
-  - component: {fileID: 4729098536653525458}
+  - component: {fileID: 4649430068134576164}
   m_Layer: 0
-  m_Name: GameTile
+  m_Name: GameTileAccentuated
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 8140342301357738459, guid: b4977179f6f829841b333a8b847409d3, type: 3}
   spawnPoint: {fileID: 923419495567964281}
---- !u!212 &4729098536653525458
+--- !u!212 &4649430068134576164
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 923419495861881125}
   m_Layer: 0
   m_Name: TurretTile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e694da32f6c11e543ba68f4e843e5349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb120b92c4d53464c80bfd8e53076b5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
