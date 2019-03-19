@@ -23,12 +23,18 @@ public class EnemySpawner : MonoBehaviour
         UpdateWaveText();
     }
 
+    private void Start() {
+        SendMessage("SetWaveCount", allLines.Length);
+    }
+
     public void SpawnNextWave() {
         if (waveIndex >= allLines.Length) {
             return;
         }
         StartCoroutine(SpawnWave());
         UpdateWaveText();
+        SendMessage("SetProgressCheckActive", null);
+        SendMessage("UpdateWaveIndex", waveIndex);
     }
 
     void UpdateWaveText() {
@@ -59,9 +65,8 @@ public class EnemySpawner : MonoBehaviour
             if (enemies[i] == 3)
             {
                 SpawnSpeedster();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.3f);
             }
-
         }
     }
     
@@ -76,6 +81,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnSpeedster() {
         Instantiate(enemyPrefab3, spawnPoint.position, spawnPoint.rotation);
     }
+
     public static string[] GetWaveList(int n) {
         if (n == 0) {
             string[] wavesList = {
