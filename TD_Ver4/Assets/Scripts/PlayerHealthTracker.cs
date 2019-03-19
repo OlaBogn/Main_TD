@@ -17,7 +17,7 @@ public class PlayerHealthTracker : MonoBehaviour
 
     GameObject[] enemies;
     private GameObject nearestEnemy;
-    private GameObject previousEnemyCounted;
+    private string previousEnemyCounted;
     
     void Start() {
         InvokeRepeating("UpdateHealth", 0f, textUpdateFrequency);
@@ -36,15 +36,18 @@ public class PlayerHealthTracker : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
+        /*
         if (shortestDistance <= damageDistanceThreshold && nearestEnemy != previousEnemyCounted) {
             DamagePlayer();
             previousEnemyCounted = nearestEnemy; // checks previous enemy to avoid taking double damage
         }
+        */
         
     }
 
-    void DamagePlayer() {
+    public void DamagePlayer() {
         playerHealth--;
+        
         if (playerHealth <= 0) {
             UpdateHealth();
             gameOverUI.SetActive(true);
