@@ -63,9 +63,6 @@ public class TurretWithAniDelayed : MonoBehaviour
 
     void Update()
     {
-        if (GameControl.control.gameOver == true) {
-            return;
-        }
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;

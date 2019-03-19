@@ -18,15 +18,12 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     void Update() {
-        if (GameControl.control.gameOver == true) {
-            return;
-        }
 
         // moves enemy
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.1f) {
+        if (Vector3.Distance(transform.position, target.position) <= 0.4f) {
             GetNextWaypoint();
         }
         
@@ -35,6 +32,10 @@ public class EnemyMovement : MonoBehaviour {
 
     void GetNextWaypoint() {
         if (wayPointIndex >= Waypoints.points.Length - 1) {
+            GameObject go = GameObject.FindGameObjectWithTag("GameMaster");
+
+            go.SendMessage("DamagePlayer", null);
+
             Destroy(gameObject); 
 
             return;

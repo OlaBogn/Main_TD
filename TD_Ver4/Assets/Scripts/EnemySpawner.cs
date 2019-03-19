@@ -79,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
     public static string[] GetWaveList(int n) {
         if (n == 0) {
             string[] wavesList = {
-                "3,3,3,3,3,3",
+                "3,3,3,3,3,3,3,3,3,3,3,3,3",
                 "0,0,0,0",
                 "0,0,0,1",
                 "0,0,1,1",
