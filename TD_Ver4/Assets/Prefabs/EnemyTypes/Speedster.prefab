@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0387c319318cc4a84d43c2aee24408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 8
   pivot: {fileID: 3004325279344018347}
   sprite: {fileID: 3369982232258371740}
 --- !u!114 &4335892119427207044
