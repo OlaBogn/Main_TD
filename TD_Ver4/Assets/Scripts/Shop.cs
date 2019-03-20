@@ -15,7 +15,7 @@ public class Shop : MonoBehaviour {
     }
     // GameController.control.prefabs[];
 
-// TODO Legge til kode for nye prefabs!!!!   
+    // TODO Legge til kode for nye prefabs!!!!   
     // Metoder for hver turret knapp
     public void PurchaseTurret0()
     {

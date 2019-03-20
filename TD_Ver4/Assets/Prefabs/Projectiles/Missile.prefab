@@ -96,6 +96,8 @@ MonoBehaviour:
   enemyTag: Enemy
   speed: 20
   bulletDamage: 10
+  hasSplashDamage: 1
+  splashRadius: 1
 --- !u!96 &4217387829323562907
 TrailRenderer:
   serializedVersion: 2

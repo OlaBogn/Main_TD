@@ -9,6 +9,9 @@ public class Bullet : MonoBehaviour
     public float speed = 25f;
     public float bulletDamage = 5f;
 
+    public bool hasSplashDamage;
+    public float splashRadius;
+
     public void Seek(Transform _target) {
         target = _target;
     }
@@ -25,17 +28,28 @@ public class Bullet : MonoBehaviour
         float distanceThisFrame = speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame) { // if this is true the bullet "should" have hit
-            HitTarget();
+            HitTarget(target.gameObject);
+            if (hasSplashDamage) {
+                GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach(GameObject go in gos) {
+                    Vector3 tempDir = go.transform.position - transform.position;
+                    float tempDist = tempDir.magnitude;
+                    if (tempDist <= splashRadius) {
+                        HitTarget(go);
+                    }
+                }
+            }
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
-    void HitTarget() {
-        if (target.gameObject.CompareTag(enemyTag)) {
-            target.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
+    void HitTarget(GameObject go) {
+        if (go.gameObject.CompareTag(enemyTag)) {
+            go.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
         }
-        target = null;
+        go = null;
         return;
     }
+    
 }
