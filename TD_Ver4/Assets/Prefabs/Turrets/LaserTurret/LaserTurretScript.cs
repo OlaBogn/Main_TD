@@ -11,6 +11,8 @@ public class LaserTurretScript : MonoBehaviour
     public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float damage;
+
     public Animator animator;
 
 
@@ -113,6 +115,20 @@ public class LaserTurretScript : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private float[] stats;
+
+    private void OnMouseDown()
+    {
+        stats = new float[3];
+        stats[0] = range;
+        stats[1] = fireRate;
+        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
+        stats[2] = damage;
+
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("GetStats", stats);
     }
 
 }

@@ -9,9 +9,9 @@ TagManager:
   - HealthCounter
   - Enemy
   - Tile
-
   - GameOverUI
-
+  - GameMaster
+  - TurretStats
   layers:
   - Default
   - TransparentFX
