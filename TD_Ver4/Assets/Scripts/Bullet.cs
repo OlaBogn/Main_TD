@@ -51,10 +51,5 @@ public class Bullet : MonoBehaviour
         go = null;
         return;
     }
-    private void OnDrawGizmos() {
-        if (hasSplashDamage) {
-            Gizmos.DrawWireSphere(transform.position, splashRadius);
-        }
-        
-    }
+    
 }
