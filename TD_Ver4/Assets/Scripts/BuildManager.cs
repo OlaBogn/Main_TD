@@ -10,8 +10,7 @@ public class BuildManager : MonoBehaviour
     private GameObject previous;
     public Sprite active;
     public Sprite standard;
-
-    private string tileTag = "Tile";
+    
     private Transform[] tiles;
     private bool[] hasBuilding;
 
