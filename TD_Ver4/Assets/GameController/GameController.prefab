@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb39e9381bd7ea4d80dc92ec0f362b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   experience: 0
   prefabs:
-  - {fileID: 8140342301357738459, guid: b4977179f6f829841b333a8b847409d3, type: 3}
+  - {fileID: 8140342301357738459, guid: 327f5dd690c7b284eb2cae01f813ef9d, type: 3}
   - {fileID: 8140342301357738459, guid: 5eadbc83c24d2f940b8e4f56580d4961, type: 3}
   - {fileID: 8140342301357738459, guid: 9273d61b9c26d5548952be1ccf02f900, type: 3}
