@@ -75,7 +75,8 @@ public class BuildManager : MonoBehaviour
     
     // Metode som bygger turret på nåværende node
     public void BuildTurret() {
-        Instantiate(turretToBuild,current.transform.position, Quaternion.identity);
+        Vector3 buildOffset = new Vector3(0, 0, -1);
+        Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
     }
 
 }

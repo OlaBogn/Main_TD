@@ -31,6 +31,8 @@ public class LaserTurretScript : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
+
+        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
 
     void UpdateTarget()

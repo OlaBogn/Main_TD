@@ -11,6 +11,7 @@ public class SniperTurretScript : MonoBehaviour
     public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float damage;
     public Animator animator;
 
 
@@ -29,6 +30,7 @@ public class SniperTurretScript : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
+        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
 
     void UpdateTarget()
@@ -113,6 +115,18 @@ public class SniperTurretScript : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private float[] stats;
+
+    private void OnMouseDown() {
+        stats = new float[3];
+        stats[0] = range;
+        stats[1] = fireRate;
+        stats[2] = damage;
+
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("GetStats", stats);
     }
 
 }
