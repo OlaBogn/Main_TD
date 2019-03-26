@@ -12,10 +12,10 @@ public class GattlingTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
+    public int price = 100;
 
     public Animator animator;
     
-
 
     [Header("Unity Setup Fields")]
 
@@ -113,6 +113,12 @@ public class GattlingTurretScript : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void GetPrice()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("BuildManager");
+        go.SendMessage("BuildTurret", price);
     }
 
     private float[] stats;

@@ -12,6 +12,7 @@ public class LaserTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
+    public int price = 110;
 
     public Animator animator;
 
@@ -116,6 +117,13 @@ public class LaserTurretScript : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    public void GetPrice()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("BuildManager");
+        go.SendMessage("PriceReciever", price);
+    }
+
 
     private float[] stats;
 
