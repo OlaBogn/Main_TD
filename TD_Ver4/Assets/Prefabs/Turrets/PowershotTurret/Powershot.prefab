@@ -129,8 +129,8 @@ MonoBehaviour:
   range: 5
   fireRate: 5
   damage: 0
-  animator: {fileID: 4753974865517352124}
-  ani2: {fileID: 2235388085873468777}
+  animator: {fileID: 4334821244112038929}
+  ani2: {fileID: 1459041647003177255}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
   turnSpeed: 10
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140342301593919666}
   - component: {fileID: 8140342301593919677}
-  - component: {fileID: 4753974865517352124}
+  - component: {fileID: 4334821244112038929}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -233,7 +233,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4753974865517352124
+--- !u!95 &4334821244112038929
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140342301875277885}
   - component: {fileID: 3480075152895439408}
-  - component: {fileID: 2235388085873468777}
+  - component: {fileID: 1459041647003177255}
   m_Layer: 0
   m_Name: Firepoint
   m_TagString: Untagged
@@ -332,7 +332,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2235388085873468777
+--- !u!95 &1459041647003177255
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ Animator:
   m_GameObject: {fileID: 8140342301875277874}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b860ce3a57f6daa40a8c6ef1caeb10f6, type: 2}
+  m_Controller: {fileID: 9100000, guid: c3be1b9b35364ef47b57de29c7568414, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
