@@ -10,7 +10,7 @@ public class GoldHandler : MonoBehaviour
     public int startgold;
 
     // StartGold er angitt i unity på hvert level!
-
+    
     // Start is called before the first frame update
     void Start()
     {

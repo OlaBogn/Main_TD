@@ -810,6 +810,11 @@ PrefabInstance:
       propertyPath: levelCompleteUI
       value: 
       objectReference: {fileID: 1831817156}
+    - target: {fileID: 2781237354145735219, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: GoldText
+      value: 
+      objectReference: {fileID: 1831817159}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!114 &227613702 stripped
@@ -6050,6 +6055,18 @@ MonoBehaviour:
 --- !u!114 &1831817158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 370522436356023632, guid: 524aae7ae52e34a459bc037148af44df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831817154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1831817159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8274894678239374127, guid: 524aae7ae52e34a459bc037148af44df,
     type: 3}
   m_PrefabInstance: {fileID: 1831817154}
   m_PrefabAsset: {fileID: 0}
