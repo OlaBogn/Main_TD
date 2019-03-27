@@ -2467,12 +2467,12 @@ PrefabInstance:
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.35
+      value: -10.39
       objectReference: {fileID: 0}
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.96
+      value: 10.48
       objectReference: {fileID: 0}
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
@@ -2686,12 +2686,12 @@ PrefabInstance:
     - target: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.35
+      value: -10.39
       objectReference: {fileID: 0}
     - target: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.96
+      value: 10.48
       objectReference: {fileID: 0}
     - target: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
         type: 3}
@@ -2992,7 +2992,7 @@ PrefabInstance:
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.3
+      value: -12.63
       objectReference: {fileID: 0}
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
@@ -3916,6 +3916,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 776257121265142120, guid: 524aae7ae52e34a459bc037148af44df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8415017469940401959, guid: 524aae7ae52e34a459bc037148af44df,
         type: 3}
       propertyPath: m_RootOrder
@@ -4030,11 +4035,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnNextWave
-      objectReference: {fileID: 0}
-    - target: {fileID: 776257121265142120, guid: 524aae7ae52e34a459bc037148af44df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260816661323896454, guid: 524aae7ae52e34a459bc037148af44df,
         type: 3}
