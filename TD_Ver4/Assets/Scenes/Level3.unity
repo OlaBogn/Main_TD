@@ -2108,18 +2108,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 524aae7ae52e34a459bc037148af44df, type: 3}
---- !u!114 &1629275899 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8274894678239374127, guid: 524aae7ae52e34a459bc037148af44df,
-    type: 3}
-  m_PrefabInstance: {fileID: 1629275898}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1670785830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4260816661323896454, guid: 524aae7ae52e34a459bc037148af44df,
@@ -2208,6 +2196,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
+        type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 1840640765162222838, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2262,11 +2255,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
-        type: 3}
-      propertyPath: m_Name
-      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7f0f376c5721349a53be26f517a4df, type: 3}
@@ -2449,11 +2437,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
-      propertyPath: levelCompleteUI
-      value: 
-      objectReference: {fileID: 1670785830}
+      propertyPath: m_Name
+      value: GameMaster
+      objectReference: {fileID: 0}
     - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: spawnPoint
@@ -2464,6 +2452,11 @@ PrefabInstance:
       propertyPath: waveCounter
       value: 
       objectReference: {fileID: 556569173}
+    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 1670785830}
     - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2519,11 +2512,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: m_Name
-      value: GameMaster
-      objectReference: {fileID: 0}
     - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: endPosition
@@ -2544,7 +2532,6 @@ PrefabInstance:
       propertyPath: GoldText
       value: 
       objectReference: {fileID: 1283202399}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!1001 &1886359808

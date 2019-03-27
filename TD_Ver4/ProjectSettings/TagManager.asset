@@ -12,6 +12,7 @@ TagManager:
   - GameOverUI
   - GameMaster
   - TurretStats
+  - RangeSprite
   layers:
   - Default
   - TransparentFX
