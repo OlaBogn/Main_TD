@@ -9,6 +9,7 @@ public class GoldHandler : MonoBehaviour
     public static int gold;
     public int startgold;
 
+    // StartGold er angitt i unity på hvert level!
 
     // Start is called before the first frame update
     void Start()
@@ -17,4 +18,9 @@ public class GoldHandler : MonoBehaviour
         GoldText.text = "$" + gold.ToString();
     }
 
+    public void UpdateGold()
+    {
+        GoldText.text = "$" + gold.ToString();
+
+    }
 }
