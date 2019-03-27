@@ -16,6 +16,11 @@ public class BuildManager : MonoBehaviour
     private int price;
 
 
+    private int gattling = 100;
+    private int laser = 110;
+    private int missile = 150;
+
+
     private void Start()
     {
         tiles = TileContainer.tiles;
@@ -73,30 +78,42 @@ public class BuildManager : MonoBehaviour
             return;
         }
         CanBuild();
+        BuildTurret();
     }
 
+    // Sjekker og finner pris på turret
+    // Må legge inn pris for turrets øverst i script
     public void CanBuild()
     {
-        GameObject go = turretToBuild;
-      //  go.SendMessage("GetPrice", null);
-    }
+        if(turretToBuild.name.ToString() == "GattlingTurret")
+        {
+            price = gattling;
+        } else
 
-    public void PriceReciever(int price)
-    {
-        // FML
+        if (turretToBuild.name.ToString() == "LaserTurret")
+        {
+            price = laser;
+        } else
 
+        if (turretToBuild.name.ToString() == "MissileTurret")
+        {
+            price = missile;
+        }
     }
     
     
     // Metode som bygger turret på nåværende node
-    public void BuildTurret(int price) {
+    public void BuildTurret() {
         if (price > GoldHandler.gold)
-        { return;
+        {
+            Debug.Log("MORE GOLD IS REQUIRED");
+            return;
         }
         else {
             Vector3 buildOffset = new Vector3(0, 0, -1);
             Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
-            GoldHandler.gold += 1;
+            GoldHandler.gold = GoldHandler.gold - price;
+            SendMessage("UpdateGold", null);
         }
     }
 }

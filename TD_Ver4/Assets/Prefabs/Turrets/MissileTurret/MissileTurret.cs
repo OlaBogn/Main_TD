@@ -117,12 +117,6 @@ public class MissileTurret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void GetPrice()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("BuildManager");
-        go.SendMessage("PriceReciever", price);
-    }
-
     private float[] stats;
 
     private void OnMouseDown()

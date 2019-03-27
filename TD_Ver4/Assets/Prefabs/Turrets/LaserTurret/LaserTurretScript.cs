@@ -120,12 +120,6 @@ public class LaserTurretScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void GetPrice()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("BuildManager");
-        go.SendMessage("PriceReciever", price);
-    }
-
 
     private float[] stats;
 
