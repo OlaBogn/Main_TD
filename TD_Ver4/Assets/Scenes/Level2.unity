@@ -815,6 +815,11 @@ PrefabInstance:
       propertyPath: GoldText
       value: 
       objectReference: {fileID: 1831817159}
+    - target: {fileID: 2781237354145735219, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: startgold
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!114 &227613702 stripped

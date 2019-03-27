@@ -7,7 +7,7 @@ public class GoldHandler : MonoBehaviour
 {
     public Text GoldText;
     public static int gold;
-    public int startgold;
+    public int startgold = 200;
 
     // StartGold er angitt i unity på hvert level!
     
