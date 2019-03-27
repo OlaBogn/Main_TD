@@ -9,13 +9,16 @@ public class TurretStats : MonoBehaviour
     public static float[] test;
 
     public Text dmgTxt, rangeTxt, rateTxt;
-    public GameObject Panel;
+    public GameObject StatPanel;
+    public GameObject BtnPanel;
 
 
     // Range, FireRate, Damage
     public void GetStats(float[] n)
     {
-        Panel.gameObject.SetActive(true);
+        StatPanel.gameObject.SetActive(true);
+        BtnPanel.gameObject.SetActive(true);
+
 
         Debug.Log("It worked");
         Debug.Log(n[0]);
@@ -27,7 +30,9 @@ public class TurretStats : MonoBehaviour
 
     public void ClearStats()
     {
-        Panel.gameObject.SetActive(false);
+        StatPanel.gameObject.SetActive(false);
+        BtnPanel.gameObject.SetActive(false);
+
     }
 
 }

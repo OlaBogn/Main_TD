@@ -14,6 +14,7 @@ public class GameControl : MonoBehaviour {
 
     [Header("Unity setup")]
     public GameObject[] prefabs;
+    public int[] prices;
 
     void Awake() {
         if (control == null) {
@@ -29,7 +30,14 @@ public class GameControl : MonoBehaviour {
 
     void Start() {
         GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        prices = new int[prefabs.Length];
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+           // prices[i] = prefabs[i].GetComponent<>().price;
+        }
     }
+
 
     
     

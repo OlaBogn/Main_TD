@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour {
 
-
+    public int price;
 
     TileClick tileClick;
 
@@ -15,7 +15,6 @@ public class Shop : MonoBehaviour {
     }
     // GameController.control.prefabs[];
 
-    // TODO Legge til kode for nye prefabs!!!!   
     // Metoder for hver turret knapp
     public void PurchaseTurret0()
     {

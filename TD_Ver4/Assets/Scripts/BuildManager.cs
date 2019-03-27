@@ -13,6 +13,8 @@ public class BuildManager : MonoBehaviour
     
     private Transform[] tiles;
     private bool[] hasBuilding;
+    private int price;
+
 
     private void Start()
     {
@@ -70,13 +72,31 @@ public class BuildManager : MonoBehaviour
         {
             return;
         }
-        BuildTurret();
-    }
-    
-    // Metode som bygger turret på nåværende node
-    public void BuildTurret() {
-        Vector3 buildOffset = new Vector3(0, 0, -1);
-        Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
+        CanBuild();
     }
 
+    public void CanBuild()
+    {
+        GameObject go = turretToBuild;
+      //  go.SendMessage("GetPrice", null);
+    }
+
+    public void PriceReciever(int price)
+    {
+        // FML
+
+    }
+    
+    
+    // Metode som bygger turret på nåværende node
+    public void BuildTurret(int price) {
+        if (price > GoldHandler.gold)
+        { return;
+        }
+        else {
+            Vector3 buildOffset = new Vector3(0, 0, -1);
+            Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
+            GoldHandler.gold += 1;
+        }
+    }
 }
