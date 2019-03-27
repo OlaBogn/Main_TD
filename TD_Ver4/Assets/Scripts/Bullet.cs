@@ -26,8 +26,7 @@ public class Bullet : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
-        transform.rotation = Quaternion.LookRotation(dir, new Vector3(0f, 0f, -10f));
-
+        
         if (dir.magnitude <= distanceThisFrame) { // if this is true the bullet "should" have hit
             HitTarget(target.gameObject);
             if (hasSplashDamage) {
@@ -42,6 +41,10 @@ public class Bullet : MonoBehaviour
             }
             return;
         }
+        if (gameObject.name.Substring(0, 1) == "M") {
+            transform.rotation = Quaternion.LookRotation(dir, new Vector3(0f, 0f, -10f));
+        }
+
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
