@@ -94,7 +94,8 @@ public class BuildManager : MonoBehaviour
         { return;
         }
         else {
-            Instantiate(turretToBuild, current.transform.position, Quaternion.identity);
+            Vector3 buildOffset = new Vector3(0, 0, -1);
+            Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
             GoldHandler.gold += 1;
         }
     }

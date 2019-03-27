@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class LaserTurretScript : MonoBehaviour
+public class PowershotTurretScript : MonoBehaviour
 {
     private Transform target;
 
@@ -12,9 +13,10 @@ public class LaserTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
-    public int price = 110;
 
     public Animator animator;
+    public Animator ani2;
+    
 
 
     [Header("Unity Setup Fields")]
@@ -32,7 +34,6 @@ public class LaserTurretScript : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
-
         damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
 
@@ -68,19 +69,18 @@ public class LaserTurretScript : MonoBehaviour
 
     void Update()
     {
-        /*if (GameControl.control.gameOver == true) {
-            return;
-        }*/
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;
-            //animator.SetBool("inRange", false);
+            animator.SetBool("inRange", false);
+            ani2.SetBool("inRange", false);
             return; //if turret doesnt have a target cancel update of rotation (Still lowers fireCountdown)
         }
         else
         {
 
-            //animator.SetBool("inRange", true);
+            animator.SetBool("inRange", true);
+            ani2.SetBool("inRange", true);
         }
 
         // Rotates turret towards current target
@@ -92,7 +92,7 @@ public class LaserTurretScript : MonoBehaviour
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
         {
-            animator.SetBool("inRange", true);
+            //animator.SetBool("inRange", true);
             StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
@@ -101,16 +101,20 @@ public class LaserTurretScript : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(0.8f);
-        animator.SetBool("inRange", false);
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        yield return new WaitForSeconds(0.4f);
+        //animator.SetBool("inRange", false);
+        if (Random.value > 0.5)
+        {
+            GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bullet = bulletGO.GetComponent<Bullet>();
         
 
-        if (bullet != null)
-        {
-            bullet.Seek(target);
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
         }
+        
         
     }
 
@@ -120,13 +124,6 @@ public class LaserTurretScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void GetPrice()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("BuildManager");
-        go.SendMessage("PriceReciever", price);
-    }
-
-
     private float[] stats;
 
     private void OnMouseDown()
@@ -134,11 +131,13 @@ public class LaserTurretScript : MonoBehaviour
         stats = new float[3];
         stats[0] = range;
         stats[1] = fireRate;
-        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
         stats[2] = damage;
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
     }
 
+    public void OnPointerDown(PointerEventData eventData) {
+        Debug.Log(this.gameObject.name + " Was Clicked.");
+    }
 }

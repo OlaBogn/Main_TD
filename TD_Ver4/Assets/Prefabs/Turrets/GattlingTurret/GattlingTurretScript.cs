@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GattlingTurretScript : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class GattlingTurretScript : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
+        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
 
     void UpdateTarget()
@@ -128,11 +130,13 @@ public class GattlingTurretScript : MonoBehaviour
         stats = new float[3];
         stats[0] = range;
         stats[1] = fireRate;
-        damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
         stats[2] = damage;
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
     }
 
+    public void OnPointerDown(PointerEventData eventData) {
+        Debug.Log(this.gameObject.name + " Was Clicked.");
+    }
 }
