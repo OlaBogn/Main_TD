@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5905278806163926553}
   - component: {fileID: 3303950313068952484}
   - component: {fileID: 1937974926909225487}
+  - component: {fileID: 6308547357440936243}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -54,7 +55,6 @@ MonoBehaviour:
   enemyPrefab3: {fileID: 3596011639458213058, guid: de8cb9b35d8b650459ad3d9847037ae4,
     type: 3}
   waveCounter: {fileID: 0}
-  waveIndex: 0
 --- !u!114 &5905278806163926553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,4 +100,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteUI: {fileID: 0}
-  waveIndex: 0
+--- !u!114 &6308547357440936243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905278806163926552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db86708eecaeab4889e54b6b6def397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoldText: {fileID: 0}
+  startgold: 400

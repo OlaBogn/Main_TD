@@ -5,14 +5,16 @@ public class EnemyHealthTracker : MonoBehaviour
     [Header("Attributes")]
     public float maxHealth;
     private float currentHealth;
+    public int worth;
 
     void Start() {
-        currentHealth = maxHealth; // Setts current health from max
+        currentHealth = maxHealth; // Sets current health from max
     }
 
     void Update() {
         if (currentHealth <= 0) {
             Destroy(gameObject); // Destroys gameObject if health is 0 or less
+            GoldHandler.gold += worth;
         }    
     }
 

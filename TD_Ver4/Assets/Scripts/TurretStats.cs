@@ -19,9 +19,6 @@ public class TurretStats : MonoBehaviour
         StatPanel.gameObject.SetActive(true);
         BtnPanel.gameObject.SetActive(true);
 
-
-        Debug.Log("It worked");
-        Debug.Log(n[0]);
         rangeTxt.text = "Range: " + n[0].ToString();
         rateTxt.text = "Fire Rate: " + n[1].ToString();
         dmgTxt.text = "Damage: " + n[2].ToString();

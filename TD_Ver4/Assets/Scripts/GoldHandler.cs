@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class GoldHandler : MonoBehaviour
 {
-    public Text GoldText;
     public static int gold;
+    [Header("Unity Setup")]
+    public Text GoldText;
     public int startgold;
+
 
     // StartGold er angitt i unity på hvert level!
 
@@ -16,6 +18,7 @@ public class GoldHandler : MonoBehaviour
     {
         gold = startgold;
         GoldText.text = "$" + gold.ToString();
+        InvokeRepeating("UpdateGold", 0f, 0.25f);
     }
 
     public void UpdateGold()
