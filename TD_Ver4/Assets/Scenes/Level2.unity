@@ -799,6 +799,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthCounter
       value: 
+
       objectReference: {fileID: 1831817158}
     - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
@@ -811,10 +812,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1831817155}
     - target: {fileID: 6308547357440936243, guid: 149d6612ea4872442a60f3991faa95e1,
+
         type: 3}
       propertyPath: GoldText
       value: 
       objectReference: {fileID: 1831817159}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!114 &227613702 stripped
@@ -3985,12 +3988,12 @@ PrefabInstance:
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7019234
+      value: 7.17
       objectReference: {fileID: 0}
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.244451
+      value: -10.6
       objectReference: {fileID: 0}
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
@@ -4715,12 +4718,12 @@ PrefabInstance:
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec386e4561f13f64fa5a3cb8f82509d6, type: 3}

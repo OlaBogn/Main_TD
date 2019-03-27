@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class GoldHandler : MonoBehaviour
 {
     public static int gold;
+
     [Header("Unity Setup")]
     public Text GoldText;
     public int startgold;
 
 
-    // StartGold er angitt i unity på hvert level!
 
+    // StartGold er angitt i unity på hvert level!
+    
     // Start is called before the first frame update
     void Start()
     {

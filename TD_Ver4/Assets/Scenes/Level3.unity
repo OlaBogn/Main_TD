@@ -364,12 +364,12 @@ PrefabInstance:
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.48
+      value: -12.63
       objectReference: {fileID: 0}
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.010441
+      value: 8.93
       objectReference: {fileID: 0}
     - target: {fileID: 8167307593643432376, guid: 4320bc4d14d87d14e877eb488fbec5c2,
         type: 3}
@@ -1096,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.496
+      value: -12.651999
       objectReference: {fileID: 0}
     - target: {fileID: 5668102663471404776, guid: e891d2869e6abeb4ab51fe5a415a4746,
         type: 3}
@@ -1633,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.494
+      value: -12.65
       objectReference: {fileID: 0}
     - target: {fileID: 7374903827427336871, guid: ec386e4561f13f64fa5a3cb8f82509d6,
         type: 3}
@@ -2108,6 +2108,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 524aae7ae52e34a459bc037148af44df, type: 3}
+--- !u!114 &1629275899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8274894678239374127, guid: 524aae7ae52e34a459bc037148af44df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1629275898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670785830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4260816661323896454, guid: 524aae7ae52e34a459bc037148af44df,
@@ -2532,6 +2544,7 @@ PrefabInstance:
       propertyPath: GoldText
       value: 
       objectReference: {fileID: 1283202399}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!1001 &1886359808
