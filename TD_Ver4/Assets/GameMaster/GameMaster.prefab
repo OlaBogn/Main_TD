@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 5905278806163926553}
   - component: {fileID: 3303950313068952484}
   - component: {fileID: 1937974926909225487}
-  - component: {fileID: 2781237354145735219}
+
+  - component: {fileID: 6308547357440936243}
+
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -100,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteUI: {fileID: 0}
---- !u!114 &2781237354145735219
+--- !u!114 &6308547357440936243
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,4 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldText: {fileID: 0}
-  startgold: 0
+
+  startgold: 400
+

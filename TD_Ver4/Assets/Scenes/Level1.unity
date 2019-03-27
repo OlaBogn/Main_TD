@@ -194,10 +194,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
+    - target: {fileID: 1840640765162222837, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
-      propertyPath: m_Name
-      value: GameController
+      propertyPath: gameOverUI
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1840640765162222838, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
@@ -254,10 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1840640765162222837, guid: 0e7f0f376c5721349a53be26f517a4df,
+    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
-      propertyPath: gameOverUI
-      value: 
+      propertyPath: m_Name
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7f0f376c5721349a53be26f517a4df, type: 3}
@@ -2223,11 +2223,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
-      propertyPath: m_Name
-      value: GameMaster
-      objectReference: {fileID: 0}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 9124966033548704759}
+    - target: {fileID: 3303950313068952484, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: standard
+      value: 
+      objectReference: {fileID: 21300000, guid: e694da32f6c11e543ba68f4e843e5349,
+        type: 3}
+    - target: {fileID: 3303950313068952484, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: active
+      value: 
+      objectReference: {fileID: 21300000, guid: 3beba38c4a7f8e24389e508630c7a4ce,
+        type: 3}
     - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: spawnPoint
@@ -2238,21 +2250,6 @@ PrefabInstance:
       propertyPath: waveCounter
       value: 
       objectReference: {fileID: 9124966033548704760}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: endPosition
-      value: 
-      objectReference: {fileID: 698469047}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: healthCounter
-      value: 
-      objectReference: {fileID: 9124966033548704761}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: gameOverUI
-      value: 
-      objectReference: {fileID: 9124966033548704758}
     - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2308,33 +2305,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
-      propertyPath: levelCompleteUI
-      value: 
-      objectReference: {fileID: 9124966033548704759}
-    - target: {fileID: 3303950313068952484, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: standard
-      value: 
-      objectReference: {fileID: 21300000, guid: e694da32f6c11e543ba68f4e843e5349,
-        type: 3}
-    - target: {fileID: 3303950313068952484, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: active
-      value: 
-      objectReference: {fileID: 21300000, guid: 3beba38c4a7f8e24389e508630c7a4ce,
-        type: 3}
-    - target: {fileID: 2781237354145735219, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: startgold
-      value: 200
+      propertyPath: m_Name
+      value: GameMaster
       objectReference: {fileID: 0}
-    - target: {fileID: 2781237354145735219, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
+      propertyPath: endPosition
+      value: 
+      objectReference: {fileID: 698469047}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: healthCounter
+      value: 
+      objectReference: {fileID: 9124966033548704761}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 9124966033548704758}
+    - target: {fileID: 6308547357440936243, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+
       propertyPath: GoldText
       value: 
-      objectReference: {fileID: 1181946909}
+      objectReference: {fileID: 9124966033548704762}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!114 &1286624805 stripped
@@ -4322,6 +4319,18 @@ MonoBehaviour:
 --- !u!114 &9124966033548704761 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 370522436356023632, guid: 524aae7ae52e34a459bc037148af44df,
+    type: 3}
+  m_PrefabInstance: {fileID: 9124966033548704757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9124966033548704762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8274894678239374127, guid: 524aae7ae52e34a459bc037148af44df,
     type: 3}
   m_PrefabInstance: {fileID: 9124966033548704757}
   m_PrefabAsset: {fileID: 0}

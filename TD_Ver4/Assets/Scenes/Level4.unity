@@ -2999,11 +2999,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
-      propertyPath: m_Name
-      value: GameMaster
-      objectReference: {fileID: 0}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 2098046080}
     - target: {fileID: 5905278805838856701, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: spawnPoint
@@ -3014,21 +3014,6 @@ PrefabInstance:
       propertyPath: waveCounter
       value: 
       objectReference: {fileID: 2098046081}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: endPosition
-      value: 
-      objectReference: {fileID: 1704349584}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: gameOverUI
-      value: 
-      objectReference: {fileID: 2098046079}
-    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
-        type: 3}
-      propertyPath: healthCounter
-      value: 
-      objectReference: {fileID: 2098046082}
     - target: {fileID: 5905278806163926534, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3084,11 +3069,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1937974926909225487, guid: 149d6612ea4872442a60f3991faa95e1,
+    - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
-      propertyPath: levelCompleteUI
+      propertyPath: m_Name
+      value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: endPosition
       value: 
-      objectReference: {fileID: 2098046080}
+      objectReference: {fileID: 1704349584}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 2098046079}
+    - target: {fileID: 5905278806163926553, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: healthCounter
+      value: 
+      objectReference: {fileID: 2098046082}
+    - target: {fileID: 6308547357440936243, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: GoldText
+      value: 
+      objectReference: {fileID: 725513650}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149d6612ea4872442a60f3991faa95e1, type: 3}
 --- !u!114 &1116692231 stripped
@@ -4136,10 +4141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
+    - target: {fileID: 1840640765162222837, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
-      propertyPath: m_Name
-      value: GameController
+      propertyPath: StartGold
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840640765162222838, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
@@ -4196,10 +4201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1840640765162222837, guid: 0e7f0f376c5721349a53be26f517a4df,
+    - target: {fileID: 1840640765162222839, guid: 0e7f0f376c5721349a53be26f517a4df,
         type: 3}
-      propertyPath: StartGold
-      value: 0
+      propertyPath: m_Name
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7f0f376c5721349a53be26f517a4df, type: 3}
@@ -6760,7 +6765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldText: {fileID: 725513650}
-  startgold: 200
+  startgold: 400
 --- !u!1001 &2121353521
 PrefabInstance:
   m_ObjectHideFlags: 0
