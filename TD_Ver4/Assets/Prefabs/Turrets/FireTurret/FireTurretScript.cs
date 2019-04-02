@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireTurretScript : MonoBehaviour
 {
     private Transform target;
+    public GameObject RangeSprite;
 
     [Header("Attributes")]
 
@@ -103,13 +104,13 @@ public class FireTurretScript : MonoBehaviour
         animator.SetBool("inRange", false);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-        
+
 
         if (bullet != null)
         {
             bullet.Seek(target);
         }
-        
+
     }
 
     void OnDrawGizmosSelected()
@@ -117,18 +118,36 @@ public class FireTurretScript : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+    public void ShowTurretRange()
+    {
+        RangeSprite.SetActive(true);
+    }
+
+    public void HideTurretRange()
+    {
+        RangeSprite.SetActive(false);
+    }
+
 
     private float[] stats;
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
+        // Removes previous RangeDisplay
+        GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
+        foreach (GameObject z in g)
+        {
+            z.SendMessage("HideTurretRange", null);
+
+        }
+        // Sends stats to StatPanel
         stats = new float[3];
         stats[0] = range;
         stats[1] = fireRate;
-        
         stats[2] = damage;
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
+        ShowTurretRange();
     }
-
 }
