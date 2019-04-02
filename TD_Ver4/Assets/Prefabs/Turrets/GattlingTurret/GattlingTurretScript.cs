@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GattlingTurretScript : MonoBehaviour
 {
     private Transform target;
     public GameObject RangeSprite;
+    private float[] stats;
+    private float numUp = 3;
+    private int upCost = 50;
+    SpriteRenderer sprite;
+
 
     [Header("Attributes")]
 
@@ -14,7 +18,7 @@ public class GattlingTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
-    public int price = 100;
+    public float level = 1;
 
     public Animator animator;
     
@@ -33,6 +37,8 @@ public class GattlingTurretScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sprite = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
@@ -128,8 +134,59 @@ public class GattlingTurretScript : MonoBehaviour
         RangeSprite.SetActive(false);
     }
 
+    public void UpgradeTurret()
+    {
+        // Fargen spriten blir endret til
+        Color gold = new Color(1f, 0.92f, 0.016f, 1f);
+        Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
+        level += 1;
 
-    private float[] stats;
+
+
+        if (level > numUp)
+        {
+            Debug.Log("Max level for tower reached!");
+            return;
+        }
+
+        if (upCost > GoldHandler.gold)
+        {
+            Debug.Log("MORE GOLD IS REQUIRED!");
+            return;
+        }
+
+
+        if (level == 2)
+        {
+            sprite.color = gray;
+
+        }
+
+        if (level == 3)
+        {
+            sprite.color = gold;
+
+        }
+
+        GoldHandler.gold = GoldHandler.gold - upCost;
+        upCost += 25;
+        fireRate += 5;
+        damage += 5;
+        Debug.Log("Turret Upgraded!");
+
+        stats[0] = range;
+     //   stats[1] = fireRate;
+        stats[2] = damage;
+        stats[3] = level;
+
+
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("GetStats", stats);
+
+    }
+
+
+
 
     private void OnMouseDown()
     {
@@ -141,13 +198,16 @@ public class GattlingTurretScript : MonoBehaviour
 
         }
         // Sends stats to StatPanel
-        stats = new float[3];
+        stats = new float[4];
         stats[0] = range;
         stats[1] = fireRate;
         stats[2] = damage;
+        stats[3] = level;
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("Setter", gameObject);
         go.SendMessage("GetStats", stats);
+
         ShowTurretRange();
     }
 }
