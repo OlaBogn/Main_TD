@@ -69,7 +69,7 @@ public class BuildManager : MonoBehaviour
     }
     
    
-    // Setter turret som skal bygges og sjekker om det finnes turret på nåværende node
+    // Sets turret and checks if player has enough gold and if there is already built a turret on the node
     public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
@@ -81,7 +81,7 @@ public class BuildManager : MonoBehaviour
         BuildTurret();
     }
 
-    // Sjekker og finner pris på turret
+    // Sets the price of the current turret to be built
     // Må legge inn pris for turrets øverst i script
     public void CanBuild()
     {
@@ -102,7 +102,7 @@ public class BuildManager : MonoBehaviour
     }
     
     
-    // Metode som bygger turret på nåværende node
+    // Instantiates turret on the current node
     public void BuildTurret() {
         if (price > GoldHandler.gold)
         {
