@@ -5,6 +5,8 @@ using UnityEngine;
 public class SlimeTurretScript : MonoBehaviour
 {
     private Transform target;
+    public GameObject RangeSprite;
+
 
     [Header("Attributes")]
 
@@ -115,9 +117,29 @@ public class SlimeTurretScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+    public void ShowTurretRange()
+    {
+        RangeSprite.SetActive(true);
+    }
+
+    public void HideTurretRange()
+    {
+        RangeSprite.SetActive(false);
+    }
+
+
     private float[] stats;
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
+        // Removes previous RangeDisplay
+        GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
+        foreach (GameObject z in g)
+        {
+            z.SendMessage("HideTurretRange", null);
+
+        }
+        // Sends stats to StatPanel
         stats = new float[3];
         stats[0] = range;
         stats[1] = fireRate;
@@ -125,6 +147,6 @@ public class SlimeTurretScript : MonoBehaviour
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
+        ShowTurretRange();
     }
-
 }

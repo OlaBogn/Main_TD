@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2564431078409929907}
   m_Layer: 0
   m_Name: LaserTurret
-  m_TagString: Untagged
+  m_TagString: RangeSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43d287c32f85824f884884f4df45cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RangeSprite: {fileID: 1736676271963283771}
   range: 7
   fireRate: 1
   damage: 0
