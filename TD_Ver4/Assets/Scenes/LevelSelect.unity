@@ -432,6 +432,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 79109607989721543, guid: adadc9776809c3e4cb598c922b05d12a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6514574714048624371}
+    - target: {fileID: 79109607989721543, guid: adadc9776809c3e4cb598c922b05d12a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adadc9776809c3e4cb598c922b05d12a, type: 3}
 --- !u!114 &6514574714048624371 stripped

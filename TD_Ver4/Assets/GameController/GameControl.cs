@@ -37,9 +37,6 @@ public class GameControl : MonoBehaviour {
            // prices[i] = prefabs[i].GetComponent<>().price;
         }
     }
-
-
-    
     
     public void GainExperience() {
         experience += 5f;
@@ -67,6 +64,15 @@ public class GameControl : MonoBehaviour {
             
             experience = data.experience;
         }
+    }
+
+    public void UpdateTurretsList(GameObject[] gos) {
+        int count = 0;
+        foreach(GameObject go in gos) {
+            prefabs[count] = go;
+            count++;
+        }
+        count = 0;
     }
 }
 

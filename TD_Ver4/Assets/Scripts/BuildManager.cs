@@ -19,6 +19,11 @@ public class BuildManager : MonoBehaviour
     private int gattling = 100;
     private int laser = 110;
     private int missile = 150;
+    private int fire = 90;
+    private int powershot = 120;
+    private int railgun = 135;
+    private int slime = 115;
+    private int sniper = 140;
 
 
 
@@ -99,6 +104,31 @@ public class BuildManager : MonoBehaviour
         if (turretToBuild.name.ToString() == "MissileTurret")
         {
             price = missile;
+        } else
+
+        if (turretToBuild.name.ToString() == "FireTurret")
+        {
+            price = fire;
+        } else
+
+        if (turretToBuild.name.ToString() == "Powershot")
+        {
+            price = powershot;
+        } else
+
+        if (turretToBuild.name.ToString() == "RailgunTurret")
+        {
+            price = railgun;
+        } else
+
+        if (turretToBuild.name.ToString() == "SlimeTurret")
+        {
+            price = slime;
+        } else
+
+        if (turretToBuild.name.ToString() == "SniperTurret")
+        {
+            price = sniper;
         }
     }
     

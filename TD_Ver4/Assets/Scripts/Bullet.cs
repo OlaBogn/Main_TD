@@ -41,6 +41,7 @@ public class Bullet : MonoBehaviour
             }
             return;
         }
+
         if (gameObject.name.Substring(0, 1) == "M") {
             transform.rotation = Quaternion.LookRotation(dir, new Vector3(0f, 0f, -10f));
         }
