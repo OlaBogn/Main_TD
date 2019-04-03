@@ -419,3 +419,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f67d44a070ce3e4ea0c5b27b08c5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9042832235800816133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9042832234348612105, guid: e6a8939b12f9e4d42a787903af671f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 9042832235800816131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9042832235800816134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042832235800816133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d5e7d57ff61ba48b19804f434ea948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnsSelected: []
