@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class SelectTurret : MonoBehaviour
 {
     private int count = 0;
-    private int maxCount = 5;
+    // private int maxCount = 5; // DEPRECATED
 
     [Header("Unity setup")]
     public GameObject[] turrets; // remembers all turret prefabs
@@ -31,6 +32,10 @@ public class SelectTurret : MonoBehaviour
         for (int i = 0; i < selectedTurretNumber.Length; i++) {
             selectedTurretNumber[i] = -1;
         }
+    }
+
+    public void StartGame() {
+        SceneManager.LoadScene(GameControl.control.targetSceneBuildIndex);
     }
     
     public void ChangeButtonNames() {

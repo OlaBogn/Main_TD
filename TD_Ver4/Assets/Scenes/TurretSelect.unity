@@ -380,5 +380,42 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042832235970292054, guid: e6a8939b12f9e4d42a787903af671f2a,
+        type: 3}
+      propertyPath: m_Name
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042832235970292052, guid: e6a8939b12f9e4d42a787903af671f2a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9042832235800816132}
+    - target: {fileID: 9042832235970292052, guid: e6a8939b12f9e4d42a787903af671f2a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042832235970292052, guid: e6a8939b12f9e4d42a787903af671f2a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042832235766830835, guid: e6a8939b12f9e4d42a787903af671f2a,
+        type: 3}
+      propertyPath: m_Text
+      value: START GAME
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a8939b12f9e4d42a787903af671f2a, type: 3}
+--- !u!114 &9042832235800816132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9042832236138575770, guid: e6a8939b12f9e4d42a787903af671f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 9042832235800816131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f67d44a070ce3e4ea0c5b27b08c5fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
