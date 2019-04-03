@@ -6,7 +6,10 @@ public class RailgunTurretScript : MonoBehaviour
 {
     private Transform target;
     public GameObject RangeSprite;
-
+    private float[] stats;
+    private float numUp = 3;
+    private int posHolder;
+    SpriteRenderer sprite;
 
     [Header("Attributes")]
 
@@ -14,8 +17,11 @@ public class RailgunTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
+    public float level = 1;
     public int price = 110;
     public float waitTime = 0.8f;
+    public int sellPrice;
+    public int upCost = 50;
 
     public Animator animator;
 
@@ -34,8 +40,8 @@ public class RailgunTurretScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sprite = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>();
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
-
         damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
 
@@ -138,9 +144,56 @@ public class RailgunTurretScript : MonoBehaviour
     {
         RangeSprite.SetActive(false);
     }
+    public void UpgradeTurret()
+    {
+        // Fargen spriten blir endret til
+        Color gold = new Color(1f, 0.92f, 0.016f, 1f);
+        Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
 
 
-    private float[] stats;
+
+        if (level > numUp)
+        {
+            Debug.Log("Max level for tower reached!");
+            return;
+        }
+
+        if (upCost > GoldHandler.gold)
+        {
+            Debug.Log("MORE GOLD IS REQUIRED!");
+            return;
+        }
+
+
+        if (level == 2)
+        {
+            sprite.color = gray;
+
+        }
+
+        if (level == 3)
+        {
+            sprite.color = gold;
+
+        }
+        level += 1;
+        sellPrice += 25;
+        GoldHandler.gold = GoldHandler.gold - upCost;
+        upCost += 25;
+        //  fireRate += 5;
+        damage += 5;
+        Debug.Log("Turret Upgraded!");
+
+        stats[0] = range;
+        stats[1] = fireRate;
+        stats[2] = damage;
+        stats[3] = level;
+
+
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("GetStats", stats);
+
+    }
 
     private void OnMouseDown()
     {
@@ -152,13 +205,37 @@ public class RailgunTurretScript : MonoBehaviour
 
         }
         // Sends stats to StatPanel
-        stats = new float[3];
+        stats = new float[4];
         stats[0] = range;
         stats[1] = fireRate;
         stats[2] = damage;
+        stats[3] = level;
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("Setter", gameObject);
         go.SendMessage("GetStats", stats);
+
         ShowTurretRange();
     }
+
+    public void SellTurret()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("GameMaster");
+        go.SendMessage("ResetBool", posHolder);
+        Destroy(gameObject);
+        GoldHandler.gold += sellPrice;
+        Debug.Log("Turret Sold!");
+    }
+
+    public void SetPos(int x)
+    {
+        posHolder = x;
+    }
+
+    private void Awake()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("noName", gameObject);
+    }
+
 }

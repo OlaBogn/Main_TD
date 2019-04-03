@@ -8,12 +8,21 @@ public class TurretStats : MonoBehaviour
     public float[] stats;
     public static float[] test;
     private string turretName =null;
+    private int posHolder;
+    private Transform[] tiles;
 
     public Text turretTxt, levelTxt, dmgTxt, rangeTxt, rateTxt;
     public GameObject StatPanel;
     public GameObject BtnPanel;
     public int level = 1;
     public GameObject turret;
+
+    public void Start()
+    {
+        tiles = TileContainer.tiles;
+
+    }
+
 
     // Range, FireRate, Damage
     public void GetStats(float[] n)
@@ -30,14 +39,13 @@ public class TurretStats : MonoBehaviour
         BtnPanel.gameObject.SetActive(true);
 
         rangeTxt.text = "Range: " + n[0].ToString();
-        rateTxt.text = "Fire Rate: " + n[1].ToString();
+        rateTxt.text = "Bullets/s: " + n[1].ToString();
         dmgTxt.text = "Damage: " + n[2].ToString();
         levelTxt.text = "Turret Level: " + n[3].ToString();
     }
 
     public void Setter(GameObject go)
-    {
-        turret = go;        
+    {        turret = go;
         if (go.name.Substring(0, 3) == "Gat")
         {
             turretName = "Gattling Turret";
@@ -73,6 +81,10 @@ public class TurretStats : MonoBehaviour
 
     }
 
+    public void SellBtn()
+    {
+        turret.SendMessage("SellTurret", null);
+    }
 
     public void Upgrade()
     {
@@ -80,11 +92,28 @@ public class TurretStats : MonoBehaviour
 
     }
 
+    public void GetPos(int x)
+    {
+        posHolder = x; 
+    }
+
     public void ClearStats()
     {
         StatPanel.gameObject.SetActive(false);
         BtnPanel.gameObject.SetActive(false);
 
+    }
+
+    // Må ha metoden setter i seg for så å kalle på metode i turret
+    public void noName(GameObject go)
+    {
+        Setter(go);
+        turret.SendMessage("SetPos", posHolder);
+    }
+
+    public void SetHolder(int x)
+    {
+        posHolder = x;
     }
 
 }

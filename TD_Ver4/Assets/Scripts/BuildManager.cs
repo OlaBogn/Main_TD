@@ -14,6 +14,7 @@ public class BuildManager : MonoBehaviour
     private Transform[] tiles;
     private bool[] hasBuilding;
     private int price;
+    private int holder;
 
 
     private int gattling = 100;
@@ -45,6 +46,7 @@ public class BuildManager : MonoBehaviour
             { 
                 if(hasBuilding[counter] == false)
                 {
+                    holder = counter;
                     hasBuilding[counter] = true;
                     counter = 0;
                     return false;
@@ -54,6 +56,11 @@ public class BuildManager : MonoBehaviour
         }
         Debug.Log("A turret already exists on this tile!");
         return true;
+    }
+
+    public void ResetBool(int x)
+    {
+        hasBuilding[x] = false;
     }
 
     // Endrer turretTile sprites på klikk og håndterer nåværende/forrige tileclick
@@ -80,17 +87,34 @@ public class BuildManager : MonoBehaviour
     public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
+        GetPrice();
+        if(HasGold() == false){
+            return;
+        }
+
         if(HasTurret() == true)
         {
             return;
         }
-        CanBuild();
         BuildTurret();
+    }
+
+    public bool HasGold()
+    {
+        if (price > GoldHandler.gold)
+        {
+            Debug.Log("MORE GOLD IS REQUIRED");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     // Sets the price of the current turret to be built
     // Må legge inn pris for turrets øverst i script
-    public void CanBuild()
+    public void GetPrice()
     {
         if(turretToBuild.name.ToString() == "GattlingTurret")
         {
@@ -142,16 +166,14 @@ public class BuildManager : MonoBehaviour
     
     // Instantiates turret on the current node
     public void BuildTurret() {
-        if (price > GoldHandler.gold)
-        {
-            Debug.Log("MORE GOLD IS REQUIRED");
-            return;
-        }
-        else {
-            Vector3 buildOffset = new Vector3(0, 0, -1);
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("SetHolder", holder);
+
+        Vector3 buildOffset = new Vector3(0, 0, -1);
             Instantiate(turretToBuild, current.transform.position + buildOffset, Quaternion.identity);
             GoldHandler.gold = GoldHandler.gold - price;
             SendMessage("UpdateGold", null);
-        }
+
+        
     }
 }
