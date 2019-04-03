@@ -19,6 +19,8 @@ public class EnemySpawner : MonoBehaviour
     private string line = string.Empty;
     private int waveIndex = 0;
 
+    private bool cr_running = false;
+
     private void Awake() {
         UpdateWaveText();
     }
@@ -28,6 +30,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void SpawnNextWave() {
+        if (cr_running) {
+            return;
+        }
         if (waveIndex >= allLines.Length) {
             return;
         }
@@ -44,6 +49,7 @@ public class EnemySpawner : MonoBehaviour
 
     // IEnumerator allows pausing of the subroutine "SpawnWave()"
     IEnumerator SpawnWave() {
+        cr_running = true;
         waveIndex++;
         line = allLines[waveIndex-1];
 
@@ -68,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(0.3f);
             }
         }
+        cr_running = false;
     }
     
     public void SpawnBeefy() {
