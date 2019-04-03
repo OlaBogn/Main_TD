@@ -8,7 +8,7 @@ public class SniperTurretScript : MonoBehaviour
     public GameObject RangeSprite;
     private float[] stats;
     private float numUp = 3;
-    private int upCost = 50;
+    private int posHolder;
     SpriteRenderer sprite;
 
     [Header("Attributes")]
@@ -18,6 +18,8 @@ public class SniperTurretScript : MonoBehaviour
     private float fireCountdown = 0f;
     public float damage;
     public float level = 1;
+    public int sellPrice;
+    public int upCost = 50;
 
     public Animator animator;
 
@@ -140,7 +142,6 @@ public class SniperTurretScript : MonoBehaviour
         // Fargen spriten blir endret til
         Color gold = new Color(1f, 0.92f, 0.016f, 1f);
         Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
-        level += 1;
 
 
 
@@ -168,10 +169,11 @@ public class SniperTurretScript : MonoBehaviour
             sprite.color = gold;
 
         }
-
+        level += 1;
+        sellPrice += 25;
         GoldHandler.gold = GoldHandler.gold - upCost;
         upCost += 25;
-     //   fireRate += 5;
+        //  fireRate += 5;
         damage += 5;
         Debug.Log("Turret Upgraded!");
 
@@ -185,9 +187,6 @@ public class SniperTurretScript : MonoBehaviour
         go.SendMessage("GetStats", stats);
 
     }
-
-
-
 
     private void OnMouseDown()
     {
@@ -211,4 +210,24 @@ public class SniperTurretScript : MonoBehaviour
 
         ShowTurretRange();
     }
+    public void SellTurret()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("GameMaster");
+        go.SendMessage("ResetBool", posHolder);
+        Destroy(gameObject);
+        GoldHandler.gold += sellPrice;
+        Debug.Log("Turret Sold!");
+    }
+
+    public void SetPos(int x)
+    {
+        posHolder = x;
+    }
+
+    private void Awake()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("noName", gameObject);
+    }
+
 }

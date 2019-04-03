@@ -125,9 +125,7 @@ GameObject:
   - component: {fileID: 2485236997642981803}
   m_Layer: 0
   m_Name: GattlingTurret
-
   m_TagString: RangeSprite
-
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +210,8 @@ MonoBehaviour:
   range: 7
   fireRate: 5
   damage: 0
-  price: 100
+  level: 1
+  sellPrice: 50
   animator: {fileID: 580440201668535468}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
