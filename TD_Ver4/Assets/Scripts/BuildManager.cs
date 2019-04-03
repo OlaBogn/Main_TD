@@ -24,6 +24,7 @@ public class BuildManager : MonoBehaviour
     private int railgun = 135;
     private int slime = 115;
     private int sniper = 140;
+    private int nukethrower = 200;
 
 
 
@@ -129,6 +130,12 @@ public class BuildManager : MonoBehaviour
         if (turretToBuild.name.ToString() == "SniperTurret")
         {
             price = sniper;
+        }
+        else
+
+        if (turretToBuild.name.ToString() == "Nukethrower")
+        {
+            price = nukethrower;
         }
     }
     
