@@ -30,9 +30,11 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void SpawnNextWave() {
+        // TODO: MUST BE FIXED BEFORE TEST BUILD
+        /* 
         if (cr_running) {
             return;
-        }
+        }*/
         if (waveIndex >= allLines.Length) {
             return;
         }
