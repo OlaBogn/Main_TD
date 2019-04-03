@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: 0
+  targetSceneBuildIndex: 3
   prefabs:
-  - {fileID: 8140342301357738459, guid: 327f5dd690c7b284eb2cae01f813ef9d, type: 3}
+  - {fileID: 8140342301357738459, guid: d57a9a1462c12e544804d0c1998af5fb, type: 3}
   - {fileID: 8140342301357738459, guid: 5eadbc83c24d2f940b8e4f56580d4961, type: 3}
   - {fileID: 8140342301357738459, guid: 9273d61b9c26d5548952be1ccf02f900, type: 3}
-  - {fileID: 8140342301357738459, guid: 9273d61b9c26d5548952be1ccf02f900, type: 3}
-  - {fileID: 8140342301357738459, guid: 9273d61b9c26d5548952be1ccf02f900, type: 3}
+  - {fileID: 8140342301357738459, guid: 327f5dd690c7b284eb2cae01f813ef9d, type: 3}
+  - {fileID: 8140342301357738459, guid: 624a26b0bf4a2304796f9298efacec78, type: 3}
   prices: 

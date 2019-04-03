@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour {
     
     public float experience;
 
+    public int targetSceneBuildIndex = 3;
+
     [Header("Unity setup")]
     public GameObject[] prefabs;
     public int[] prices;
