@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserTurretScript : MonoBehaviour
+public class NukethrowerScript : MonoBehaviour
 {
     private Transform target;
     public GameObject RangeSprite;
     private float[] stats;
     private float numUp = 3;
-    private int posHolder;
+    private int upCost = 50;
     SpriteRenderer sprite;
+
 
     [Header("Attributes")]
 
@@ -17,13 +18,11 @@ public class LaserTurretScript : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage;
-    public int price = 110;
     public float level = 1;
-    public int sellPrice;
-    public int upCost = 50;
+    public float waitTime = 0.8f;
 
     public Animator animator;
-
+    
 
     [Header("Unity Setup Fields")]
 
@@ -40,6 +39,7 @@ public class LaserTurretScript : MonoBehaviour
     void Start()
     {
         sprite = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         damage = bulletPrefab.GetComponent<Bullet>().bulletDamage;
     }
@@ -76,9 +76,6 @@ public class LaserTurretScript : MonoBehaviour
 
     void Update()
     {
-        /*if (GameControl.control.gameOver == true) {
-            return;
-        }*/
         if (target == null)
         {
             fireCountdown -= Time.deltaTime;
@@ -100,7 +97,7 @@ public class LaserTurretScript : MonoBehaviour
         // Calculates rate of fire and shoots if cooldown is done
         if (fireCountdown <= 0f)
         {
-            animator.SetBool("inRange", true);
+            animator.SetBool("inRange", false);
             StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
@@ -109,8 +106,8 @@ public class LaserTurretScript : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(0.8f);
-        animator.SetBool("inRange", false);
+        yield return new WaitForSeconds(waitTime);
+        animator.SetBool("inRange", true);
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         
@@ -137,11 +134,13 @@ public class LaserTurretScript : MonoBehaviour
     {
         RangeSprite.SetActive(false);
     }
+
     public void UpgradeTurret()
     {
         // Fargen spriten blir endret til
         Color gold = new Color(1f, 0.92f, 0.016f, 1f);
         Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
+        level += 1;
 
 
 
@@ -169,12 +168,11 @@ public class LaserTurretScript : MonoBehaviour
             sprite.color = gold;
 
         }
-        level += 1;
-        sellPrice += 25;
+
         GoldHandler.gold = GoldHandler.gold - upCost;
-        upCost += 25;
-        //  fireRate += 5;
-        damage += 5;
+        upCost += 50;
+        fireRate = fireRate*1.5f;
+        damage = damage*1.5f;
         Debug.Log("Turret Upgraded!");
 
         stats[0] = range;
@@ -213,24 +211,4 @@ public class LaserTurretScript : MonoBehaviour
 
         ShowTurretRange();
     }
-    public void SellTurret()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("GameMaster");
-        go.SendMessage("ResetBool", posHolder);
-        Destroy(gameObject);
-        GoldHandler.gold += sellPrice;
-        Debug.Log("Turret Sold!");
-    }
-
-    public void SetPos(int x)
-    {
-        posHolder = x;
-    }
-
-    private void Awake()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
-        go.SendMessage("noName", gameObject);
-    }
-
 }
