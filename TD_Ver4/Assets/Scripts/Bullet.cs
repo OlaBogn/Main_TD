@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
-{
+public class Bullet : MonoBehaviour {
 
     private Transform target;
     public string enemyTag = "Enemy";
@@ -17,8 +16,7 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (target == null) {
             Destroy(gameObject);
             return;
@@ -26,12 +24,12 @@ public class Bullet : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
-        
+
         if (dir.magnitude <= distanceThisFrame) { // if this is true the bullet "should" have hit
             HitTarget(target.gameObject);
             if (hasSplashDamage) {
                 GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
-                foreach(GameObject go in gos) {
+                foreach (GameObject go in gos) {
                     Vector3 tempDir = go.transform.position - transform.position;
                     float tempDist = tempDir.magnitude;
                     if (tempDist <= splashRadius) {

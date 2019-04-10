@@ -14,6 +14,7 @@ public class SelectTurret : MonoBehaviour
     public Text[] buttons; // collects all buttons to modify content
     public GameObject[] selectedTurrets; // shows selected turrets
     public int[] selectedTurretNumber;
+
     private bool[] selectedSlotOccupied;
 
     private bool[] turretHasBeenSelected;
@@ -40,7 +41,7 @@ public class SelectTurret : MonoBehaviour
     
     public void ChangeButtonNames() {
         int count = 0;
-        foreach(GameObject turret in turrets) {
+        foreach (GameObject turret in turrets) {
             if (turret == null)
                 break;
             buttons[count].text = turret.name;
@@ -53,41 +54,9 @@ public class SelectTurret : MonoBehaviour
         }
     }
 
-    public void ClearTurret() {
-        string btnClicked = EventSystem.current.currentSelectedGameObject.name;
-        EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text = "Empty";
-        switch (btnClicked) {
-            case "TurretSelected0":
-                selectedSlotOccupied[0] = false;
-                turretHasBeenSelected[selectedTurretNumber[0]] = false;
-                selectedTurretNumber[0] = -1;
-                break;
-            case "TurretSelected1":
-                selectedSlotOccupied[1] = false;
-                turretHasBeenSelected[selectedTurretNumber[1]] = false;
-                selectedTurretNumber[1] = -1;
-                break;
-            case "TurretSelected2":
-                selectedSlotOccupied[2] = false;
-                turretHasBeenSelected[selectedTurretNumber[2]] = false;
-                selectedTurretNumber[2] = -1;
-                break;
-            case "TurretSelected3":
-                selectedSlotOccupied[3] = false;
-                turretHasBeenSelected[selectedTurretNumber[3]] = false;
-                selectedTurretNumber[3] = -1;
-                break;
-            case "TurretSelected4":
-                selectedSlotOccupied[4] = false;
-                turretHasBeenSelected[selectedTurretNumber[4]] = false;
-                selectedTurretNumber[4] = -1;
-                break;
-        }
-    }
-
     public bool CheckIfAllSlotsAreOccupied() {
         count = 0;
-        for(int i = 0; i < selectedSlotOccupied.Length; i++) {
+        for (int i = 0; i < selectedSlotOccupied.Length; i++) {
             if (selectedSlotOccupied[i] == false) {
                 count = i;
                 return true;
@@ -96,6 +65,58 @@ public class SelectTurret : MonoBehaviour
         return false;
     }
 
+
+
+    public void ClearTurret() {
+        string btnClicked = EventSystem.current.currentSelectedGameObject.name;
+        EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text = "Empty";
+
+        int n = 0;
+
+        switch (btnClicked) {
+            case "TurretSelected0":
+                n = 0;
+                selectedSlotOccupied[n] = false;
+                if (turretHasBeenSelected[n]) {
+                    turretHasBeenSelected[selectedTurretNumber[n]] = false;
+                    selectedTurretNumber[n] = -1;
+                }
+                break;
+            case "TurretSelected1":
+                n = 1;
+                selectedSlotOccupied[n] = false;
+                if (turretHasBeenSelected[n]) {
+                    turretHasBeenSelected[selectedTurretNumber[n]] = false;
+                    selectedTurretNumber[n] = -1;
+                }
+                break;
+            case "TurretSelected2":
+                n = 2;
+                selectedSlotOccupied[n] = false;
+                if (turretHasBeenSelected[n]) {
+                    turretHasBeenSelected[selectedTurretNumber[n]] = false;
+                    selectedTurretNumber[n] = -1;
+                }
+                break;
+            case "TurretSelected3":
+                n = 3;
+                selectedSlotOccupied[n] = false;
+                if (turretHasBeenSelected[n]) {
+                    turretHasBeenSelected[selectedTurretNumber[n]] = false;
+                    selectedTurretNumber[n] = -1;
+                }
+                break;
+            case "TurretSelected4":
+                n = 4;
+                selectedSlotOccupied[n] = false;
+                if (turretHasBeenSelected[n]) {
+                    turretHasBeenSelected[selectedTurretNumber[n]] = false;
+                    selectedTurretNumber[n] = -1;
+                }
+                break;
+        }
+    }
+    
     public void ChooseTurret() {
         string btnClicked = EventSystem.current.currentSelectedGameObject.name; // Gets the name of clicked button
 
