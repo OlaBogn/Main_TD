@@ -10,6 +10,7 @@ public class FireTurretScript : MonoBehaviour
     private float numUp = 3;
     private int posHolder;
     SpriteRenderer sprite;
+    private string message;
 
     [Header("Attributes")]
 
@@ -23,7 +24,6 @@ public class FireTurretScript : MonoBehaviour
 
     public Animator animator;
 
-
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
@@ -34,7 +34,6 @@ public class FireTurretScript : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +71,6 @@ public class FireTurretScript : MonoBehaviour
         }
 
     }
-
 
     void Update()
     {
@@ -143,21 +141,23 @@ public class FireTurretScript : MonoBehaviour
         Color gold = new Color(1f, 0.92f, 0.016f, 1f);
         Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
 
-
-
         if (level > numUp)
         {
             Debug.Log("Max level for tower reached!");
+            message = "Tower is fully upgraded";
+            MessageCall();
             return;
         }
 
         if (upCost > GoldHandler.gold)
         {
             Debug.Log("MORE GOLD IS REQUIRED!");
+            message = "More gold is required";
+            MessageCall();
             return;
         }
 
-
+        level += 1;
         if (level == 2)
         {
             sprite.color = gray;
@@ -169,27 +169,25 @@ public class FireTurretScript : MonoBehaviour
             sprite.color = gold;
 
         }
-        level += 1;
+        
         sellPrice += 25;
         GoldHandler.gold = GoldHandler.gold - upCost;
         upCost += 25;
         //  fireRate += 5;
         damage += 5;
         Debug.Log("Turret Upgraded!");
+        message = "Tower upgraded";
+        MessageCall();
 
         stats[0] = range;
         stats[1] = fireRate;
         stats[2] = damage;
         stats[3] = level;
 
-
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
 
     }
-
-
-
 
     private void OnMouseDown()
     {
@@ -220,6 +218,8 @@ public class FireTurretScript : MonoBehaviour
         Destroy(gameObject);
         GoldHandler.gold += sellPrice;
         Debug.Log("Turret Sold!");
+        message = "Tower sold!";
+        MessageCall();
     }
 
     public void SetPos(int x)
@@ -233,4 +233,9 @@ public class FireTurretScript : MonoBehaviour
         go.SendMessage("noName", gameObject);
     }
 
+    public void MessageCall()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("MessagePanel");
+        go.SendMessage("Caller", message);
+    }
 }

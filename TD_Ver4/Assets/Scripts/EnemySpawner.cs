@@ -62,12 +62,12 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++){
             if(enemies[i] == 0) {
                 SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1.0f);
             }
 
             if(enemies[i] == 1) {
                 SpawnBeefy();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1.5f);
             }
 
             if (enemies[i] == 3)

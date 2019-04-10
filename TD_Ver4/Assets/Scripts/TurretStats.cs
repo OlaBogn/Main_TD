@@ -16,6 +16,7 @@ public class TurretStats : MonoBehaviour
     public GameObject BtnPanel;
     public int level = 1;
     public GameObject turret;
+    public GameObject UpgradeBtn;
 
     public void Start()
     {
@@ -32,16 +33,20 @@ public class TurretStats : MonoBehaviour
         if (n[3] >= 3)
         {
             turretTxt.text = "Supreme " + turretName;
-
+            UpgradeBtn.SetActive(false);
         }
+        else
+        {
+            UpgradeBtn.SetActive(true);
+        }
+            StatPanel.gameObject.SetActive(true);
+            BtnPanel.gameObject.SetActive(true);
 
-        StatPanel.gameObject.SetActive(true);
-        BtnPanel.gameObject.SetActive(true);
-
-        rangeTxt.text = "Range: " + n[0].ToString();
-        rateTxt.text = "Bullets/s: " + n[1].ToString();
-        dmgTxt.text = "Damage: " + n[2].ToString();
-        levelTxt.text = "Turret Level: " + n[3].ToString();
+            rangeTxt.text = "Range: " + n[0].ToString();
+            rateTxt.text = "Bullets/s: " + n[1].ToString();
+            dmgTxt.text = "Damage: " + n[2].ToString();
+            levelTxt.text = "Turret Level: " + n[3].ToString();
+        
     }
 
     public void Setter(GameObject go)
@@ -77,6 +82,16 @@ public class TurretStats : MonoBehaviour
         if (go.name.Substring(0, 3) == "Rai")
         {
             turretName = "Railgun Turret";
+        }
+
+        if (go.name.Substring(0, 3) == "Nuk")
+        {
+            turretName = "Nukethrower";
+        }
+
+        if (go.name.Substring(0, 3) == "Art")
+        {
+            turretName = "Artilleri Turret";
         }
 
     }

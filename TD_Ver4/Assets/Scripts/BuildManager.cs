@@ -10,12 +10,13 @@ public class BuildManager : MonoBehaviour
     private GameObject previous;
     public Sprite active;
     public Sprite standard;
+    private string message;
     
     private Transform[] tiles;
     private bool[] hasBuilding;
     private int price;
     private int holder;
-
+    
 
     private int gattling = 100;
     private int laser = 110;
@@ -26,6 +27,7 @@ public class BuildManager : MonoBehaviour
     private int slime = 115;
     private int sniper = 140;
     private int nukethrower = 200;
+    private int artilleri = 130;
 
 
 
@@ -55,6 +57,8 @@ public class BuildManager : MonoBehaviour
             counter++;
         }
         Debug.Log("A turret already exists on this tile!");
+        message = "A turret already exists on this tile";
+        MessageCall();
         return true;
     }
 
@@ -88,12 +92,13 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
         GetPrice();
-        if(HasGold() == false){
-            return;
-        }
+       
 
         if(HasTurret() == true)
         {
+            return;
+        }
+        if (HasGold() == false){
             return;
         }
         BuildTurret();
@@ -104,6 +109,8 @@ public class BuildManager : MonoBehaviour
         if (price > GoldHandler.gold)
         {
             Debug.Log("MORE GOLD IS REQUIRED");
+            message = "More gold is required";
+            MessageCall();
             return false;
         }
         else
@@ -161,6 +168,11 @@ public class BuildManager : MonoBehaviour
         {
             price = nukethrower;
         }
+
+        if (turretToBuild.name.ToString() == "Artilleri Turret")
+        {
+            price = artilleri;
+        }
     }
     
     
@@ -176,4 +188,11 @@ public class BuildManager : MonoBehaviour
 
         
     }
+
+    public void MessageCall()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("MessagePanel");
+        go.SendMessage("Caller", message);
+    }
+
 }

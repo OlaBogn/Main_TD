@@ -259,6 +259,12 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1840640765162222837, guid: 0e7f0f376c5721349a53be26f517a4df,
+        type: 3}
+      propertyPath: prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8140342301357738459, guid: d57a9a1462c12e544804d0c1998af5fb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7f0f376c5721349a53be26f517a4df, type: 3}
 --- !u!1001 &57677360
