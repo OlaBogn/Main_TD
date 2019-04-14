@@ -8,8 +8,9 @@ public class NukethrowerScript : MonoBehaviour
     public GameObject RangeSprite;
     private float[] stats;
     private float numUp = 3;
-    private int upCost = 50;
+    private int posHolder;
     SpriteRenderer sprite;
+    private string message;
 
 
     [Header("Attributes")]
@@ -20,6 +21,8 @@ public class NukethrowerScript : MonoBehaviour
     public float damage;
     public float level = 1;
     public float waitTime = 0.8f;
+    public int sellPrice;
+    private int upCost = 50;
 
     public Animator animator;
     
@@ -140,23 +143,24 @@ public class NukethrowerScript : MonoBehaviour
         // Fargen spriten blir endret til
         Color gold = new Color(1f, 0.92f, 0.016f, 1f);
         Color gray = new Color(0.7f, 0.7f, 0.7f, 1f);
-        level += 1;
-
-
 
         if (level > numUp)
         {
             Debug.Log("Max level for tower reached!");
+            message = "Tower is fully upgraded";
+            MessageCall();
             return;
         }
 
         if (upCost > GoldHandler.gold)
         {
             Debug.Log("MORE GOLD IS REQUIRED!");
+            message = "More gold is required";
+            MessageCall();
             return;
         }
 
-
+        level += 1;
         if (level == 2)
         {
             sprite.color = gray;
@@ -174,6 +178,8 @@ public class NukethrowerScript : MonoBehaviour
         fireRate = fireRate*1.5f;
         damage = damage*1.5f;
         Debug.Log("Turret Upgraded!");
+        message = "Tower upgraded";
+        MessageCall();
 
         stats[0] = range;
         stats[1] = fireRate;
@@ -187,7 +193,16 @@ public class NukethrowerScript : MonoBehaviour
     }
 
 
-
+    public void SellTurret()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("GameMaster");
+        go.SendMessage("ResetBool", posHolder);
+        Destroy(gameObject);
+        GoldHandler.gold += sellPrice;
+        Debug.Log("Turret Sold!");
+        message = "Tower sold!";
+        MessageCall();
+    }
 
     private void OnMouseDown()
     {
@@ -210,5 +225,16 @@ public class NukethrowerScript : MonoBehaviour
         go.SendMessage("GetStats", stats);
 
         ShowTurretRange();
+    }
+
+    public void SetPos(int x)
+    {
+        posHolder = x;
+    }
+
+    public void MessageCall()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("MessagePanel");
+        go.SendMessage("Caller", message);
     }
 }
