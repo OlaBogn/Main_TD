@@ -42,20 +42,23 @@ public class BuildManager : MonoBehaviour
     public bool HasTurret()
     {
         int counter = 0;
-        foreach(Transform tile in tiles)
-        {
-            if (current.transform == tile)
-            { 
-                if(hasBuilding[counter] == false)
-                {
-                    holder = counter;
-                    hasBuilding[counter] = true;
-                    counter = 0;
-                    return false;
+        try {
+            foreach (Transform tile in tiles) {
+                if (current.transform == tile) {
+                    if (hasBuilding[counter] == false) {
+                        holder = counter;
+                        hasBuilding[counter] = true;
+                        counter = 0;
+                        return false;
+                    }
                 }
+                counter++;
             }
-            counter++;
+        } catch (System.NullReferenceException e) {
+            // TODO: FIX. Error occurs if the "Tower Buttons" are pressed before a tile is selected
+            Debug.Log("NullReferenceException: " + e + ", no tile has been selected to upgrade."); 
         }
+        
         Debug.Log("A turret already exists on this tile!");
         message = "A turret already exists on this tile";
         MessageCall();
