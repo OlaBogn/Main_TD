@@ -19,12 +19,13 @@ public class TurretSelect : MonoBehaviour
     public Sprite[] topSprite;
 
     public bool[] selectedSlotsOccupied;
-    
+    public GameObject emptyPrefab; // used to erase turretprefab in gamecontroller
+
     // TODO: make buttons remember their contents and not update with contents if deselected
-    
-    void Start()
-    {
+
+    void Start() {
         UpdateTurretButtons();
+        emptyPrefab = new GameObject();
     }
     
     void UpdateTurretButtons() {
@@ -43,21 +44,14 @@ public class TurretSelect : MonoBehaviour
         for (int i = 0; i < turretButtons.Length; i++) {
             turretButtons[i] = gameObject.transform.GetChild(0).transform.GetChild(i).gameObject;
             infoPanels[i] = gameObject.transform.GetChild(2).transform.GetChild(i).gameObject;
-        }
 
-        // Setts up baseSprite array
-        for (int i = 0; i < turrets.Length; i++) {
+            // Setts up baseSprite array
             baseSprite[i] = turrets[i].GetComponent<SpriteRenderer>().sprite;
-        }
 
-        // Setts up topSprite array
-        for (int i = 0; i < turrets.Length; i++) {
+            // Setts up topSprite array
             topSprite[i] = turrets[i].transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
-        }
 
-        
-        // writes text- and image- elements onto turretButtons
-        for (int i = 0; i < turrets.Length; i++) {
+            // writes text- and image- elements onto turretButtons
             turretButtons[i].transform.GetChild(0).GetComponent<Text>().text = turrets[i].name;
             turretButtons[i].transform.GetChild(2).GetComponent<Image>().sprite = topSprite[i];
             turretButtons[i].transform.GetChild(1).GetComponent<Image>().sprite = baseSprite[i];
@@ -98,11 +92,20 @@ public class TurretSelect : MonoBehaviour
             }
         }
 
-        if (counter > selectedSlotsOccupied.Length - 1) {
-            Debug.Log("All slots occupied");
+        if (counter >= selectedSlotsOccupied.Length - 1) {
+            Debug.Log("All slots occupied: " + selectedSlotsOccupied.Length);
             return;
         }
-        
+
+        for (int i = 0; i < GameControl.control.prefabs.Length; i++) {
+            if (turretName == GameControl.control.prefabs[i].name) {
+                Debug.Log("Turret is allready selected");
+                return;
+            }
+        }
+
+        selectedSlotsOccupied[counter] = true;
+
         //TODO: set each turret into count position
         if (turretName == turrets[0].name) {
             GameControl.control.prefabs[counter] = turrets[0];
@@ -141,6 +144,9 @@ public class TurretSelect : MonoBehaviour
         int counter = 0;
         for (int i = 0; i < turretSelectedButtons.Length; i++) {
             for (int n = 0; n < turrets.Length; n++) {
+                if (GameControl.control.prefabs[i].name == "emptyPrefab") {
+                    break;
+                }
                 if (GameControl.control.prefabs[i].name == turrets[n].name) {
                     turretSelectedButtons[i].transform.GetChild(0).GetComponent<Text>().text = turrets[n].name;
                     turretSelectedButtons[i].transform.GetChild(1).GetComponent<Image>().sprite = baseSprite[n];
@@ -148,7 +154,6 @@ public class TurretSelect : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Refreshed");
         counter++;
     }
 
@@ -165,10 +170,11 @@ public class TurretSelect : MonoBehaviour
             if (turretSelectedButtons[i].transform.GetChild(0).GetComponent<Text>().text == selectedTurretName) {
                 temp = turretSelectedButtons[i];
                 selectedSlotsOccupied[i] = false;
+                GameControl.control.prefabs[i] = emptyPrefab;
                 break;
             }
         }
-
+        
         temp.transform.GetChild(0).GetComponent<Text>().text = "Empty";
         temp.transform.GetChild(1).GetComponent<Image>().sprite = emptyPlaceholder;
         temp.transform.GetChild(2).GetComponent<Image>().sprite = emptyPlaceholder;
