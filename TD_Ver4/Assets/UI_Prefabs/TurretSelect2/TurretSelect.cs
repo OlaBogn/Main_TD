@@ -14,6 +14,9 @@ public class TurretSelect : MonoBehaviour
     public GameObject[] turretSelectedButtons;
     public GameObject[] infoPanels;
 
+    public Sprite[] baseSprite;
+    public Sprite[] topSprite;
+
     private int counter = 0;
 
     // Start is called before the first frame update
@@ -34,15 +37,22 @@ public class TurretSelect : MonoBehaviour
             infoPanels[i] = gameObject.transform.GetChild(2).transform.GetChild(i).gameObject;
         }
 
+        // Setts up baseSprite array
+        for (int i = 0; i < turrets.Length; i++) {
+            topSprite[i] = turrets[i].transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+        }
+
         for (int i = 0; i < turrets.Length; i++) {
             turretButtons[i].transform.GetChild(0).GetComponent<Text>().text = turrets[i].name;
-            turretButtons[i].transform.GetChild(1).GetComponent<Image>().sprite = turrets[i].transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+            turretButtons[i].transform.GetChild(1).GetComponent<Image>().sprite = topSprite[i]; //turrets[i].transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite
         }
 
         // Setts up turretSelectedButtons array refferences
         for (int i = 0; i < turretSelectedButtons.Length; i++) {
             turretSelectedButtons[i] = gameObject.transform.GetChild(1).transform.GetChild(i).gameObject;
         }
+
+        
 
         for (int i = 0; i < turretSelectedButtons.Length; i++) {
             turretSelectedButtons[i].transform.GetChild(0).GetComponent<Text>().text = GameControl.control.prefabs[i].name;
