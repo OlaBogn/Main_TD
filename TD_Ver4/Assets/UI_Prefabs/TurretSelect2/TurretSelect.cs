@@ -92,7 +92,7 @@ public class TurretSelect : MonoBehaviour
             }
         }
 
-        if (counter >= selectedSlotsOccupied.Length - 1) {
+        if (counter >= selectedSlotsOccupied.Length) {
             Debug.Log("All slots occupied: " + selectedSlotsOccupied.Length);
             return;
         }
@@ -144,7 +144,7 @@ public class TurretSelect : MonoBehaviour
         int counter = 0;
         for (int i = 0; i < turretSelectedButtons.Length; i++) {
             for (int n = 0; n < turrets.Length; n++) {
-                if (GameControl.control.prefabs[i].name == "emptyPrefab") {
+                if (GameControl.control.prefabs[i].name.Substring(0,3) == "New") {
                     break;
                 }
                 if (GameControl.control.prefabs[i].name == turrets[n].name) {
