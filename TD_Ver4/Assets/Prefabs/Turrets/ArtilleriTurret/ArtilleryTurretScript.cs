@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArtilleriTurretScript : MonoBehaviour
+public class ArtilleryTurretScript : MonoBehaviour
 {
     private Transform target;
     public GameObject RangeSprite;
