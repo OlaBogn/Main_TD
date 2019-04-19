@@ -6,7 +6,7 @@ public class LevelSelectMenu : MonoBehaviour
 {
     public void StartNextLevel() {
         // Check if slots are occupied, 
-        //DOESNT ALLOW "START GAME" WITHOUT ALL SLOTS FILLED! 
+        // DOESNT ALLOW "START GAME" WITHOUT ALL SLOTS FILLED! 
         if (!CheckOccupiedSlots()) {
             Debug.LogWarning("Not all slots are filled!");
             return;
