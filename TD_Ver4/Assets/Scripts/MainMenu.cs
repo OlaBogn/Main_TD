@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void LevelSelect() {
+        GameControl.control.targetSceneBuildIndex = 4;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 

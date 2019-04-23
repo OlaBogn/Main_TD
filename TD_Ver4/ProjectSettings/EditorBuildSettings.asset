@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 7f9162790b3a7cc4696ca7d6801e11b8
   - enabled: 1
     path: Assets/Scenes/TurretSelect.unity
-    guid: d102b3f1d81000d49863faab16e209da
+    guid: f06269d9bc50cc140bcab08801194819
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 8075583b97737764695575816f4c02f3
