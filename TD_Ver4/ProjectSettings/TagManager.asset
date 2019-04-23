@@ -13,7 +13,6 @@ TagManager:
   - GameMaster
   - TurretStats
   - RangeSprite
-  - InfoPanelTurretSelect
   layers:
   - Default
   - TransparentFX
