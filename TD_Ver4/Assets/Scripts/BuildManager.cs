@@ -92,6 +92,7 @@ public class BuildManager : MonoBehaviour
     public void SetDefault()
     {
         current.GetComponent<SpriteRenderer>().sprite = standard;
+        current = null;
     }
     
    
