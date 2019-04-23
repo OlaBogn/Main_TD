@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 5905278806163926553}
   - component: {fileID: 3303950313068952484}
   - component: {fileID: 1937974926909225487}
-
   - component: {fileID: 6308547357440936243}
-
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -50,12 +48,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  enemyPrefab: {fileID: 8503759337824955594, guid: ea46455720b644c469568c5afd3bc3cf,
-    type: 3}
-  enemyPrefab2: {fileID: 4435513794635368610, guid: eab543d8e201ce74990678102c8a8c40,
-    type: 3}
-  enemyPrefab3: {fileID: 3596011639458213058, guid: de8cb9b35d8b650459ad3d9847037ae4,
-    type: 3}
+  enemyPrefabs:
+  - {fileID: 3596011639458213056, guid: de8cb9b35d8b650459ad3d9847037ae4, type: 3}
+  - {fileID: 737561353931377399, guid: ea46455720b644c469568c5afd3bc3cf, type: 3}
+  - {fileID: 4435513794635368613, guid: eab543d8e201ce74990678102c8a8c40, type: 3}
+  - {fileID: 1607053233223072276, guid: 12e7c4631d33c48449c100c3df5c14e4, type: 3}
+  - {fileID: 2308978647311993658, guid: 7ee6fb5025001df46bb3d10047b9d6b7, type: 3}
+  - {fileID: 2215491376640606650, guid: 1d4b5d035c28cae4ab0bbf92cd66358b, type: 3}
+  - {fileID: 8329671555172547962, guid: ef4bee6478a11d34595212cbac0b6694, type: 3}
+  - {fileID: 3966353138606354269, guid: b644ac26a53b9b84db3c458e70df398f, type: 3}
   waveCounter: {fileID: 0}
 --- !u!114 &5905278806163926553
 MonoBehaviour:
@@ -103,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteUI: {fileID: 0}
 --- !u!114 &6308547357440936243
-
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldText: {fileID: 0}
-
   startgold: 400
-

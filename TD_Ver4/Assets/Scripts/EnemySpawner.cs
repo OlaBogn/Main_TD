@@ -9,9 +9,12 @@ public class EnemySpawner : MonoBehaviour
     
     [Header("Unity SetUp")]
     public Transform spawnPoint;
-    public Transform enemyPrefab;
-    public Transform enemyPrefab2;
-    public Transform enemyPrefab3;
+
+    public GameObject[] enemyPrefabs;
+
+    //public Transform enemyPrefab;
+    //public Transform enemyPrefab2;
+    //public Transform enemyPrefab3;
     public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
@@ -60,47 +63,54 @@ public class EnemySpawner : MonoBehaviour
 
         // Går gjennom int array som velger fiender
         for (int i = 0; i < enemies.Length; i++){
-            if(enemies[i] == 0) {
-                SpawnEnemy();
+
+            if (enemies[i] == 0) {
+                SpawnEnemy(0); // speedster
+                yield return new WaitForSeconds(0.3f);
+            } else if (enemies[i] == 1) {
+                SpawnEnemy(1); // enemy
+                yield return new WaitForSeconds(1.0f);
+            } else if (enemies[i] == 2) {
+                SpawnEnemy(2); // beefy
+                yield return new WaitForSeconds(1.5f);
+            } else if (enemies[i] == 3) {
+                SpawnEnemy(3); // flaming
+                yield return new WaitForSeconds(1.0f);
+            } else if (enemies[i] == 4) {
+                SpawnEnemy(4); // flying
+                yield return new WaitForSeconds(1.0f);
+            } else if (enemies[i] == 5) {
+                SpawnEnemy(5); // armored
+                yield return new WaitForSeconds(1.0f);
+            } else if (enemies[i] == 6) {
+                SpawnEnemy(6); // Gold_enemy
+                yield return new WaitForSeconds(1.0f);
+            } else if (enemies[i] == 7) {
+                SpawnEnemy(7); // Boss
                 yield return new WaitForSeconds(1.0f);
             }
 
-            if(enemies[i] == 1) {
-                SpawnBeefy();
-                yield return new WaitForSeconds(1.5f);
-            }
-
-            if (enemies[i] == 3)
-            {
-                SpawnSpeedster();
-                yield return new WaitForSeconds(0.3f);
-            }
+            
         }
         cr_running = false;
     }
+
+    public void SpawnEnemy(int n) {
+        Instantiate(enemyPrefabs[n], spawnPoint.position, spawnPoint.rotation);
+    }
     
-    public void SpawnBeefy() {
-        Instantiate(enemyPrefab2, spawnPoint.position, spawnPoint.rotation);
-    }
-
-    public void SpawnEnemy() {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-    }
-
-    public void SpawnSpeedster() {
-        Instantiate(enemyPrefab3, spawnPoint.position, spawnPoint.rotation);
-    }
-
     public static string[] GetWaveList(int n) {
         if (n == 0) {
             string[] wavesList = {
+                "7",
+                "0,0,0,0,0,0,0,0,0,0,0,0,0",
+                "1,1,1,1,1,1,1,1,1,1,1,1,1",
+                "2,2,2,2,2,2,2,2,2,2,2,2,2",
                 "3,3,3,3,3,3,3,3,3,3,3,3,3",
-                "0,0,0,0",
-                "0,0,0,1",
-                "0,0,1,1",
-                "0,1,1,1",
-                "1,1,1,1",
-                "3,3,3,3,3,3"
+                "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                "5,5,5,5,5,5,5,5,5,5,5,5,5",
+                "6,6,6,6,6,6,6,6,6,6,6,6,6",
+                "7,7,7,7,7,7,7,7,7,7,7,7,7"
             };
             return wavesList;
         }
