@@ -108,8 +108,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5505495468139148099}
-  - component: {fileID: 1665064358056797007}
   - component: {fileID: 1268292956107861745}
+  - component: {fileID: 7128210538936618748}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -132,21 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1665064358056797007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966353138606354269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0387c319318cc4a84d43c2aee24408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  pivot: {fileID: 6852203687834677208}
-  sprite: {fileID: 3966353138606354269}
 --- !u!114 &1268292956107861745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18bb49cabecadb4587eaa49dafe51be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 150
   worth: 100
+--- !u!114 &7128210538936618748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966353138606354269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4e2ebb4f08617458a8a1133413f25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  target: {fileID: 0}
+  pivot: {fileID: 6852203687834677208}
+  sprite: {fileID: 1057426694896099782}
 --- !u!1 &6852203687834677208
 GameObject:
   m_ObjectHideFlags: 0
