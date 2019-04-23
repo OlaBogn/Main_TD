@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     public bool hasSplashDamage;
     public float splashRadius;
 
+    public GameObject smolExplosion, largeExplosion;
+
     public void Seek(Transform _target) {
         target = _target;
     }
@@ -56,5 +58,15 @@ public class Bullet : MonoBehaviour
         go = null;
         return;
     }
-    
+
+    private void OnDestroy() {
+        if (gameObject.name.Substring(0, 4) == "Miss") {
+            Instantiate(smolExplosion, transform.position, Quaternion.identity);
+        }
+        if (gameObject.name.Substring(0,4) == "Nuke") {
+            Instantiate(largeExplosion, transform.position, Quaternion.identity);
+        }
+        
+    }
+
 }
