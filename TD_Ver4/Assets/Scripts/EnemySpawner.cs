@@ -11,10 +11,6 @@ public class EnemySpawner : MonoBehaviour
     public Transform spawnPoint;
 
     public GameObject[] enemyPrefabs;
-
-    //public Transform enemyPrefab;
-    //public Transform enemyPrefab2;
-    //public Transform enemyPrefab3;
     public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
@@ -102,7 +98,6 @@ public class EnemySpawner : MonoBehaviour
     public static string[] GetWaveList(int n) {
         if (n == 0) {
             string[] wavesList = {
-                "7",
                 "0,0,0,0,0,0,0,0,0,0,0,0,0",
                 "1,1,1,1,1,1,1,1,1,1,1,1,1",
                 "2,2,2,2,2,2,2,2,2,2,2,2,2",
