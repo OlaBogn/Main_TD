@@ -11,6 +11,9 @@ public class Background : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("ClearStats", null);
 
+        GameObject ree = GameObject.FindGameObjectWithTag("GameMaster");
+        ree.SendMessage("SetDefault", null);
+
         // Clears Turret Range
         GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
 
