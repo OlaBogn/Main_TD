@@ -30,37 +30,40 @@ public class BuildManager : MonoBehaviour
     private int artilleri = 130;
 
 
-
     private void Start()
     {
         tiles = TileContainer.tiles;
         hasBuilding = TileContainer.hasBuilding;
     }
 
-
     // Sjekk som finner ut om det er turret allerede bygget på node
     public bool HasTurret()
     {
-        int counter = 0;
-        try {
-            foreach (Transform tile in tiles) {
-                if (current.transform == tile) {
-                    if (hasBuilding[counter] == false) {
-                        holder = counter;
-                        hasBuilding[counter] = true;
-                        counter = 0;
-                        return false;
+            int counter = 0;
+            try
+            {
+                foreach (Transform tile in tiles)
+                {
+                    if (current.transform == tile)
+                    {
+                        if (hasBuilding[counter] == false)
+                        {
+                            holder = counter;
+                            hasBuilding[counter] = true;
+                            counter = 0;
+                            return false;
+                        }
                     }
+                    counter++;
                 }
-                counter++;
             }
-        } catch (System.NullReferenceException e) {
-            // TODO: FIX. Error occurs if the "Tower Buttons" are pressed before a tile is selected
-            Debug.Log("NullReferenceException: " + e + ", no tile has been selected to upgrade."); 
-        }
-        
-        Debug.Log("A turret already exists on this tile!");
-        message = "A turret already exists on this tile";
+            catch (System.NullReferenceException e)
+            {
+                // TODO: FIX. Error occurs if the "Tower Buttons" are pressed before a tile is selected
+                Debug.Log("NullReferenceException: " + e + ", no tile has been selected to upgrade.");
+            }
+        Debug.Log("Cant build here");
+        message = "Cant build here";
         MessageCall();
         return true;
     }
@@ -101,20 +104,14 @@ public class BuildManager : MonoBehaviour
             current = null;
         }
     }
-    
+
    
     // Sets turret and checks if player has enough gold and if there is already built a turret on the node
     public void SetTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
         GetPrice();
-        if(current == null)
-        {
-            Debug.Log("No tile is selected");
-            message = "No tile selected";
-            MessageCall();
-            return;
-        }
+       
 
         if (HasGold() == false){
             return;
