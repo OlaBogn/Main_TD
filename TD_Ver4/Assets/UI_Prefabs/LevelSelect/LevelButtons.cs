@@ -9,27 +9,32 @@ public class LevelButtons : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         GameControl.control.targetSceneBuildIndex = 4;
         SceneManager.LoadScene(3);
+        Debug.Log("1");
     }
 
     public void Level2() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         GameControl.control.targetSceneBuildIndex = 5;
         SceneManager.LoadScene(3);
+        Debug.Log("2");
     }
 
     public void Level3() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
         GameControl.control.targetSceneBuildIndex = 6;
         SceneManager.LoadScene(3);
+        Debug.Log("3");
     }
 
     public void Level4() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
         GameControl.control.targetSceneBuildIndex = 7;
         SceneManager.LoadScene(3);
+        Debug.Log("4");
     }
 
     public void MainMenu() {
         SceneManager.LoadScene(0);
+        Debug.Log("5");
     }
 }
