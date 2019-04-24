@@ -17,7 +17,7 @@ public class Background : MonoBehaviour
         // Clears Turret Range
         GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
 
-        if (g.Length >= 0)
+        if (g.Length == 0)
         {
             return;
         }

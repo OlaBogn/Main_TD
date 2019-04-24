@@ -91,8 +91,15 @@ public class BuildManager : MonoBehaviour
 
     public void SetDefault()
     {
-        current.GetComponent<SpriteRenderer>().sprite = standard;
-        current = null;
+        if (current == null)
+        {
+            return;
+        }
+        else
+        {
+            current.GetComponent<SpriteRenderer>().sprite = standard;
+            current = null;
+        }
     }
     
    
@@ -101,6 +108,13 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
         GetPrice();
+        if(current == null)
+        {
+            Debug.Log("No tile is selected");
+            message = "No tile selected";
+            MessageCall();
+            return;
+        }
 
         if (HasGold() == false){
             return;
