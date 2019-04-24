@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.Serialization.Formatters.Binary; // writes unreadable files for datastorage
 using System.IO;
+using UnityEngine.UI;
 
 /*
  * Holds runtime-data across scenes, and saves data  to "persistentDataPath"
@@ -9,14 +10,15 @@ using System.IO;
 public class GameControl : MonoBehaviour {
 
     public static GameControl control;
-    
-    public float experience;
 
+    public float experience;
     public int targetSceneBuildIndex = 3;
 
     [Header("Unity setup")]
     public GameObject[] prefabs;
     public int[] prices;
+
+    private bool timeStopped = false;
 
     void Awake() {
         if (control == null) {
@@ -29,6 +31,8 @@ public class GameControl : MonoBehaviour {
         Load();
         
     }
+
+
 
     void Start() {
         GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
@@ -51,6 +55,7 @@ public class GameControl : MonoBehaviour {
         PlayerData data = new PlayerData();
         
         data.experience = experience;
+        data.audioLevel = gameObject.GetComponent<AudioSource>().volume;
 
         bf.Serialize(file, data); // takes serializable "data" object and stores it in "file" location
         file.Close();
@@ -65,6 +70,9 @@ public class GameControl : MonoBehaviour {
             file.Close();
             
             experience = data.experience;
+            gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
+            GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
+
         }
     }
 
@@ -76,10 +84,33 @@ public class GameControl : MonoBehaviour {
         }
         count = 0;
     }
+
+    public void SetAudioLevel() {
+        float sliderValue = GameObject.Find("AudioSlider").GetComponent<Slider>().value;
+        gameObject.GetComponent<AudioSource>().volume = sliderValue;
+
+        Save();
+    }
+
+    public void MuteAudio() {
+        gameObject.GetComponent<AudioSource>().volume = 0f;
+        GameObject.Find("AudioSlider").GetComponent<Slider>().value = 0;
+    }
+
+    public void ToggleTime() {
+        if (timeStopped) {
+            Time.timeScale = 0f;
+        } else {
+            Time.timeScale = 1f;
+        }
+        timeStopped = !timeStopped;
+    }
+
 }
 
 // Object being saved by GameControl
 [Serializable]
 class PlayerData {
     public float experience;
+    public float audioLevel;
 }
