@@ -88,6 +88,12 @@ public class BuildManager : MonoBehaviour
         current.GetComponent<SpriteRenderer>().sprite = active;
         previous.GetComponent<SpriteRenderer>().sprite = standard;
     }
+
+    public void SetDefault()
+    {
+        current.GetComponent<SpriteRenderer>().sprite = standard;
+        current = null;
+    }
     
    
     // Sets turret and checks if player has enough gold and if there is already built a turret on the node

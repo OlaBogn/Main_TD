@@ -191,6 +191,10 @@ public class FireTurretScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Removes active tile click
+        GameObject ree = GameObject.FindGameObjectWithTag("GameMaster");
+        ree.SendMessage("SetDefault", null);
+
         // Removes previous RangeDisplay
         GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
         foreach (GameObject z in g)
