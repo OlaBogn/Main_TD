@@ -3,6 +3,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary; // writes unreadable files for datastorage
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /*
  * Holds runtime-data across scenes, and saves data  to "persistentDataPath"
@@ -70,9 +71,15 @@ public class GameControl : MonoBehaviour {
             file.Close();
             
             experience = data.experience;
-            gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
-            GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
-
+            try {
+                if (SceneManager.GetActiveScene().buildIndex == 2) {
+                    gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
+                    GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
+                }
+            } catch (NullReferenceException e) {
+                Debug.LogWarning(e);
+            }
+            
         }
     }
 

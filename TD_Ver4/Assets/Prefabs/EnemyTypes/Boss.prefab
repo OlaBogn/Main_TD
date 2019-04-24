@@ -146,6 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   worth: 100
+  robotDeath: {fileID: 6503367028628930712, guid: c15c32c0a4953db4aa9bceec2b08f33a,
+    type: 3}
+  organicDeath: {fileID: 817679801434154564, guid: 260f44d6f73bd1f4391e35beb636b551,
+    type: 3}
+  flamingDeath: {fileID: 3278190287656875349, guid: c249233a6507d544caad511791f3a593,
+    type: 3}
 --- !u!114 &7128210538936618748
 MonoBehaviour:
   m_ObjectHideFlags: 0
