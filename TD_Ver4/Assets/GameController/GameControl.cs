@@ -19,7 +19,7 @@ public class GameControl : MonoBehaviour {
     public GameObject[] prefabs;
     public int[] prices;
 
-    private bool timeStopped = false;
+    private bool timeStopped = true;
 
     void Awake() {
         if (control == null) {
