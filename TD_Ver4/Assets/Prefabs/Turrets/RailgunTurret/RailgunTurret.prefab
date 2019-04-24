@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6574848050935333955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7142856, y: 1.7142856, z: 1}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 1}
   m_Children: []
   m_Father: {fileID: 8140342301357738469}
   m_RootOrder: 1
@@ -210,8 +210,11 @@ MonoBehaviour:
   range: 10
   fireRate: 2
   damage: 0
+  level: 1
   price: 110
   waitTime: 0.3
+  sellPrice: 0
+  upCost: 50
   animator: {fileID: 6091306250681889065}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}

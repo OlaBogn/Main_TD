@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2562359513640416671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.019799996, y: 0, z: 0}
-  m_LocalScale: {x: 2.4, y: 2.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8140342301357738469}
   m_RootOrder: 1
@@ -122,9 +122,10 @@ GameObject:
   - component: {fileID: 8140342301357738469}
   - component: {fileID: 8140342301357738458}
   - component: {fileID: 7670849424537074245}
+  - component: {fileID: 3304120358529693750}
   m_Layer: 0
   m_Name: SniperTurret
-  m_TagString: Untagged
+  m_TagString: RangeSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,6 +210,9 @@ MonoBehaviour:
   range: 50
   fireRate: 0.5
   damage: 0
+  level: 1
+  sellPrice: 0
+  upCost: 50
   animator: {fileID: 6142086589826398050}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
@@ -216,6 +220,22 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4588562835530020193, guid: d5b172103b1daae4698faf2f04fb1c87,
     type: 3}
   firePoint: {fileID: 8140342301875277885}
+--- !u!58 &3304120358529693750
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140342301357738459}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &8140342301593919667
 GameObject:
   m_ObjectHideFlags: 0
