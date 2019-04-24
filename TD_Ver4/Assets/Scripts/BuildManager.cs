@@ -101,15 +101,16 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
         GetPrice();
-       
+
+        if (HasGold() == false){
+            return;
+        }
 
         if(HasTurret() == true)
         {
             return;
         }
-        if (HasGold() == false){
-            return;
-        }
+        
         BuildTurret();
     }
 
