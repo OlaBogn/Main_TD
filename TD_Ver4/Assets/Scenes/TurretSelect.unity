@@ -2108,7 +2108,6 @@ GameObject:
   - component: {fileID: 2685441836335341619}
   - component: {fileID: 2974069557634962288}
   - component: {fileID: 2536663784443081130}
-  - component: {fileID: 723889754030603982}
   m_Layer: 0
   m_Name: Panel (5)
   m_TagString: Untagged
@@ -2116,22 +2115,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &723889754030603982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723889754030603981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb39e9381bd7ea4d80dc92ec0f362b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experience: 0
-  targetSceneBuildIndex: 3
-  prefabs: []
-  prices: 
 --- !u!1 &731896321230227569
 GameObject:
   m_ObjectHideFlags: 0
