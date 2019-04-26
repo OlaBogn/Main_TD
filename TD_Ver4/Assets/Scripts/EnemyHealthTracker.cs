@@ -45,7 +45,7 @@ public class EnemyHealthTracker : MonoBehaviour
                 manager.SpawnDeathEffect(2, transform);
             } else if (gameObject.name.Substring(0, 3) == "Gol") {
                 manager.SpawnDeathEffect(4, transform);
-                manager.SpawnDeathEffect(2, transform);
+                manager.SpawnDeathEffect(1, transform);
             } else if (gameObject.name.Substring(0, 3) == "Spe") {
                 manager.SpawnDeathEffect(2, transform);
             }
