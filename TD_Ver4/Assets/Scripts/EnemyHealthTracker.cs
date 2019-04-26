@@ -4,7 +4,7 @@ public class EnemyHealthTracker : MonoBehaviour
 {
     [Header("Attributes")]
     public float maxHealth;
-    private float currentHealth;
+    public float currentHealth;
     public int worth;
 
     private GameObject gameMaster;
@@ -23,6 +23,7 @@ public class EnemyHealthTracker : MonoBehaviour
 
     public void TakeDamage(float DamageAmount) {
         currentHealth -= DamageAmount; // gameObject takes damage based on recieved value from projectile-hit
+        Debug.Log("nibba");
     }
 
     private void OnDestroy() {
