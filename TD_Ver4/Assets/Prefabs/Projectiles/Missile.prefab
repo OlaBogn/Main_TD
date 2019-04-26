@@ -93,13 +93,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98f22d9b676420046bd96ddc838d50e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   enemyTag: Enemy
   speed: 20
   bulletDamage: 25
   hasSplashDamage: 1
-  splashRadius: 1
+  splashRadius: 6
 --- !u!96 &4217387829323562907
 TrailRenderer:
   serializedVersion: 2

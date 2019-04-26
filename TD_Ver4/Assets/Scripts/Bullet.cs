@@ -82,4 +82,8 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, splashRadius);
+    }
+
 }
