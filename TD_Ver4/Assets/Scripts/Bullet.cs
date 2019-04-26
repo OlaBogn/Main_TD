@@ -9,10 +9,12 @@ public class Bullet : MonoBehaviour
     public float speed = 25f;
     public float bulletDamage = 5f;
 
-    public bool hasSplashDamage;
+    public bool hasSplashDamage = false;
     public float splashRadius;
     
     private GameObject gameMaster;
+
+    private bool hasHit = false;
 
     public void Seek(Transform _target) {
         target = _target;
@@ -30,11 +32,16 @@ public class Bullet : MonoBehaviour
             return;
         }
 
+        if (hasHit) {
+            return;
+        }
+
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
         
-        if (dir.magnitude <= distanceThisFrame) { // if this is true the bullet "should" have hit
+        if (dir.magnitude <= distanceThisFrame && !hasHit) { // if this is true the bullet "should" have hit
             HitTarget(target.gameObject);
+            hasHit = true;
             if (hasSplashDamage) {
                 GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach(GameObject go in gos) {
@@ -56,8 +63,10 @@ public class Bullet : MonoBehaviour
     }
 
     void HitTarget(GameObject go) {
+        target = null;
         if (go.gameObject.CompareTag(enemyTag)) {
-            go.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
+            //go.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
+            go.SendMessage("TakeDamage", bulletDamage);
         }
         go = null;
         return;
