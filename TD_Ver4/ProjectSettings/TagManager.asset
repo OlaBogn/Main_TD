@@ -15,6 +15,7 @@ TagManager:
   - RangeSprite
   - InfoPanelTurretSelect
   - MessagePanel
+  - Effect
   layers:
   - Default
   - TransparentFX

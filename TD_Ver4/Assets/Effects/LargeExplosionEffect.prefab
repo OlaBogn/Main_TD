@@ -9426,7 +9426,7 @@ GameObject:
   - component: {fileID: 2522945468613299634}
   m_Layer: 0
   m_Name: LargeExplosionEffect
-  m_TagString: Untagged
+  m_TagString: Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

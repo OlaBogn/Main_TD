@@ -4709,8 +4709,8 @@ GameObject:
   - component: {fileID: 7247452942957662452}
   - component: {fileID: 8351556927884187631}
   m_Layer: 0
-  m_Name: GoldoidDeath 1
-  m_TagString: Untagged
+  m_Name: GoldoidDeath
+  m_TagString: Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
