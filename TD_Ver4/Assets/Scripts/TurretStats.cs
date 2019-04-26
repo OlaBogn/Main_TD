@@ -11,7 +11,7 @@ public class TurretStats : MonoBehaviour
     private int posHolder;
     private Transform[] tiles;
 
-    public Text turretTxt, levelTxt, dmgTxt, rangeTxt, rateTxt, sellTxt;
+    public Text turretTxt, levelTxt, dmgTxt, rangeTxt, rateTxt, sellTxt, upTxt;
     public GameObject StatPanel;
     public GameObject BtnPanel;
     public int level = 1;
@@ -101,6 +101,7 @@ public class TurretStats : MonoBehaviour
         turret.SendMessage("SellTurret", null);
     }
 
+    // Displays Turret Sell Return
     public void SellPrice(int sellPrice)
     {
         sellTxt.text = "SELL" + "\n" + "$" + sellPrice.ToString();
@@ -109,6 +110,12 @@ public class TurretStats : MonoBehaviour
     public void Upgrade()
     {
         turret.SendMessage("UpgradeTurret", null);
+
+    }
+
+    public void UpgradeText(int upCost)
+    {
+        upTxt.text = "UPGRADE" + "\n" + "$" + upCost.ToString();
 
     }
 
