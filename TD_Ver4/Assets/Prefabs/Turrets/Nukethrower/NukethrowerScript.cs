@@ -22,7 +22,7 @@ public class NukethrowerScript : MonoBehaviour
     public float level = 1;
     public float waitTime = 0.8f;
     public int sellPrice;
-    private int upCost = 50;
+    public int upCost = 50;
 
     public Animator animator;
     
@@ -217,6 +217,11 @@ public class NukethrowerScript : MonoBehaviour
             z.SendMessage("HideTurretRange", null);
 
         }
+
+        // Sets SellButton text
+        GameObject ez = GameObject.FindGameObjectWithTag("TurretStats");
+        ez.SendMessage("SellPrice", sellPrice);
+
         // Sends stats to StatPanel
         stats = new float[4];
         stats[0] = range;

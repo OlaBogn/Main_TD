@@ -206,6 +206,11 @@ public class MissileTurret : MonoBehaviour
             z.SendMessage("HideTurretRange", null);
 
         }
+
+        // Sets SellButton text
+        GameObject ez = GameObject.FindGameObjectWithTag("TurretStats");
+        ez.SendMessage("SellPrice", sellPrice);
+
         // Sends stats to StatPanel
         stats = new float[4];
         stats[0] = range;

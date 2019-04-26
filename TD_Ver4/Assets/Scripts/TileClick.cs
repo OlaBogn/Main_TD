@@ -21,5 +21,22 @@ public class TileClick : MonoBehaviour
         }
 
         gm.GetComponent<BuildManager>().SendMessage("SetCurrent", gameObject);
+
+        // Clears Turret Panel
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("ClearStats", null);
+
+        // Clears Turret Range
+        GameObject[] g = GameObject.FindGameObjectsWithTag("RangeSprite");
+
+        if (g.Length == 0)
+        {
+            return;
+        }
+        foreach (GameObject z in g)
+        {
+            z.SendMessage("HideTurretRange", null);
+
+        }
     }
 }
