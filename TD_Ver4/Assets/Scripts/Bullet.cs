@@ -65,7 +65,6 @@ public class Bullet : MonoBehaviour
     void HitTarget(GameObject go) {
         target = null;
         if (go.gameObject.CompareTag(enemyTag)) {
-            //go.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
             go.SendMessage("TakeDamage", bulletDamage);
         }
         go = null;
