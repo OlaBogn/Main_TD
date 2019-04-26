@@ -23,6 +23,7 @@ public class EnemyHealthTracker : MonoBehaviour
 
     public void TakeDamage(float DamageAmount) {
         currentHealth -= DamageAmount; // gameObject takes damage based on recieved value from projectile-hit
+        Debug.Log(gameObject.name);
     }
 
     private void OnDestroy() {
