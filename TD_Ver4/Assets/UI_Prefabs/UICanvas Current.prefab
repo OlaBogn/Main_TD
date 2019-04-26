@@ -337,6 +337,7 @@ MonoBehaviour:
   rangeTxt: {fileID: 7217138643299532968}
   rateTxt: {fileID: 6413446611005726855}
   sellTxt: {fileID: 4329960551047217963}
+  upTxt: {fileID: 2712766969028065662}
   StatPanel: {fileID: 7759825637319594601}
   BtnPanel: {fileID: 8256599418180482672}
   level: 1
@@ -1503,7 +1504,7 @@ GameObject:
   - component: {fileID: 7654136792504812879}
   - component: {fileID: 2712766969028065662}
   m_Layer: 5
-  m_Name: Text
+  m_Name: UpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

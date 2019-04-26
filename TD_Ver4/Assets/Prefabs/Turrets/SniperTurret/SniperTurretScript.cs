@@ -190,6 +190,10 @@ public class SniperTurretScript : MonoBehaviour
         stats[2] = damage;
         stats[3] = level;
 
+        // Sets SellButton text
+        GameObject ez = GameObject.FindGameObjectWithTag("TurretStats");
+        ez.SendMessage("SellPrice", sellPrice);
+        ez.SendMessage("UpgradeText", upCost);
 
         GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
         go.SendMessage("GetStats", stats);
@@ -213,6 +217,7 @@ public class SniperTurretScript : MonoBehaviour
         // Sets SellButton text
         GameObject ez = GameObject.FindGameObjectWithTag("TurretStats");
         ez.SendMessage("SellPrice", sellPrice);
+        ez.SendMessage("UpgradeText", upCost);
 
         // Sends stats to StatPanel
         stats = new float[4];
