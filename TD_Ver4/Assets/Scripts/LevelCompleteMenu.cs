@@ -18,14 +18,13 @@ public class LevelCompleteMenu : MonoBehaviour
 
         int sceneMax = 0;
         sceneMax = SceneManager.sceneCountInBuildSettings;
+        Debug.Log("sceneMax: " + sceneMax);
         if (SceneManager.GetActiveScene().buildIndex >= sceneMax - 2) {
-
             SceneManager.LoadScene(sceneMax - 1);
-            
+        } else {
+            GameControl.control.targetSceneBuildIndex += 1;
+            SceneManager.LoadScene(3);
         }
-
-        GameControl.control.targetSceneBuildIndex += 1;
-        SceneManager.LoadScene(3);
     }
 
     private void DestroyAllEffects() {
