@@ -103,7 +103,7 @@ public class TurretStats : MonoBehaviour
 
     public void SellPrice(int sellPrice)
     {
-        sellTxt.text = "$" + sellPrice.ToString();
+        sellTxt.text = "SELL" + "\n" + "$" + sellPrice.ToString();
     }
 
     public void Upgrade()
