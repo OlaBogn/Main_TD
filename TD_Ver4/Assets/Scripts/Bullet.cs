@@ -11,9 +11,7 @@ public class Bullet : MonoBehaviour
 
     public bool hasSplashDamage;
     public float splashRadius;
-
-    public GameObject smolExplosion, largeExplosion;
-
+    
     private GameObject gameMaster;
 
     public void Seek(Transform _target) {
