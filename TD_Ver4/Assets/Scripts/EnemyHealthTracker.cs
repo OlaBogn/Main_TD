@@ -6,8 +6,11 @@ public class EnemyHealthTracker : MonoBehaviour
     public float maxHealth;
     private float currentHealth;
     public int worth;
-    
+
+    private GameObject gameMaster;
+
     void Start() {
+        gameMaster = GameObject.Find("GameMaster");
         currentHealth = maxHealth; // Sets current health from max
     }
 
@@ -25,7 +28,7 @@ public class EnemyHealthTracker : MonoBehaviour
     private void OnDestroy() {
         // Deathtypes: 0 = organicDeath01, 1 = OrganicDeath02, 2 = RobotDeath, 3 = Flaming
         
-        var manager = GameObject.Find("GameMaster").GetComponent<EffectsManager>();
+        var manager = gameMaster.GetComponent<EffectsManager>();
         
         if (gameObject.name.Substring(0,3) == "Arm") {
             manager.SpawnDeathEffect(2, transform);

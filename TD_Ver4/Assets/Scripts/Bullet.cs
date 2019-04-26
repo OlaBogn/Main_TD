@@ -14,8 +14,14 @@ public class Bullet : MonoBehaviour
 
     public GameObject smolExplosion, largeExplosion;
 
+    private GameObject gameMaster;
+
     public void Seek(Transform _target) {
         target = _target;
+    }
+
+    private void Start() {
+        gameMaster = GameObject.Find("GameMaster");
     }
 
     // Update is called once per frame
@@ -60,13 +66,13 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnDestroy() {
-        GameObject effectsManager = GameObject.Find("GameManager");
+        var manager = gameMaster.GetComponent<EffectsManager>();
 
         if (gameObject.name.Substring(0, 4) == "Miss") {
-            EffectsManager.effectsManager.SpawnExplosionEffect(0, transform);
+            manager.SpawnExplosionEffect(0, transform);
         }
         if (gameObject.name.Substring(0,4) == "Nuke") {
-            EffectsManager.effectsManager.SpawnExplosionEffect(1, transform);
+            manager.SpawnExplosionEffect(1, transform);
         }
     }
 
