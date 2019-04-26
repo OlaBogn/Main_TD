@@ -81,9 +81,5 @@ public class Bullet : MonoBehaviour
             manager.SpawnExplosionEffect(1, transform);
         }
     }
-
-    private void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, splashRadius);
-    }
-
+    
 }
