@@ -2229,6 +2229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6588795173289452668, guid: 149d6612ea4872442a60f3991faa95e1,
+        type: 3}
+      propertyPath: effects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5905278806163926552, guid: 149d6612ea4872442a60f3991faa95e1,
         type: 3}
       propertyPath: m_Name

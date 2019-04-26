@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3303950313068952484}
   - component: {fileID: 1937974926909225487}
   - component: {fileID: 6308547357440936243}
+  - component: {fileID: 6588795173289452668}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -117,3 +118,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoldText: {fileID: 0}
   startgold: 400
+--- !u!114 &6588795173289452668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905278806163926552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50528a7066886743996ef299a796891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffects:
+  - {fileID: 166933947894382205, guid: e22c227d5e3582340b231383d17935dd, type: 3}
+  - {fileID: 1434118288698377665, guid: b31e2ec7905c30b469e14411ab85d646, type: 3}
+  deathEffects:
+  - {fileID: 1271686343549156843, guid: d55dfe4747b5cb14393a9186ba896182, type: 3}
+  - {fileID: 3704736314085606514, guid: 3272e5ee4450fa54bbfc40d5c46c17d7, type: 3}
+  - {fileID: 6503367028628930712, guid: c15c32c0a4953db4aa9bceec2b08f33a, type: 3}
+  - {fileID: 166933947894382205, guid: e22c227d5e3582340b231383d17935dd, type: 3}

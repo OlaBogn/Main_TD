@@ -7,12 +7,10 @@ public class EnemyHealthTracker : MonoBehaviour
     private float currentHealth;
     public int worth;
 
-    [Header("Unity setup")]
-    public GameObject robotDeath;
-    public GameObject organicDeath;
-    public GameObject flamingDeath;
+    private GameObject gameMaster;
 
     void Start() {
+        gameMaster = GameObject.Find("GameMaster");
         currentHealth = maxHealth; // Sets current health from max
     }
 
@@ -28,23 +26,27 @@ public class EnemyHealthTracker : MonoBehaviour
     }
 
     private void OnDestroy() {
+        // Deathtypes: 0 = organicDeath01, 1 = OrganicDeath02, 2 = RobotDeath, 3 = Flaming
+        
+        var manager = gameMaster.GetComponent<EffectsManager>();
+        
         if (gameObject.name.Substring(0,3) == "Arm") {
-            Instantiate(robotDeath, transform.position, Quaternion.identity);
-            Instantiate(organicDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(2, transform);
+            manager.SpawnDeathEffect(1, transform);
         } else if (gameObject.name.Substring(0, 3) == "Bee") {
-            Instantiate(organicDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(0, transform);
         } else if (gameObject.name.Substring(0, 3) == "Bos") {
-            Instantiate(organicDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(1, transform);
         } else if (gameObject.name.Substring(0, 3) == "Ene") {
-            Instantiate(organicDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(1, transform);
         } else if (gameObject.name.Substring(0, 3) == "Fla") {
-            Instantiate(flamingDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(3, transform);
         } else if (gameObject.name.Substring(0, 3) == "Fly") {
-            Instantiate(robotDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(2, transform);
         } else if (gameObject.name.Substring(0, 3) == "Gol") {
-            Instantiate(organicDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(1, transform);
         } else if (gameObject.name.Substring(0, 3) == "Spe") {
-            Instantiate(robotDeath, transform.position, Quaternion.identity);
+            manager.SpawnDeathEffect(2, transform);
         }
     }
 }
