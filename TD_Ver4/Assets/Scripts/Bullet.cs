@@ -60,13 +60,14 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnDestroy() {
+        GameObject effectsManager = GameObject.Find("GameManager");
+
         if (gameObject.name.Substring(0, 4) == "Miss") {
-            Instantiate(smolExplosion, transform.position, Quaternion.identity);
+            EffectsManager.effectsManager.SpawnExplosionEffect(0, transform);
         }
         if (gameObject.name.Substring(0,4) == "Nuke") {
-            Instantiate(largeExplosion, transform.position, Quaternion.identity);
+            EffectsManager.effectsManager.SpawnExplosionEffect(1, transform);
         }
-        
     }
 
 }
