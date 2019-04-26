@@ -212,6 +212,8 @@ MonoBehaviour:
   damage: 0
   price: 150
   level: 1
+  sellPrice: 75
+  upCost: 113
   animator: {fileID: 8562143403284495936}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}

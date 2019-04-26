@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTag: Enemy
   speed: 50
-  bulletDamage: 5
+  bulletDamage: 20
   hasSplashDamage: 0
   splashRadius: 0
   smolExplosion: {fileID: 166933947894382205, guid: e22c227d5e3582340b231383d17935dd,

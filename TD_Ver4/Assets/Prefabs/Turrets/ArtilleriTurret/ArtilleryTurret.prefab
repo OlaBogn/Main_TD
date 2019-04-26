@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8844245851998466602}
   - component: {fileID: 2485236997642981803}
   m_Layer: 0
-  m_Name: ArtilleriTurret
+  m_Name: ArtilleryTurret
   m_TagString: RangeSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,11 +208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RangeSprite: {fileID: 7696808268212439849}
   range: 10
-  fireRate: 1
+  fireRate: 0.5
   damage: 20
   level: 1
-  sellPrice: 50
-  upCost: 50
+  sellPrice: 65
+  upCost: 98
   animator: {fileID: 2845894884561104267}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}

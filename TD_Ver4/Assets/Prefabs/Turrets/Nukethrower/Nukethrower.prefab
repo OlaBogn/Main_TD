@@ -212,6 +212,7 @@ MonoBehaviour:
   damage: 50
   level: 1
   waitTime: 2
+  sellPrice: 100
   animator: {fileID: 2625916514366417371}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
