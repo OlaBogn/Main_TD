@@ -47,11 +47,12 @@ public class Bullet : MonoBehaviour
                 foreach(GameObject go in gos) {
                     Vector3 tempDir = go.transform.position - transform.position;
                     float tempDist = tempDir.magnitude;
-                    if (tempDist <= splashRadius) {
+                    if (tempDist <= splashRadius && go.gameObject != target.gameObject) {
                         HitTarget(go);
                     }
                 }
             }
+            target = null;
             return;
         }
 
@@ -63,7 +64,6 @@ public class Bullet : MonoBehaviour
     }
 
     void HitTarget(GameObject go) {
-        target = null;
         if (go.gameObject.CompareTag(enemyTag)) {
             go.SendMessage("TakeDamage", bulletDamage);
         }
