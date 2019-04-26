@@ -27,26 +27,31 @@ public class EnemyHealthTracker : MonoBehaviour
 
     private void OnDestroy() {
         // Deathtypes: 0 = organicDeath01, 1 = OrganicDeath02, 2 = RobotDeath, 3 = Flaming
-        
-        var manager = gameMaster.GetComponent<EffectsManager>();
-        
-        if (gameObject.name.Substring(0,3) == "Arm") {
-            manager.SpawnDeathEffect(2, transform);
-            manager.SpawnDeathEffect(1, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Bee") {
-            manager.SpawnDeathEffect(0, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Bos") {
-            manager.SpawnDeathEffect(1, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Ene") {
-            manager.SpawnDeathEffect(1, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Fla") {
-            manager.SpawnDeathEffect(3, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Fly") {
-            manager.SpawnDeathEffect(2, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Gol") {
-            manager.SpawnDeathEffect(1, transform);
-        } else if (gameObject.name.Substring(0, 3) == "Spe") {
-            manager.SpawnDeathEffect(2, transform);
+        try {
+            var manager = gameMaster.GetComponent<EffectsManager>();
+
+            if (gameObject.name.Substring(0, 3) == "Arm") {
+                manager.SpawnDeathEffect(2, transform);
+                manager.SpawnDeathEffect(1, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Bee") {
+                manager.SpawnDeathEffect(0, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Bos") {
+                manager.SpawnDeathEffect(1, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Ene") {
+                manager.SpawnDeathEffect(1, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Fla") {
+                manager.SpawnDeathEffect(3, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Fly") {
+                manager.SpawnDeathEffect(2, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Gol") {
+                manager.SpawnDeathEffect(4, transform);
+                manager.SpawnDeathEffect(2, transform);
+            } else if (gameObject.name.Substring(0, 3) == "Spe") {
+                manager.SpawnDeathEffect(2, transform);
+            }
+        } catch (MissingReferenceException e) {
+            Debug.LogWarning(e);
         }
+        
     }
 }
