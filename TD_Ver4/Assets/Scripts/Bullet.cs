@@ -65,7 +65,6 @@ public class Bullet : MonoBehaviour
     void HitTarget(GameObject go) {
         target = null;
         if (go.gameObject.CompareTag(enemyTag)) {
-            //go.gameObject.GetComponent<EnemyHealthTracker>().TakeDamage(bulletDamage);
             go.SendMessage("TakeDamage", bulletDamage);
         }
         go = null;
@@ -81,6 +80,10 @@ public class Bullet : MonoBehaviour
         if (gameObject.name.Substring(0,4) == "Nuke") {
             manager.SpawnExplosionEffect(1, transform);
         }
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, splashRadius);
     }
 
 }
