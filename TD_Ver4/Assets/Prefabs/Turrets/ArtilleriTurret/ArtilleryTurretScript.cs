@@ -16,7 +16,7 @@ public class ArtilleryTurretScript : MonoBehaviour
     public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
-    public float damage;
+    public float damage = 20f;
     public float level = 1;
     public int sellPrice;
     public int upCost = 50;

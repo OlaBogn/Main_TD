@@ -21,11 +21,196 @@ public class TurretSelect : MonoBehaviour
     public bool[] selectedSlotsOccupied;
     public GameObject emptyPrefab; // used to erase turretprefab in gamecontroller
 
-    // TODO: make buttons remember their contents and not update with contents if deselected
+    // TurretPrices TODO: update before release
+    private int gattling = 100;
+    private int laser = 110;
+    private int missile = 150;
+    private int fire = 90;
+    private int powershot = 120;
+    private int railgun = 135;
+    private int slime = 115;
+    private int sniper = 140;
+    private int nukethrower = 200;
+    private int artilleri = 130;
 
     void Start() {
         UpdateTurretButtons();
         emptyPrefab = new GameObject();
+        UpdateInfoPanels();
+    }
+
+    void UpdateInfoPanels() {
+        int count = 0;
+        
+        foreach(GameObject panel in infoPanels) {
+            float damage, fireRate, range, splashRadius;
+
+            switch (count) {
+                case 0:
+                    damage = turrets[count].GetComponent<GattlingTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<GattlingTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<GattlingTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<GattlingTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + gattling.ToString();
+                    if (turrets[count].GetComponent<GattlingTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 1:
+                    damage = turrets[count].GetComponent<LaserTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<LaserTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<LaserTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<LaserTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + laser.ToString();
+                    if (turrets[count].GetComponent<LaserTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 2:
+                    damage = turrets[count].GetComponent<FireTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<FireTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<FireTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<FireTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + fire.ToString();
+                    if (turrets[count].GetComponent<FireTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 3:
+                    damage = turrets[count].GetComponent<MissileTurret>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<MissileTurret>().fireRate;
+                    range = turrets[count].GetComponent<MissileTurret>().range;
+                    splashRadius = turrets[count].GetComponent<MissileTurret>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + missile.ToString();
+                    if (turrets[count].GetComponent<MissileTurret>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 4:
+                    damage = turrets[count].GetComponent<SlimeTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<SlimeTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<SlimeTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<SlimeTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + slime.ToString();
+                    if (turrets[count].GetComponent<SlimeTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 5:
+                    damage = turrets[count].GetComponent<SniperTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<SniperTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<SniperTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<SniperTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + sniper.ToString();
+                    if (turrets[count].GetComponent<SniperTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 6:
+                    damage = turrets[count].GetComponent<PowershotTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<PowershotTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<PowershotTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<PowershotTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + powershot.ToString();
+                    if (turrets[count].GetComponent<PowershotTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 7:
+                    damage = turrets[count].GetComponent<RailgunTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<RailgunTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<RailgunTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<RailgunTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + railgun.ToString();
+                    if (turrets[count].GetComponent<RailgunTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 8:
+                    damage = turrets[count].GetComponent<ArtilleryTurretScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<ArtilleryTurretScript>().fireRate;
+                    range = turrets[count].GetComponent<ArtilleryTurretScript>().range;
+                    splashRadius = turrets[count].GetComponent<ArtilleryTurretScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + artilleri.ToString();
+                    if (turrets[count].GetComponent<ArtilleryTurretScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+                case 9:
+                    damage = turrets[count].GetComponent<NukethrowerScript>().bulletPrefab.GetComponent<Bullet>().bulletDamage;
+                    fireRate = turrets[count].GetComponent<NukethrowerScript>().fireRate;
+                    range = turrets[count].GetComponent<NukethrowerScript>().range;
+                    splashRadius = turrets[count].GetComponent<NukethrowerScript>().bulletPrefab.GetComponent<Bullet>().splashRadius;
+
+                    panel.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Damage: " + damage.ToString();
+                    panel.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Firerate: " + fireRate.ToString();
+                    panel.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Range: " + range.ToString();
+                    panel.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Price: " + nukethrower.ToString();
+                    if (turrets[count].GetComponent<NukethrowerScript>().bulletPrefab.GetComponent<Bullet>().hasSplashDamage) {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + splashRadius.ToString();
+                    } else {
+                        panel.transform.GetChild(4).gameObject.GetComponent<Text>().text = "Splash: " + "none";
+                    }
+                    break;
+            }
+
+            count++;
+        }
     }
     
     void UpdateTurretButtons() {
