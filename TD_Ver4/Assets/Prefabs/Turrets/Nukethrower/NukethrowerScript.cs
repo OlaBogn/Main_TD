@@ -241,6 +241,12 @@ public class NukethrowerScript : MonoBehaviour
         posHolder = x;
     }
 
+    private void Awake()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("TurretStats");
+        go.SendMessage("noName", gameObject);
+    }
+
     public void MessageCall()
     {
         GameObject go = GameObject.FindGameObjectWithTag("MessagePanel");
