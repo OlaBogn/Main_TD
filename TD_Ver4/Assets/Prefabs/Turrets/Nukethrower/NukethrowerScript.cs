@@ -172,10 +172,10 @@ public class NukethrowerScript : MonoBehaviour
             sprite.color = gold;
 
         }
-
+        sellPrice = sellPrice + upCost / 2;
         GoldHandler.gold = GoldHandler.gold - upCost;
-        upCost += 50;
-        fireRate = fireRate*1.5f;
+        upCost += upCost/2;
+        //fireRate = fireRate*1.5f;
         damage = damage*1.5f;
         Debug.Log("Turret Upgraded!");
         message = "Tower upgraded";

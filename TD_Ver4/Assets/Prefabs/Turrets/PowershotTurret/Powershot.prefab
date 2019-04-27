@@ -208,11 +208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RangeSprite: {fileID: 4559322118772659988}
   range: 5
-  fireRate: 5
+  fireRate: 6
   damage: 0
   level: 1
   sellPrice: 58
-  upCost: 86
+  upCost: 58
   animator: {fileID: 4334821244112038929}
   ani2: {fileID: 1459041647003177255}
   enemyTag: Enemy

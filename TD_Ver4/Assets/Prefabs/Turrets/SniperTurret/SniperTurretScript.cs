@@ -176,11 +176,11 @@ public class SniperTurretScript : MonoBehaviour
 
         }
 
-        sellPrice += 25;
+        sellPrice += upCost/2;
         GoldHandler.gold = GoldHandler.gold - upCost;
-        upCost += 25;
+        upCost += upCost/2;
         //  fireRate += 5;
-        damage += 5;
+        damage = damage*1.5f;
         Debug.Log("Turret Upgraded!");
         message = "Tower upgraded";
         MessageCall();

@@ -190,11 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18bb49cabecadb4587eaa49dafe51be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  worth: 10
-  robotDeath: {fileID: 6503367028628930712, guid: c15c32c0a4953db4aa9bceec2b08f33a,
-    type: 3}
-  organicDeath: {fileID: 3704736314085606514, guid: 3272e5ee4450fa54bbfc40d5c46c17d7,
-    type: 3}
-  flamingDeath: {fileID: 3278190287656875349, guid: c249233a6507d544caad511791f3a593,
-    type: 3}
+  maxHealth: 5
+  currentHealth: 0
+  worth: 1
