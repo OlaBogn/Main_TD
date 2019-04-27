@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
 
     private bool hasHit = false;
 
+    private bool isDestroyed = false;
+
     public void Seek(Transform _target) {
         target = _target;
     }
@@ -28,6 +30,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if (target == null) {
+            isDestroyed = true;
+            LateUpdate();
             Destroy(gameObject);
             return;
         }
@@ -71,15 +75,17 @@ public class Bullet : MonoBehaviour
         return;
     }
 
-    private void OnDestroy() {
-        var manager = gameMaster.GetComponent<EffectsManager>();
+    private void LateUpdate() {
+        if (isDestroyed) {
+            var manager = gameMaster.GetComponent<EffectsManager>();
 
-        if (gameObject.name.Substring(0, 4) == "Miss") {
-            manager.SpawnExplosionEffect(0, transform);
-        }
-        if (gameObject.name.Substring(0,4) == "Nuke") {
-            manager.SpawnExplosionEffect(1, transform);
+            if (gameObject.name.Substring(0, 4) == "Miss") {
+                manager.SpawnExplosionEffect(0, transform);
+            }
+            if (gameObject.name.Substring(0, 4) == "Nuke") {
+                manager.SpawnExplosionEffect(1, transform);
+            }
         }
     }
-    
+
 }
