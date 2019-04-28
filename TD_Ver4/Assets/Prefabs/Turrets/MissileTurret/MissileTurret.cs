@@ -146,7 +146,6 @@ public class MissileTurret : MonoBehaviour
 
         if (level > numUp)
         {
-            Debug.Log("Max level for tower reached!");
             message = "Tower is fully upgraded";
             MessageCall();
             return;
@@ -154,7 +153,6 @@ public class MissileTurret : MonoBehaviour
 
         if (upCost > GoldHandler.gold)
         {
-            Debug.Log("MORE GOLD IS REQUIRED!");
             message = "More gold is required";
             MessageCall();
             return;
@@ -178,7 +176,6 @@ public class MissileTurret : MonoBehaviour
         upCost += upCost/2;
         //  fireRate += 5;
         damage = damage*1.5f;
-        Debug.Log("Turret Upgraded!");
         message = "Tower upgraded";
         MessageCall();
 
@@ -235,7 +232,6 @@ public class MissileTurret : MonoBehaviour
         go.SendMessage("ResetBool", posHolder);
         Destroy(gameObject);
         GoldHandler.gold += sellPrice;
-        Debug.Log("Turret Sold!");
         message = "Tower sold!";
         MessageCall();
     }
