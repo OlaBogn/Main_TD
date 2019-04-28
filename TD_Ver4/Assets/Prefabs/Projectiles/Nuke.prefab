@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTag: Enemy
   speed: 20
-  bulletDamage: 25
+  bulletDamage: 20
   hasSplashDamage: 1
   splashRadius: 15
 --- !u!96 &4217387829323562907

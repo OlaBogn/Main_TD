@@ -18,15 +18,15 @@ public class BuildManager : MonoBehaviour
     private int holder;
     
 
-    private int gattling = 100;
+    private int gattling = 105;
     private int laser = 110;
     private int missile = 150;
     private int fire = 90;
     private int powershot = 120;
     private int railgun = 135;
-    private int slime = 115;
+    private int slime = 105;
     private int sniper = 140;
-    private int nukethrower = 200;
+    private int nukethrower = 300;
     private int artilleri = 130;
 
 
@@ -190,7 +190,7 @@ public class BuildManager : MonoBehaviour
             price = nukethrower;
         }
 
-        if (turretToBuild.name.ToString() == "Artilleri Turret")
+        if (turretToBuild.name.ToString() == "ArtilleryTurret")
         {
             price = artilleri;
         }

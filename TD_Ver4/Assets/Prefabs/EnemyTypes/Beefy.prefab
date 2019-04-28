@@ -91,14 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18bb49cabecadb4587eaa49dafe51be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  worth: 20
-  robotDeath: {fileID: 6503367028628930712, guid: c15c32c0a4953db4aa9bceec2b08f33a,
-    type: 3}
-  organicDeath: {fileID: 1271686343549156843, guid: d55dfe4747b5cb14393a9186ba896182,
-    type: 3}
-  flamingDeath: {fileID: 3278190287656875349, guid: c249233a6507d544caad511791f3a593,
-    type: 3}
+  maxHealth: 20
+  currentHealth: 0
+  worth: 4
 --- !u!1 &6351451000695005468
 GameObject:
   m_ObjectHideFlags: 0

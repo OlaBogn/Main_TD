@@ -214,7 +214,7 @@ MonoBehaviour:
   price: 110
   waitTime: 0.3
   sellPrice: 70
-  upCost: 105
+  upCost: 70
   animator: {fileID: 6091306250681889065}
   enemyTag: Enemy
   PartToRotate: {fileID: 8140342301187300262}
