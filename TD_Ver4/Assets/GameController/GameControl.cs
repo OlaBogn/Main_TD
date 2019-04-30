@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour {
 
     public float experience;
     public int targetSceneBuildIndex = 3;
-
+    
     [Header("Unity setup")]
     public GameObject[] prefabs;
     public int[] prices;
@@ -72,10 +72,10 @@ public class GameControl : MonoBehaviour {
             
             experience = data.experience;
             try {
-                if (SceneManager.GetActiveScene().buildIndex == 2) {
+                //if (SceneManager.GetActiveScene().buildIndex == 2) {
                     gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
                     GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
-                }
+                //}
             } catch (NullReferenceException e) {
                 Debug.LogWarning(e);
             }
