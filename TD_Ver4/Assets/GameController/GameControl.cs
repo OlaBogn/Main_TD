@@ -32,9 +32,7 @@ public class GameControl : MonoBehaviour {
         
         
     }
-
-
-
+    
     void Start() {
         GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
 
@@ -45,6 +43,10 @@ public class GameControl : MonoBehaviour {
         {
            // prices[i] = prefabs[i].GetComponent<>().price;
         }
+    }
+
+    public void MoveToMainMenu() {
+        SceneManager.LoadScene(0);
     }
     
     public void GainExperience() {
@@ -62,7 +64,6 @@ public class GameControl : MonoBehaviour {
 
         bf.Serialize(file, data); // takes serializable "data" object and stores it in "file" location
         file.Close();
-        Debug.Log("Saved");
     }
 
     public void Load() {
@@ -75,10 +76,12 @@ public class GameControl : MonoBehaviour {
             
             experience = data.experience;
             try {
-                //if (SceneManager.GetActiveScene().buildIndex == 2) {
+                if (SceneManager.GetActiveScene().buildIndex == 2) {
                     gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
                     GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
-                //}
+                } else {
+                    gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
+                }
             } catch (NullReferenceException e) {
                 Debug.LogWarning(e);
             }
@@ -96,7 +99,6 @@ public class GameControl : MonoBehaviour {
     }
 
     public void SetAudioLevel() {
-        Debug.Log("Setting Audio Level");
 
         float sliderValue = GameObject.Find("AudioSlider").GetComponent<Slider>().value;
         gameObject.GetComponent<AudioSource>().volume = sliderValue;

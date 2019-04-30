@@ -22,15 +22,15 @@ public class TurretSelect : MonoBehaviour
     public GameObject emptyPrefab; // used to erase turretprefab in gamecontroller
 
     // TurretPrices TODO: update before release
-    private int gattling = 100;
+    private int gattling = 105;
     private int laser = 110;
     private int missile = 150;
     private int fire = 90;
     private int powershot = 120;
     private int railgun = 135;
-    private int slime = 115;
+    private int slime = 105;
     private int sniper = 140;
-    private int nukethrower = 200;
+    private int nukethrower = 300;
     private int artilleri = 130;
 
     void Start() {

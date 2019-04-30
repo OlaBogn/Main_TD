@@ -35,7 +35,12 @@ public class TileClick : MonoBehaviour
         }
         foreach (GameObject z in g)
         {
-            z.SendMessage("HideTurretRange", null);
+            try {
+                z.SendMessage("HideTurretRange", null);
+            } catch (System.Exception e) {
+                Debug.Log("Cant send message: " + e);
+            }
+            
 
         }
     }

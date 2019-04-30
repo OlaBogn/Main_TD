@@ -14,5 +14,10 @@ public class SetSliderLevel : MonoBehaviour
             GameControl.control.SetAudioLevel();
         });
 
+        Button mute = GameObject.Find("MuteAudio").GetComponent<Button>();
+
+        mute.onClick.AddListener(delegate {
+            GameControl.control.MuteAudio();
+        });
     }
 }
