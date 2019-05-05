@@ -21,9 +21,13 @@ public class Background : MonoBehaviour
         {
             return;
         }
-        foreach (GameObject z in g)
-        {
-            z.SendMessage("HideTurretRange", null);
+        foreach (GameObject z in g) {
+            try {
+                z.SendMessage("HideTurretRange", null);
+            } catch (System.Exception e) {
+                Debug.Log("Cant send message: " + e);
+            }
+
 
         }
     }

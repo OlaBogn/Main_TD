@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     private string line = string.Empty;
     private int waveIndex = 0;
 
-    private bool cr_running = false;
+    public bool cr_running = false;
 
     private void Awake() {
         UpdateWaveText();
@@ -29,11 +29,10 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void SpawnNextWave() {
-        // TODO: MUST BE FIXED BEFORE TEST BUILD
-        /* 
+        
         if (cr_running) {
             return;
-        }*/
+        }
         if (waveIndex >= allLines.Length) {
             return;
         }

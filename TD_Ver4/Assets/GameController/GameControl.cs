@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour {
 
     public float experience;
     public int targetSceneBuildIndex = 3;
-
+    
     [Header("Unity setup")]
     public GameObject[] prefabs;
     public int[] prices;
@@ -29,20 +29,24 @@ public class GameControl : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        Load();
+        
         
     }
-
-
-
+    
     void Start() {
         GameObject[] gos = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        Load();
 
         prices = new int[prefabs.Length];
         for (int i = 0; i < prefabs.Length; i++)
         {
            // prices[i] = prefabs[i].GetComponent<>().price;
         }
+    }
+
+    public void MoveToMainMenu() {
+        SceneManager.LoadScene(0);
     }
     
     public void GainExperience() {
@@ -75,12 +79,14 @@ public class GameControl : MonoBehaviour {
                 if (SceneManager.GetActiveScene().buildIndex == 2) {
                     gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
                     GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
+                } else {
+                    gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
                 }
             } catch (NullReferenceException e) {
                 Debug.LogWarning(e);
             }
             
-        }
+        } 
     }
 
     public void UpdateTurretsList(GameObject[] gos) {
@@ -93,15 +99,42 @@ public class GameControl : MonoBehaviour {
     }
 
     public void SetAudioLevel() {
+
         float sliderValue = GameObject.Find("AudioSlider").GetComponent<Slider>().value;
         gameObject.GetComponent<AudioSource>().volume = sliderValue;
 
         Save();
+        Load();
     }
 
     public void MuteAudio() {
         gameObject.GetComponent<AudioSource>().volume = 0f;
         GameObject.Find("AudioSlider").GetComponent<Slider>().value = 0;
+    }
+
+    public float GetAudioLevel() {
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat")) {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+            PlayerData data = (PlayerData)bf.Deserialize(file);
+
+            file.Close();
+
+            experience = data.experience;
+            try {
+                //if (SceneManager.GetActiveScene().buildIndex == 2) {
+                gameObject.GetComponent<AudioSource>().volume = data.audioLevel;
+                GameObject.Find("AudioSlider").GetComponent<Slider>().value = data.audioLevel;
+                //}
+            } catch (NullReferenceException e) {
+                Debug.LogWarning(e);
+            }
+
+            return data.audioLevel;
+
+        }
+
+        return -1f; // -1f means failed to load
     }
 
     public void ToggleTime() {
