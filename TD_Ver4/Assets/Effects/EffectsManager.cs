@@ -12,7 +12,7 @@ public class EffectsManager : MonoBehaviour
     public void SpawnExplosionEffect(int n, Transform trans) {
         Instantiate(explosionEffects[n], trans.position, Quaternion.identity);
     }
-
+    
     public void SpawnDeathEffect(int n, Transform trans) {
         Instantiate(deathEffects[n], trans.position, Quaternion.identity);
     }

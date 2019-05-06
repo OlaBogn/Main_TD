@@ -5,7 +5,7 @@ public class Waypoints : MonoBehaviour
 
     public static Transform[] points;
 
-    // Legger alle "waypoint-objekter" under et Transform Array kalt "points" 
+    // Putts all waypoint objects in points array 
     private void Awake()
     {
         points = new Transform[transform.childCount];

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Unity SetUp")]
     public Transform spawnPoint;
 
-    public GameObject[] enemyPrefabs;
+    public GameObject[] enemyPrefabs; 
     public Text waveCounter;
 
     // Henter alle linjer ifra et tekstdokument (wavelist.txt)
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     private string line = string.Empty;
     private int waveIndex = 0;
 
-    public bool cr_running = false;
+    public bool cr_running = false; // is set to true if "SpawnWave" coroutine is running
 
     private void Awake() {
         UpdateWaveText();
@@ -25,7 +25,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start() {
         SendMessage("SetWaveCount", allLines.Length);
-        InvokeRepeating("UpdateSpawnWaveButton", 0f, 0.1f);
     }
 
     public void SpawnNextWave() {
@@ -47,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         waveCounter.text = waveText;
     }
 
-    // IEnumerator allows pausing of the subroutine "SpawnWave()"
+    // IEnumerator allows pausing of the coroutine "SpawnWave()"
     IEnumerator SpawnWave() {
         cr_running = true;
         waveIndex++;
@@ -59,6 +58,7 @@ public class EnemySpawner : MonoBehaviour
         // Går gjennom int array som velger fiender
         for (int i = 0; i < enemies.Length; i++){
 
+            // Comments reffers to enemy-types in the enemyPrefabs array
             if (enemies[i] == 0) {
                 SpawnEnemy(0); // speedster
                 yield return new WaitForSeconds(0.3f);
