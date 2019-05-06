@@ -15,6 +15,7 @@ public class PlayerHealthTracker : MonoBehaviour
     public void DamagePlayer() {
         playerHealth--;
 
+        // Activates game over screen if health is less than 0
         if (playerHealth <= 0) {
             UpdateHealth();
             gameOverUI.SetActive(true);

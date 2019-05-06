@@ -13,6 +13,7 @@ public class LevelProgress : MonoBehaviour
     private int waveIndex = 0;
     private bool isActive = false;
 
+    // checks if there are enemys on the screen and finds out if the "wave" is over
     private void FixedUpdate() {
         if (!isActive) {
             return;
