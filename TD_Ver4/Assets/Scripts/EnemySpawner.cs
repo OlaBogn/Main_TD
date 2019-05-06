@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using System.Linq;
 
 public class EnemySpawner : MonoBehaviour
@@ -26,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start() {
         SendMessage("SetWaveCount", allLines.Length);
+        InvokeRepeating("UpdateSpawnWaveButton", 0f, 0.1f);
     }
 
     public void SpawnNextWave() {
