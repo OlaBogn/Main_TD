@@ -17,3 +17,5 @@ This program is buildt as a project in the Unity game engine (version: 2018.3.2f
 The editor used for code is Visual Studio.
 
 As this game was meant for the Android environment, an Android phone is recommended, tho this is not strictly neccessary as the game can be run either in the Unity dev-environment or buildt for most platforms.
+
+![alt text](https://i.imgur.com/8lLvqwz.png)
